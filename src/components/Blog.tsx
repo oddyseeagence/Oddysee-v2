@@ -114,36 +114,38 @@ export function Blog() {
     useScrollReveal<HTMLDivElement>();
 
   return (
-    <section className="max-w-[1320px] mx-auto px-4 md:px-8 lg:px-10 py-24">
-      <div
-        ref={headerRef}
-        data-reveal={isHeaderRevealed ? "visible" : "hidden"}
-        className="scroll-reveal flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16"
-      >
-        <div>
-          <h2 className="font-heading text-4xl md:text-5xl text-[#1D0D3B]">
-            Explore Latest Thoughts
-          </h2>
-        </div>
-        <button
-          type="button"
-          className="bg-[#632BC5] rounded-full px-8 py-4 font-bold text-[#FFFFFF] w-fit"
+    <section className="bg-white py-24">
+      <div className="mx-auto max-w-[1320px] px-4 md:px-8 lg:px-10">
+        <div
+          ref={headerRef}
+          data-reveal={isHeaderRevealed ? "visible" : "hidden"}
+          className="scroll-reveal mb-16 flex flex-col gap-6 md:flex-row md:items-end md:justify-between"
         >
-          Explore More
-        </button>
-      </div>
+          <div>
+            <h2 className="font-heading text-4xl text-[#1D0D3B] md:text-5xl">
+              Explore Latest Thoughts
+            </h2>
+          </div>
+          <button
+            type="button"
+            className="w-fit rounded-full bg-[#632BC5] px-8 py-4 font-bold text-[#FFFFFF]"
+          >
+            Explore More
+          </button>
+        </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-        <FeaturedPostCard />
+        <div className="grid grid-cols-1 gap-12 lg:grid-cols-2">
+          <FeaturedPostCard />
 
-        <div className="flex flex-col gap-10">
-          {SMALL_POSTS.map((post, index) => (
-            <SmallPostCard
-              key={post.title}
-              post={post}
-              index={index}
-            />
-          ))}
+          <div className="flex flex-col gap-10">
+            {SMALL_POSTS.map((post, index) => (
+              <SmallPostCard
+                key={post.title}
+                post={post}
+                index={index}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </section>

@@ -366,6 +366,18 @@ h1.font-heading {
   width: var(--process-image-width);
 }
 
+.process-card__contained-strip {
+  position: absolute;
+  inset: 0;
+  clip-path: inset(
+    100% var(--process-contained-strip-right) 0
+      var(--process-contained-strip-left)
+  );
+  transition: clip-path var(--process-reveal-duration) ease-in-out;
+  transition-delay: var(--process-strip-delay);
+  will-change: clip-path;
+}
+
 .process-card__title {
   transition:
     transform 600ms ease-in-out,
@@ -379,6 +391,13 @@ h1.font-heading {
 
 .process-card:hover .process-card__strip {
   clip-path: inset(0);
+}
+
+.process-card:hover .process-card__contained-strip {
+  clip-path: inset(
+    0 var(--process-contained-strip-right) 0
+      var(--process-contained-strip-left)
+  );
 }
 
 .process-card:hover .process-card__title {
@@ -411,6 +430,7 @@ h1.font-heading {
   }
 
   .process-card__strip,
+  .process-card__contained-strip,
   .process-card__title,
   .process-card__numeral {
     transition-duration: 1ms !important;

@@ -11,7 +11,6 @@ const PARTNERS = [
   { name: "Planète Montessori", src: "/images/partners/pmis.svg" },
 ];
 
-// Duplicated once so the marquee track can loop seamlessly.
 const TRACK = [...PARTNERS, ...PARTNERS];
 
 export function TrustBanner() {
@@ -21,20 +20,11 @@ export function TrustBanner() {
     <section
       ref={ref}
       data-reveal={isRevealed ? "visible" : "hidden"}
-      className="scroll-reveal relative bg-background"
+      className="scroll-reveal relative bg-white"
     >
-      <div
-        className="h-[3px] w-full"
-        style={{
-          background:
-            "linear-gradient(to right, #0a0a0a, var(--crevix-purple-solid), #1e1b4b)",
-        }}
-      />
-
       <div className="mx-auto max-w-[1320px] px-4 py-12 md:px-8 md:py-16 lg:px-10">
-        {/* Row 1 — stats + client logos */}
         <div className="flex flex-col gap-6 md:flex-row md:items-center md:gap-12">
-          <span className="shrink-0 font-sans text-[19.2px] leading-snug font-bold text-[#1D0D3B]">
+          <span className="shrink-0 font-sans text-[19.2px] font-bold leading-snug text-[#1D0D3B]">
             Helped generating
             <br />
             +390 000 MAD for clients
@@ -70,9 +60,26 @@ export function TrustBanner() {
             </div>
           </div>
         </div>
+      </div>
+    </section>
+  );
+}
 
-        {/* Row 2 — Meta badge + heading */}
-        <div className="mt-16 flex flex-col items-center gap-6 md:mt-20 md:flex-row md:gap-[120px]">
+export function MetaPartnerBand() {
+  const { ref, isRevealed } = useScrollReveal<HTMLElement>();
+
+  return (
+    <section
+      ref={ref}
+      data-reveal={isRevealed ? "visible" : "hidden"}
+      className="scroll-reveal bg-white"
+    >
+      <div className="mx-auto max-w-[1320px] px-4 py-12 md:px-8 md:py-16 lg:px-10">
+        <div className="flex flex-col items-center gap-6 md:flex-row md:justify-between md:gap-12">
+          <h2 className="max-w-[900px] font-heading text-[27px] leading-tight text-[#1D0D3B] md:text-[32px] lg:text-[43px]">
+            On gère vos publicités avec les données et le support qu&apos;il
+            faut, pas au hasard.
+          </h2>
           <Image
             src="/images/metapartner.png"
             alt="Partenaire Meta"
@@ -80,10 +87,6 @@ export function TrustBanner() {
             height={180}
             className="h-[84px] w-auto shrink-0"
           />
-          <h2 className="max-w-[900px] font-heading text-[27px] leading-tight text-[#1D0D3B] md:text-[32px] lg:text-[43px]">
-            On gère vos publicités avec les données et le support qu&apos;il
-            faut, pas au hasard.
-          </h2>
         </div>
       </div>
     </section>

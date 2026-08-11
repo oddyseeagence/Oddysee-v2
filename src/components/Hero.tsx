@@ -16,8 +16,6 @@ export function Hero() {
       >
         <source src="/videos/hero.mp4" type="video/mp4" />
       </video>
-      <div className="absolute inset-0 z-0 bg-[#0a0a0a]/25" />
-
       <div className="relative mx-auto flex h-full max-w-[1320px] flex-col justify-end px-4 pb-16 md:px-8 lg:px-10">
         <div className="relative z-10 flex flex-col gap-10">
           <div className="flex flex-col gap-10 lg:flex-row lg:items-center lg:justify-between">

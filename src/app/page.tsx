@@ -1,6 +1,6 @@
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
-import { TrustBanner } from "@/components/TrustBanner";
+import { MetaPartnerBand, TrustBanner } from "@/components/TrustBanner";
 import { Services } from "@/components/Services";
 import { ProjectsStack } from "@/components/ProjectsStack";
 import { Process } from "@/components/Process";
@@ -17,6 +17,7 @@ export default function Home() {
       <main>
         <Hero />
         <TrustBanner />
+        <MetaPartnerBand />
         {/* <Showreel /> — temporarily disabled, keep for later */}
         <Services />
         <ProjectsStack />
@@ -24,7 +25,7 @@ export default function Home() {
         <CtaBand />
         <Testimonials />
         <Blog />
-        <Faq />
+        <Faq background="lavender" />
       </main>
       <Footer />
     </>

@@ -1,9 +1,8 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useRef } from "react";
 import Image from "next/image";
-import { ArrowRightIcon, QuoteIcon } from "@/components/icons";
-import { useScrollReveal } from "@/hooks/useScrollReveal";
+import { QuoteIcon } from "@/components/icons";
 
 interface Testimonial {
   quote: string;
@@ -15,184 +14,231 @@ interface Testimonial {
 const testimonials: Testimonial[] = [
   {
     quote:
-      "Excellente expérience de travail avec cette équipe, ils ont clairement compris nos besoins et livré un design épuré et moderne, parfaitement dans les temps.",
+      "Oddysee a su transformer notre vision en une identité forte, claire et mémorable.",
     name: "Michael Johnson",
     role: "PDG de Startup Tech",
     avatar: "/images/e4BWmAGi1BLgfp8ovDBTi284Ec.png",
   },
   {
     quote:
-      "L'équipe a été très professionnelle et agréable, ils ont communiqué clairement, partagé des mises à jour régulières, et livré un beau design qui a aidé notre entreprise à se développer en ligne.",
+      "Leur équipe est devenue un partenaire précieux pour faire grandir notre présence en ligne.",
     name: "Sophia Anderson",
-    role: "Directrice Marketing",
+    role: "Directrice marketing",
     avatar: "/images/Ve4xe8fe2mEHspmmkKz2EDVx0A4.png",
   },
   {
     quote:
-      "Qualité de travail incroyable et souci du détail, le design final était magnifique et fonctionnait parfaitement sur tous les appareils et écrans.",
+      "Un travail remarquable, un vrai souci du détail et une expérience fluide du début à la fin.",
     name: "Emily Carter",
-    role: "Cheffe de Produit",
+    role: "Cheffe de produit",
     avatar: "/images/KC3Kuv2mmVfyLTTg0k3nlV2IAO8.png",
   },
   {
     quote:
-      "Nous sommes très satisfaits du résultat final, le design est moderne et professionnel, et le processus était simple, rapide et bien organisé du début à la fin.",
+      "Notre nouvelle image reflète enfin la qualité de notre travail et parle vraiment à nos clients.",
     name: "Olivia Martinez",
-    role: "Responsable de Marque",
+    role: "Responsable de marque",
     avatar: "/images/JfJAfR6lq1p2gtGDdu4qauSo5k.png",
   },
   {
     quote:
-      "Travailler avec cette équipe a été une excellente expérience, ils ont clairement compris nos besoins et livré un design épuré et moderne qui a parfaitement amélioré notre marque et l'expérience utilisateur.",
+      "Une équipe attentive et exigeante qui a dépassé nos attentes à chaque étape du projet.",
     name: "David Miller",
-    role: "Propriétaire d'Entreprise SaaS",
+    role: "Fondateur d’entreprise SaaS",
     avatar: "/images/SDZauHxn0fY54tA8kHIfP6zJ9aU.png",
-  },
-  {
-    quote:
-      "Oddysee a transformé notre vision en une identité claire et mémorable. Le processus était fluide et le résultat a dépassé toutes nos attentes.",
-    name: "Camille Laurent",
-    role: "Fondatrice de Maison Lune",
-    avatar: "/images/Ve4xe8fe2mEHspmmkKz2EDVx0A4.png",
-  },
-  {
-    quote:
-      "Notre nouveau site est plus rapide, plus simple à utiliser et beaucoup plus efficace pour générer des demandes. La différence a été immédiate.",
-    name: "Thomas Bernard",
-    role: "Directeur Commercial",
-    avatar: "/images/e4BWmAGi1BLgfp8ovDBTi284Ec.png",
-  },
-  {
-    quote:
-      "Une équipe attentive, réactive et exigeante sur chaque détail. Notre marque dispose enfin d'une image cohérente qui reflète vraiment notre travail.",
-    name: "Sarah El Amrani",
-    role: "Responsable Communication",
-    avatar: "/images/KC3Kuv2mmVfyLTTg0k3nlV2IAO8.png",
   },
 ];
 
-const PAGE_COUNT = testimonials.length;
-const AUTO_ADVANCE_MS = 4500;
-
-function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
+function TestimonialCard({
+  testimonial,
+  duplicate = false,
+}: {
+  testimonial: Testimonial;
+  duplicate?: boolean;
+}) {
   return (
-    <article className="relative min-h-[300px] rounded-3xl bg-white px-8 pb-10 pt-20 shadow-[0_24px_60px_rgba(54,35,88,0.14)] md:px-16">
-      <Image
-        src={testimonial.avatar}
-        alt={testimonial.name}
-        width={96}
-        height={96}
-        className="absolute left-1/2 top-0 h-24 w-24 -translate-x-1/2 -translate-y-1/2 rounded-full object-cover ring-4 ring-[#632BC5] shadow-lg"
-      />
-      <QuoteIcon className="absolute left-7 top-20 h-7 w-9 text-[#632BC5] md:left-10" />
-      <QuoteIcon className="absolute bottom-8 right-7 h-7 w-9 rotate-180 text-[#632BC5] md:right-10" />
-      <p className="mx-auto max-w-2xl px-8 font-sans text-center text-base leading-8 text-[#625d6b] md:text-lg">
-        {testimonial.quote}
-      </p>
-      <div className="mt-8 text-center">
-        <h3 className="font-sans text-base font-normal text-[#632BC5]">
-          {testimonial.name}
-        </h3>
-        <p className="mt-1 font-sans text-xs text-[#1D0D3B]/45">
-          {testimonial.role}
-        </p>
+    <article
+      aria-hidden={duplicate || undefined}
+      className="relative flex min-h-[290px] w-[calc(100vw-32px)] shrink-0 flex-col bg-white px-6 py-7 sm:w-[680px] sm:px-8 sm:py-8 lg:w-[760px] lg:px-10"
+    >
+      <div className="flex items-center justify-between gap-5">
+        <div className="flex min-w-0 items-center gap-3">
+          <Image
+            src={testimonial.avatar}
+            alt={duplicate ? "" : `Portrait de ${testimonial.name}`}
+            draggable={false}
+            width={38}
+            height={38}
+            sizes="38px"
+            className="pointer-events-none h-[38px] w-[38px] shrink-0 select-none rounded-full object-cover"
+          />
+          <div className="min-w-0">
+            <h3 className="truncate text-[12px] font-semibold leading-4 text-[#242122]">
+              {testimonial.name}
+            </h3>
+            <p className="truncate text-[9px] leading-4 text-[#777274]">
+              {testimonial.role}
+            </p>
+          </div>
+        </div>
+        <QuoteIcon
+          aria-hidden="true"
+          className="h-4 w-5 shrink-0 text-[#242122]"
+        />
       </div>
+
+      <blockquote className="mt-7 max-w-[570px] text-[27px] font-normal leading-[1.12] tracking-[-0.035em] text-[#292526] sm:text-[31px] lg:text-[34px]">
+        {testimonial.quote}
+      </blockquote>
     </article>
   );
 }
 
+function TestimonialGroup({ duplicate = false }: { duplicate?: boolean }) {
+  return (
+    <div
+      aria-hidden={duplicate || undefined}
+      className="flex shrink-0 gap-5 pr-5"
+    >
+      {testimonials.map((testimonial) => (
+        <TestimonialCard
+          key={`${duplicate ? "duplicate-" : ""}${testimonial.name}`}
+          testimonial={testimonial}
+          duplicate={duplicate}
+        />
+      ))}
+    </div>
+  );
+}
+
 export function Testimonials() {
-  const [page, setPage] = useState(0);
-  const { ref: headerRef, isRevealed: isHeaderRevealed } =
-    useScrollReveal<HTMLDivElement>();
-  const { ref: carouselRef, isRevealed: isCarouselRevealed } =
-    useScrollReveal<HTMLDivElement>();
-
-  const showPrevious = useCallback(() => {
-    setPage((currentPage) =>
-      currentPage === 0 ? PAGE_COUNT - 1 : currentPage - 1,
-    );
-  }, []);
-
-  const showNext = useCallback(() => {
-    setPage((currentPage) => (currentPage + 1) % PAGE_COUNT);
-  }, []);
+  const viewportRef = useRef<HTMLDivElement>(null);
+  const hoveredRef = useRef(false);
+  const draggingRef = useRef(false);
+  const lastPointerXRef = useRef(0);
 
   useEffect(() => {
-    const interval = window.setInterval(showNext, AUTO_ADVANCE_MS);
-    return () => window.clearInterval(interval);
-  }, [showNext]);
+    const viewport = viewportRef.current;
+
+    if (!viewport) {
+      return;
+    }
+
+    const reduceMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+    let previousTime = performance.now();
+    let frameId = 0;
+
+    const moveBy = (distance: number) => {
+      const loopWidth = viewport.scrollWidth / 2;
+
+      if (loopWidth <= 0) {
+        return;
+      }
+
+      const nextPosition = viewport.scrollLeft + distance;
+      viewport.scrollLeft = ((nextPosition % loopWidth) + loopWidth) % loopWidth;
+    };
+
+    const handleMouseEnter = () => {
+      hoveredRef.current = true;
+    };
+
+    const handleMouseLeave = () => {
+      hoveredRef.current = false;
+    };
+
+    const handlePointerDown = (event: PointerEvent) => {
+      if (event.pointerType === "mouse" && event.button !== 0) {
+        return;
+      }
+
+      event.preventDefault();
+      draggingRef.current = true;
+      lastPointerXRef.current = event.clientX;
+      viewport.setPointerCapture(event.pointerId);
+    };
+
+    const handlePointerMove = (event: PointerEvent) => {
+      if (!draggingRef.current) {
+        return;
+      }
+
+      event.preventDefault();
+      moveBy(lastPointerXRef.current - event.clientX);
+      lastPointerXRef.current = event.clientX;
+    };
+
+    const stopDragging = (event: PointerEvent) => {
+      draggingRef.current = false;
+
+      if (viewport.hasPointerCapture(event.pointerId)) {
+        viewport.releasePointerCapture(event.pointerId);
+      }
+    };
+
+    const handleWheel = (event: WheelEvent) => {
+      const distance =
+        Math.abs(event.deltaX) > Math.abs(event.deltaY)
+          ? event.deltaX
+          : event.deltaY;
+
+      event.preventDefault();
+      moveBy(distance);
+    };
+
+    const animate = (time: number) => {
+      const elapsed = Math.min(time - previousTime, 64);
+      previousTime = time;
+
+      if (!reduceMotion && !hoveredRef.current && !draggingRef.current) {
+        moveBy(elapsed * 0.04);
+      }
+
+      frameId = window.requestAnimationFrame(animate);
+    };
+
+    viewport.addEventListener("mouseenter", handleMouseEnter);
+    viewport.addEventListener("mouseleave", handleMouseLeave);
+    viewport.addEventListener("pointerdown", handlePointerDown);
+    viewport.addEventListener("pointermove", handlePointerMove);
+    viewport.addEventListener("pointerup", stopDragging);
+    viewport.addEventListener("pointercancel", stopDragging);
+    viewport.addEventListener("wheel", handleWheel, { passive: false });
+    frameId = window.requestAnimationFrame(animate);
+
+    return () => {
+      window.cancelAnimationFrame(frameId);
+      viewport.removeEventListener("mouseenter", handleMouseEnter);
+      viewport.removeEventListener("mouseleave", handleMouseLeave);
+      viewport.removeEventListener("pointerdown", handlePointerDown);
+      viewport.removeEventListener("pointermove", handlePointerMove);
+      viewport.removeEventListener("pointerup", stopDragging);
+      viewport.removeEventListener("pointercancel", stopDragging);
+      viewport.removeEventListener("wheel", handleWheel);
+    };
+  }, []);
 
   return (
-    <section className="overflow-hidden bg-[#F7F3FF] px-4 py-24 md:px-8">
-      <div className="mx-auto max-w-[1180px]">
-        <div
-          ref={headerRef}
-          data-reveal={isHeaderRevealed ? "visible" : "hidden"}
-          className="scroll-reveal mx-auto max-w-4xl text-center"
-        >
-          <h2 className="font-heading text-4xl text-[#1D0D3B] md:text-5xl">
+    <section className="overflow-hidden bg-[#F7F3FF] py-20 font-sans sm:py-24 lg:py-28">
+      <div className="mx-auto max-w-[1320px] px-4 md:px-8 lg:px-10">
+        <header className="max-w-[600px]">
+          <h2 className="font-heading text-4xl leading-tight text-[#262122] md:text-5xl lg:text-[56px]">
             Vrais retours de nos clients
           </h2>
-        </div>
+        </header>
 
         <div
-          ref={carouselRef}
-          data-reveal={isCarouselRevealed ? "visible" : "hidden"}
-          className="scroll-reveal relative mx-auto mt-24 max-w-5xl px-0 md:px-20"
-          style={{ transitionDelay: "90ms" }}
-          aria-live="polite"
+          ref={viewportRef}
+          id="testimonial-carousel"
+          aria-label="Témoignages clients"
+          className="mt-12 min-w-0 cursor-grab touch-pan-y select-none overflow-x-auto overscroll-x-contain pb-2 active:cursor-grabbing sm:mt-14 [scroll-behavior:auto] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
         >
-          <div className="relative mx-auto max-w-[820px] pt-12">
-            <div
-              aria-hidden="true"
-              className="absolute inset-x-5 bottom-0 top-16 translate-y-5 rounded-3xl bg-white/45 shadow-[0_18px_45px_rgba(54,35,88,0.08)]"
-            />
-            <div
-              aria-hidden="true"
-              className="absolute inset-x-10 bottom-0 top-20 translate-y-10 rounded-3xl bg-white/25"
-            />
-            <div
-              key={page}
-              className="relative animate-in fade-in slide-in-from-right-4 duration-500"
-            >
-              <TestimonialCard testimonial={testimonials[page]} />
-            </div>
+          <div className="flex w-max">
+            <TestimonialGroup />
+            <TestimonialGroup duplicate />
           </div>
-
-          <button
-            type="button"
-            onClick={showPrevious}
-            aria-label="Afficher le témoignage précédent"
-            className="absolute left-1 top-1/2 z-10 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-white text-[#1D0D3B] shadow-md transition hover:text-[#632BC5] md:left-0"
-          >
-            <ArrowRightIcon className="h-5 w-5 rotate-180" />
-          </button>
-          <button
-            type="button"
-            onClick={showNext}
-            aria-label="Afficher le témoignage suivant"
-            className="absolute right-1 top-1/2 z-10 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-white text-[#1D0D3B] shadow-md transition hover:text-[#632BC5] md:right-0"
-          >
-            <ArrowRightIcon className="h-5 w-5" />
-          </button>
-        </div>
-
-        <div className="mt-14 flex justify-center gap-2" aria-label="Pagination des témoignages">
-          {testimonials.map((testimonial, index) => (
-            <button
-              key={testimonial.name}
-              type="button"
-              onClick={() => setPage(index)}
-              aria-label={`Afficher le témoignage de ${testimonial.name}`}
-              aria-current={page === index ? "true" : undefined}
-              className={`h-2.5 w-2.5 rounded-full transition-all ${
-                page === index
-                  ? "w-7 bg-[#632BC5]"
-                  : "bg-[#632BC5]/25 hover:bg-[#632BC5]/50"
-              }`}
-            />
-          ))}
         </div>
       </div>
     </section>

@@ -27,6 +27,11 @@ export function Header({ variant = "default", darkLogo = false }: HeaderProps) {
   const [hideNav, setHideNav] = useState(false);
   const [pastHero, setPastHero] = useState(false);
 
+  function isActiveLink(href: string) {
+    if (href === "/") return pathname === "/";
+    return pathname === href || pathname.startsWith(`${href}/`);
+  }
+
   function handleHomeClick(event: MouseEvent<HTMLAnchorElement>) {
     setMobileOpen(false);
 
@@ -169,11 +174,14 @@ export function Header({ variant = "default", darkLogo = false }: HeaderProps) {
           <Link
             href="/#hero"
             onClick={handleHomeClick}
+            aria-current={pathname === "/" ? "page" : undefined}
             className={cn(
               "text-base leading-6 text-[#faf9ff] transition-colors duration-150 hover:text-[#a78fff]",
               isAbout &&
                 "rounded-full px-7 py-2.5 text-sm leading-5 transition-colors duration-200 hover:bg-[#8966ff]/25 hover:text-white",
-              isLight && "text-sm text-[#1D0D3B] hover:text-[#632BC5]"
+              isLight && "text-sm text-[#1D0D3B] hover:text-[#632BC5]",
+              pathname === "/" && "text-[#a78fff]",
+              pathname === "/" && isLight && "text-[#632BC5]"
             )}
           >
             Accueil
@@ -183,13 +191,16 @@ export function Header({ variant = "default", darkLogo = false }: HeaderProps) {
             <a
               key={link.label}
               href={link.href}
+              aria-current={isActiveLink(link.href) ? "page" : undefined}
               className={cn(
                 "text-base leading-6 text-[#faf9ff] transition-colors duration-150 hover:text-[#a78fff]",
                 isAbout &&
                   "rounded-full px-7 py-2.5 text-sm leading-5 transition-colors duration-200 hover:bg-[#8966ff]/25 hover:text-white",
                 isAbout && link.href === "/a-propos" &&
                   "bg-white/12 text-[#c6b7ff]",
-                isLight && "text-sm text-[#1D0D3B] hover:text-[#632BC5]"
+                isLight && "text-sm text-[#1D0D3B] hover:text-[#632BC5]",
+                isActiveLink(link.href) && "text-[#a78fff]",
+                isActiveLink(link.href) && isLight && "text-[#632BC5]"
               )}
             >
               {link.label}
@@ -263,9 +274,12 @@ export function Header({ variant = "default", darkLogo = false }: HeaderProps) {
             <Link
               href="/#hero"
               onClick={handleHomeClick}
+              aria-current={pathname === "/" ? "page" : undefined}
               className={cn(
                 "text-base text-[#faf9ff] transition-colors duration-150 hover:text-[#a78fff]",
-                isLight && "text-[#1D0D3B] hover:text-[#632BC5]"
+                isLight && "text-[#1D0D3B] hover:text-[#632BC5]",
+                pathname === "/" && "text-[#a78fff]",
+                pathname === "/" && isLight && "text-[#632BC5]"
               )}
             >
               Accueil
@@ -275,9 +289,12 @@ export function Header({ variant = "default", darkLogo = false }: HeaderProps) {
                 key={link.label}
                 href={link.href}
                 onClick={() => setMobileOpen(false)}
+                aria-current={isActiveLink(link.href) ? "page" : undefined}
                 className={cn(
                   "text-base text-[#faf9ff] transition-colors duration-150 hover:text-[#a78fff]",
-                  isLight && "text-[#1D0D3B] hover:text-[#632BC5]"
+                  isLight && "text-[#1D0D3B] hover:text-[#632BC5]",
+                  isActiveLink(link.href) && "text-[#a78fff]",
+                  isActiveLink(link.href) && isLight && "text-[#632BC5]"
                 )}
               >
                 {link.label}

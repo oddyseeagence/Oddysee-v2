@@ -1,8 +1,9 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, type MouseEvent } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { ArrowUpRightIcon, XIcon } from "@/components/icons";
 
@@ -19,11 +20,41 @@ interface HeaderProps {
 }
 
 export function Header({ variant = "default", darkLogo = false }: HeaderProps) {
+  const pathname = usePathname();
   const isLight = variant === "light";
   const isAbout = variant === "about";
   const [mobileOpen, setMobileOpen] = useState(false);
   const [hideNav, setHideNav] = useState(false);
   const [pastHero, setPastHero] = useState(false);
+
+  function handleHomeClick(event: MouseEvent<HTMLAnchorElement>) {
+    setMobileOpen(false);
+
+    if (
+      pathname !== "/" ||
+      event.button !== 0 ||
+      event.metaKey ||
+      event.ctrlKey ||
+      event.shiftKey ||
+      event.altKey
+    ) {
+      return;
+    }
+
+    const hero = document.getElementById("hero");
+    if (!hero) return;
+
+    event.preventDefault();
+    setHideNav(false);
+    hero.scrollIntoView({
+      behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
+        ? "auto"
+        : "smooth",
+      block: "start",
+    });
+    window.history.replaceState(null, "", "/#hero");
+  }
+
   useEffect(() => {
     if (isAbout) return;
 
@@ -98,7 +129,11 @@ export function Header({ variant = "default", darkLogo = false }: HeaderProps) {
         )}
       >
         {/* Logo — standalone, left, aligned with the hero headline */}
-        <Link href="/" className="flex items-center justify-self-start">
+        <Link
+          href="/#hero"
+          onClick={handleHomeClick}
+          className="flex items-center justify-self-start"
+        >
           <Image
             src={
               darkLogo
@@ -132,7 +167,8 @@ export function Header({ variant = "default", darkLogo = false }: HeaderProps) {
           )}
         >
           <Link
-            href="/"
+            href="/#hero"
+            onClick={handleHomeClick}
             className={cn(
               "text-base leading-6 text-[#faf9ff] transition-colors duration-150 hover:text-[#a78fff]",
               isAbout &&
@@ -225,8 +261,8 @@ export function Header({ variant = "default", darkLogo = false }: HeaderProps) {
         >
           <div className="flex flex-col gap-6 px-8 py-8">
             <Link
-              href="/"
-              onClick={() => setMobileOpen(false)}
+              href="/#hero"
+              onClick={handleHomeClick}
               className={cn(
                 "text-base text-[#faf9ff] transition-colors duration-150 hover:text-[#a78fff]",
                 isLight && "text-[#1D0D3B] hover:text-[#632BC5]"

@@ -27,7 +27,7 @@ export function TrustBanner() {
           <span className="shrink-0 font-sans text-[19.2px] font-bold leading-snug text-[#1D0D3B]">
             Helped generating
             <br />
-            +390 000 MAD for clients
+            +3 900 000 MAD for clients
           </span>
 
           <div

@@ -1,53 +1,9 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useRef } from "react";
-
-interface Project {
-  slug: string;
-  title: string;
-  year: string;
-  image: string;
-  link: string;
-}
-
-const PROJECTS: Project[] = [
-  {
-    slug: "busix",
-    title: "Busix",
-    year: "2024",
-    image: "/images/m9iGbTvzSU0X8EmaayVuOMIRork.png",
-    link: "/images/m9iGbTvzSU0X8EmaayVuOMIRork.png",
-  },
-  {
-    slug: "mindeasee",
-    title: "MindEasee",
-    year: "2024",
-    image: "/images/TzNUKQ3nV4fZNTQVsrtY5HZdZQg.png",
-    link: "/images/TzNUKQ3nV4fZNTQVsrtY5HZdZQg.png",
-  },
-  {
-    slug: "lunex",
-    title: "Lunex",
-    year: "2024",
-    image: "/images/1JwMgKBC5NLItnIkj4lQUhGmN9k.png",
-    link: "/images/1JwMgKBC5NLItnIkj4lQUhGmN9k.png",
-  },
-  {
-    slug: "zentro",
-    title: "Zentro",
-    year: "2025",
-    image: "/images/U6Npa7O4X2OlLqe9caPvFM1fQ.png",
-    link: "/images/U6Npa7O4X2OlLqe9caPvFM1fQ.png",
-  },
-  {
-    slug: "vynex",
-    title: "Vynex",
-    year: "2025",
-    image: "/images/DeY32bDwEuzZ6HcYmlxZqgyMQ.png",
-    link: "/images/DeY32bDwEuzZ6HcYmlxZqgyMQ.png",
-  },
-];
+import { projects } from "@/lib/projects";
 
 export function Projects() {
   const cardRefs = useRef<(HTMLAnchorElement | null)[]>([]);
@@ -85,15 +41,13 @@ export function Projects() {
       className="overflow-hidden bg-white pb-24 pt-20 md:pb-32 md:pt-28 lg:pb-40 lg:pt-32"
     >
       <div className="about-container grid gap-x-4 gap-y-12 md:grid-cols-2 md:gap-y-16">
-        {PROJECTS.map((project, index) => (
-          <a
+        {projects.map((project, index) => (
+          <Link
             key={project.slug}
             ref={(node) => {
               cardRefs.current[index] = node;
             }}
-            href={project.link}
-            target="_blank"
-            rel="noreferrer"
+            href={`/projets/${project.slug}`}
             aria-label={`Voir le projet ${project.title}`}
             className="project-grid-card group block translate-y-10 opacity-0 outline-none transition-[opacity,transform] duration-700 ease-out data-[visible=true]:translate-y-0 data-[visible=true]:opacity-100 focus-visible:rounded-3xl focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-4 focus-visible:ring-offset-white"
           >
@@ -136,7 +90,7 @@ export function Projects() {
                 <span className="size-1.5 rounded-full bg-primary/25 transition-colors delay-150 duration-300 group-hover:bg-primary" />
               </span>
             </div>
-          </a>
+          </Link>
         ))}
       </div>
     </section>

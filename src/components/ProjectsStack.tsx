@@ -1,59 +1,10 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useRef } from "react";
 import { useStackScrollDamping } from "@/hooks/useStackScrollDamping";
-
-interface Project {
-  slug: string;
-  title: string;
-  description: string;
-  image: string;
-  link: string;
-}
-
-const PROJECTS: Project[] = [
-  {
-    slug: "busix",
-    title: "Busix",
-    description:
-      "Une expérience digitale claire et structurée pour présenter l'expertise d'une marque avec impact.",
-    image: "/images/m9iGbTvzSU0X8EmaayVuOMIRork.png",
-    link: "/images/m9iGbTvzSU0X8EmaayVuOMIRork.png",
-  },
-  {
-    slug: "mindeasee",
-    title: "MindEasee",
-    description:
-      "Une identité apaisante et une interface pensée pour créer de la confiance dès le premier regard.",
-    image: "/images/TzNUKQ3nV4fZNTQVsrtY5HZdZQg.png",
-    link: "/images/TzNUKQ3nV4fZNTQVsrtY5HZdZQg.png",
-  },
-  {
-    slug: "lunex",
-    title: "Lunex",
-    description:
-      "Un kit d'interface mobile conçu pour rendre chaque interaction rapide, fluide et intuitive.",
-    image: "/images/1JwMgKBC5NLItnIkj4lQUhGmN9k.png",
-    link: "/images/1JwMgKBC5NLItnIkj4lQUhGmN9k.png",
-  },
-  {
-    slug: "zentro",
-    title: "Zentro",
-    description:
-      "Un site SaaS moderne qui simplifie le produit, renforce sa valeur et guide vers la conversion.",
-    image: "/images/U6Npa7O4X2OlLqe9caPvFM1fQ.png",
-    link: "/images/U6Npa7O4X2OlLqe9caPvFM1fQ.png",
-  },
-  {
-    slug: "vynex",
-    title: "Vynex",
-    description:
-      "Un tableau de bord modulaire qui transforme des données complexes en décisions lisibles.",
-    image: "/images/DeY32bDwEuzZ6HcYmlxZqgyMQ.png",
-    link: "/images/DeY32bDwEuzZ6HcYmlxZqgyMQ.png",
-  },
-];
+import { projects } from "@/lib/projects";
 
 const MAX_SCALE_REDUCTION = 0.05;
 const MAX_DIM_OPACITY = 0.28;
@@ -61,7 +12,7 @@ const STACK_SCROLL_DAMPING = 0.525;
 
 export function ProjectsStack() {
   const panelRefs = useRef<(HTMLElement | null)[]>([]);
-  const surfaceRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const surfaceRefs = useRef<(HTMLAnchorElement | null)[]>([]);
   const dimRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   useStackScrollDamping(panelRefs, { dampingFactor: STACK_SCROLL_DAMPING });
@@ -119,7 +70,7 @@ export function ProjectsStack() {
 
   return (
     <div id="projects" className="projects-container relative isolate bg-black">
-      {PROJECTS.map((project, index) => (
+      {projects.map((project, index) => (
         <section
           id={`project-${project.slug}`}
           key={project.slug}
@@ -129,11 +80,13 @@ export function ProjectsStack() {
           aria-labelledby={`project-${project.slug}-title`}
           className="project-panel sticky top-0 h-[100svh] w-full overflow-hidden bg-black md:h-screen"
         >
-          <div
+          <Link
+            href={`/projets/${project.slug}`}
+            aria-label={`Découvrir le projet ${project.title}`}
             ref={(node) => {
               surfaceRefs.current[index] = node;
             }}
-            className="absolute inset-0 origin-center transform-gpu overflow-hidden will-change-transform [backface-visibility:hidden]"
+            className="group/project absolute inset-0 origin-center transform-gpu overflow-hidden outline-none will-change-transform [backface-visibility:hidden] focus-visible:ring-4 focus-visible:ring-inset focus-visible:ring-white"
           >
             <Image
               src={project.image}
@@ -170,12 +123,9 @@ export function ProjectsStack() {
                   </p>
                 </div>
 
-                <a
-                  href={project.link}
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label={`Voir le projet ${project.title}`}
-                  className="group/link mb-1 flex size-16 shrink-0 items-center justify-center rounded-full outline-none transition duration-300 ease-out hover:scale-105 hover:bg-white/15 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-4 focus-visible:ring-offset-black/50 sm:size-20 md:size-24"
+                <span
+                  aria-hidden="true"
+                  className="mb-1 flex size-16 shrink-0 items-center justify-center rounded-full transition duration-300 ease-out group-hover/project:scale-105 group-hover/project:bg-white/15 sm:size-20 md:size-24"
                 >
                   <Image
                     src="/images/uparrow.svg"
@@ -183,12 +133,12 @@ export function ProjectsStack() {
                     aria-hidden="true"
                     width={158}
                     height={158}
-                    className="size-full transition-transform duration-300 ease-out group-hover/link:rotate-3"
+                    className="size-full transition-transform duration-300 ease-out group-hover/project:rotate-3"
                   />
-                </a>
+                </span>
               </div>
             </div>
-          </div>
+          </Link>
         </section>
       ))}
     </div>

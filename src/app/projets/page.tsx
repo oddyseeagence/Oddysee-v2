@@ -24,12 +24,11 @@ export default function ProjectsPage() {
         >
           <div className="about-container">
             <h2 className="max-w-[980px] font-heading text-4xl font-medium leading-[44px] tracking-[-1px] text-[#1D0D3B] md:text-6xl md:leading-[64px] md:tracking-[-1.5px] lg:text-[80px] lg:leading-[88px] lg:tracking-[-2.5px]">
-              Nos projets, pensés
-              <br className="hidden sm:block" />
-              pour marquer les esprits.
+              Nos projets, conçus pour générer des résultats.
             </h2>
             <p className="mt-10 max-w-[650px] text-[18px] font-medium leading-[1.45] text-[#1D0D3B]/65 sm:text-[20px] md:mt-12 md:text-[22px]">
-              Des idées transformées en expériences qui font avancer les marques.
+              Des solutions digitales qui renforcent visibilité, conversion et
+              croissance durable.
             </p>
           </div>
         </section>
@@ -37,12 +36,12 @@ export default function ProjectsPage() {
         <section className="border-t border-[#1D0D3B]/10 bg-white">
           <div className="mx-auto grid max-w-[1320px] gap-8 px-4 py-20 md:px-8 lg:grid-cols-2 lg:px-10 lg:py-28">
             <h2 className="font-heading text-4xl tracking-[-0.03em] text-[#1D0D3B] md:text-6xl">
-              Notre travail en action.
+              Nos résultats en action.
             </h2>
             <p className="max-w-2xl font-sans text-lg leading-8 text-[#1D0D3B]/65 md:text-xl">
-              Chaque projet réunit stratégie, direction créative et exécution
-              digitale pour produire une identité cohérente et une expérience
-              mémorable.
+              Chaque projet combine stratégie, technologie et acquisition pour
+              créer des solutions digitales capables de générer des résultats
+              durables.
             </p>
           </div>
         </section>

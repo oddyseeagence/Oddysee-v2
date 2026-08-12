@@ -23,71 +23,75 @@ interface FooterColumn {
 
 const footerColumns: FooterColumn[] = [
   {
-    title: "Create",
+    title: "Créer",
     groups: [
       {
-        heading: "Business tools",
+        heading: "Nos expertises",
         links: [
-          { label: "Project strategy", href: "/services" },
-          { label: "Business account", href: "/contact" },
-          { label: "Business center", href: "/contact" },
-          { label: "Creative shop", href: "/projets" },
+          { label: "Sites web", href: "/services#services-list" },
+          { label: "Publicité digitale", href: "/services#services-list" },
+          { label: "Réseaux sociaux", href: "/services#services-list" },
+          { label: "Référencement SEO", href: "/services#services-list" },
         ],
       },
       {
-        heading: "Creative tools",
+        heading: "Solutions digitales",
         links: [
-          { label: "Oddysee Studio", href: "/services" },
-          { label: "Creative exchange", href: "/contact" },
-          { label: "Creative center", href: "/projets" },
+          { label: "Applications métier", href: "/services#services-list" },
+          { label: "Automatisation CRM", href: "/services#services-list" },
+          { label: "Identité digitale", href: "/services#services-list" },
         ],
       },
     ],
   },
   {
-    title: "Learn",
+    title: "Découvrir",
     groups: [
       {
-        heading: "Get inspired",
+        heading: "Notre agence",
         links: [
-          { label: "Insights", href: "/projets" },
-          { label: "Case studies", href: "/projets" },
-          { label: "Blog", href: "/" },
+          { label: "À propos", href: "/a-propos" },
+          { label: "Nos projets", href: "/projets" },
+          { label: "Blog", href: "/blog" },
         ],
       },
       {
-        heading: "Build skills",
+        heading: "Nous connaître",
         links: [
-          { label: "Oddysee Academy", href: "/a-propos" },
-          { label: "Certification", href: "/contact" },
+          { label: "Notre équipe", href: "/a-propos#equipe" },
+          { label: "Notre méthode", href: "/services#notre-processus" },
+          { label: "Carrières", href: "/contact" },
         ],
       },
     ],
   },
   {
-    title: "Support",
+    title: "Contact",
     groups: [
       {
+        heading: "Parler stratégie",
         links: [
-          { label: "Marketing partners", href: "/a-propos" },
-          { label: "For agencies", href: "/services" },
-          { label: "Brand safety", href: "/a-propos" },
-          { label: "Help center", href: "/contact" },
-          { label: "Contact us", href: "/contact" },
+          { label: "Pour entreprises", href: "/contact" },
+          { label: "Nous écrire", href: "mailto:contact@oddysee.fr" },
+          { label: "Nous appeler", href: "/contact" },
+          { label: "Marrakech Maroc", href: "/contact" },
         ],
       },
       {
-        heading: "Refer",
-        links: [{ label: "Oddysee Affiliate", href: "/contact" }],
+        heading: "Suivez-nous",
+        links: [
+          { label: "LinkedIn", href: "#" },
+          { label: "Instagram", href: "#" },
+        ],
       },
     ],
   },
 ];
 
 const legalLinks: FooterLink[] = [
-  { label: "Terms & policies", href: "#" },
-  { label: "Privacy", href: "#" },
-  { label: "Oddysee.com", href: "/" },
+  { label: "Mentions & conditions", href: "#" },
+  { label: "Confidentialité", href: "#" },
+  { label: "Oddysee.fr", href: "/" },
 ];
 
 const socialLinks: {
@@ -131,19 +135,19 @@ function FooterCta() {
   return (
     <section className="max-w-[410px] text-[#1D0D3B]">
       <h2 className="font-sans text-[clamp(40px,3vw,50px)] font-medium leading-[0.98] tracking-[-0.04em]">
-        Let&apos;s Build
+        Construisons quelque chose
         <br />
-        Something Great
+        d&apos;ambitieux
       </h2>
       <p className="mt-6 max-w-[390px] font-sans text-sm leading-[1.5] text-[#1D0D3B]/80">
-        We craft modern, user-focused digital experiences that help brands
-        grow, connect, and leave a lasting impactful impression.
+        Nous créons des écosystèmes digitaux performants pour aider les
+        entreprises à attirer, convertir et accélérer leur croissance.
       </p>
       <a
         href="/contact"
         className="mt-8 inline-flex items-center justify-center rounded-full bg-[#1D0D3B] px-8 py-4 font-sans text-sm font-bold text-white backdrop-blur-md transition hover:brightness-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#632BC5] focus-visible:ring-offset-4 focus-visible:ring-offset-[#F7F3FF]"
       >
-        Hire Us Now
+        Parler à Oddysee
       </a>
     </section>
   );
@@ -202,14 +206,12 @@ export function Footer() {
 
         <div className="relative z-10 mt-16 grid items-center gap-8 md:mt-24 xl:mt-32 xl:grid-cols-[1fr_auto_1fr]">
           <label className="relative mx-auto block w-full max-w-[280px] xl:mx-0">
-            <span className="sr-only">Select language and region</span>
+            <span className="sr-only">Choisir la langue et la région</span>
             <select
-              defaultValue="english-global"
+              defaultValue="french-morocco"
               className="h-12 w-full appearance-none rounded-full border border-[#1D0D3B]/25 bg-transparent px-6 pr-12 font-sans text-sm font-semibold text-[#1D0D3B] outline-none transition hover:border-[#1D0D3B]/50 focus-visible:border-[#632BC5] focus-visible:ring-2 focus-visible:ring-[#632BC5]/30"
             >
-              <option value="english-global">English - Global</option>
-              <option value="french">Français</option>
-              <option value="english-us">English - United States</option>
+              <option value="french-morocco">Français – Maroc</option>
             </select>
             <ChevronDownIcon
               aria-hidden="true"

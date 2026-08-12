@@ -31,17 +31,17 @@ const PROCESS_STEPS: ProcessStep[] = [
 
 const SERVICE_PROCESS_STEPS: ProcessStep[] = [
   {
-    title: "Découverte & alignement",
+    title: "Analyse & diagnostic",
     numeral: ".01",
     image: "/images/01.png",
   },
   {
-    title: "Cadrage & planification",
+    title: "Création & optimisation",
     numeral: ".02",
     image: "/images/02.png",
   },
   {
-    title: "Création & suivi",
+    title: "Lancement & croissance",
     numeral: ".03",
     image: "/images/03.png",
   },
@@ -176,7 +176,7 @@ export function Process({
           </h2>
           <p className="font-sans text-base text-[rgba(29,13,59,0.7)] mt-4 max-w-xl">
             {isServicesVariant
-              ? "Une méthode claire et collaborative pour transformer chaque idée en une expérience cohérente, utile et prête à évoluer."
+              ? "Une méthode structurée et collaborative pour transformer chaque objectif en stratégie mesurable et conçue pour générer des résultats."
               : "Nous suivons des étapes simples pour planifier, concevoir et livrer des projets qui répondent efficacement aux objectifs des clients et garantissent un succès durable."}
           </p>
         </div>

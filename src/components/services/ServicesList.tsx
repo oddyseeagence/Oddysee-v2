@@ -18,7 +18,7 @@ const servicesList: ServicesListItem[] = [
     image: "/images/U6Npa7O4X2OlLqe9caPvFM1fQ.png",
     href: "/contact",
     description:
-      "Applications web et mobiles, produits SaaS et outils internes conçus pour simplifier les usages et accompagner votre croissance.",
+      "Applications web et mobiles, solutions SaaS et outils métiers conçus pour automatiser vos processus et accompagner durablement votre croissance.",
   },
   {
     index: "02",
@@ -26,7 +26,7 @@ const servicesList: ServicesListItem[] = [
     image: "/images/th0iLwfNy4GC3lETawQhJYrM.png",
     href: "/contact",
     description:
-      "Stratégie éditoriale, création de contenu et gestion quotidienne pour construire une présence visible, cohérente et crédible.",
+      "Stratégie éditoriale, contenus et gestion quotidienne pour développer votre visibilité, renforcer votre crédibilité et engager durablement vos audiences.",
   },
   {
     index: "03",
@@ -34,7 +34,7 @@ const servicesList: ServicesListItem[] = [
     image: "/images/aiLTjYPkgfqyzApAFEHC4C2uDg.png",
     href: "/contact",
     description:
-      "Campagnes Meta et Google Ads pilotées par les données pour cibler les bonnes audiences et générer des résultats mesurables.",
+      "Campagnes Meta et Google Ads pilotées par la donnée pour attirer les bonnes audiences et générer davantage de prospects réellement qualifiés.",
   },
   {
     index: "04",
@@ -42,7 +42,7 @@ const servicesList: ServicesListItem[] = [
     image: "/images/XGpOxv5lnuHffpehV7PCZKFuF4.png",
     href: "/contact",
     description:
-      "Stratégie de référencement, optimisation technique et recherche locale pour gagner durablement en visibilité.",
+      "Stratégie de référencement, optimisation technique et contenu ciblé pour gagner durablement en visibilité et attirer vos prospects.",
   },
   {
     index: "05",
@@ -50,7 +50,7 @@ const servicesList: ServicesListItem[] = [
     image: "/images/PTrOdXdJAOGMtfCb7ccLalR0o.png",
     href: "/contact",
     description:
-      "Sites vitrines, e-commerce et plateformes sur mesure qui valorisent votre activité et transforment les visites en opportunités.",
+      "Sites vitrines, e-commerce et plateformes sur mesure pensés pour valoriser votre activité et transformer davantage de visiteurs en clients.",
   },
 ];
 

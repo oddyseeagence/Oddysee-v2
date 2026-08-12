@@ -10,6 +10,8 @@ interface ProjectVisualProps {
   alt: string;
   priority?: boolean;
   className?: string;
+  sizes?: string;
+  imageClassName?: string;
 }
 
 export function ProjectVisual({
@@ -17,6 +19,9 @@ export function ProjectVisual({
   alt,
   priority = false,
   className = "",
+  sizes = "(min-width: 1024px) 92vw, 100vw",
+  imageClassName =
+    "object-cover transition-transform duration-700 ease-out hover:scale-[1.015]",
 }: ProjectVisualProps) {
   const isHydrated = useSyncExternalStore(
     emptySubscribe,
@@ -34,8 +39,8 @@ export function ProjectVisual({
           alt={alt}
           fill
           priority={priority}
-          sizes="(min-width: 1024px) 92vw, 100vw"
-          className="object-cover transition-transform duration-700 ease-out hover:scale-[1.015]"
+          sizes={sizes}
+          className={imageClassName}
         />
       ) : null}
     </div>

@@ -5,21 +5,21 @@ import { TEAM_MEMBERS } from "@/lib/team";
 const principles: AboutPrinciple[] = [
   {
     eyebrow: "Notre mission",
-    title: "Donner une forme forte aux idées ambitieuses",
+    title: "Créer des systèmes digitaux qui font grandir",
     description:
-      "Nous transformons les intuitions de nos clients en identités, expériences et récits capables de créer une vraie préférence de marque.",
+      "Nous transformons les enjeux de nos clients en stratégies, expériences et systèmes capables d’attirer, convaincre et convertir durablement leurs audiences.",
   },
   {
     eyebrow: "Notre vision",
-    title: "Faire rayonner les marques qui feront demain",
+    title: "Transformer chaque interaction en levier de croissance",
     description:
-      "Nous croyons à un design utile, sensible et durable : un langage clair qui rapproche les organisations des personnes qu’elles souhaitent toucher.",
+      "Nous croyons à un digital utile, cohérent et mesurable : un écosystème clair qui rapproche les entreprises des clients qu’elles veulent convaincre.",
   },
   {
     eyebrow: "Nos valeurs",
-    title: "Curiosité, exigence et esprit collectif",
+    title: "Exigence, performance et esprit collectif",
     description:
-      "Chaque projet est un terrain d’exploration partagé. Nous avançons avec franchise, attention au détail et plaisir de construire ensemble.",
+      "Chaque projet repose sur l’ambition partagée. Nous avançons avec méthode, transparence et exigence pour créer ensemble des résultats durables.",
   },
 ];
 
@@ -29,7 +29,7 @@ export function AboutPurposeTeam() {
       <div className="about-container">
         <div>
           <h2 className="max-w-[680px] font-heading text-[42px] leading-[0.98] tracking-[-0.035em] text-[var(--about-foreground)] sm:text-[52px] lg:text-[64px]">
-            Donner vie à ce qui vient ensuite.
+            Construire aujourd’hui la croissance digitale de demain.
           </h2>
         </div>
 

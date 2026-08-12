@@ -18,11 +18,11 @@ export function ProjectTeam() {
             id="project-team-title"
             className="mt-4 font-heading text-4xl leading-[1.02] tracking-[-0.035em] text-[#1D0D3B] sm:text-5xl lg:text-[64px]"
           >
-            Rencontrez notre équipe créative
+            Rencontrez l’équipe derrière Oddysee
           </h2>
           <p className="mt-5 max-w-2xl text-base leading-7 text-[#1D0D3B]/65 md:text-lg">
-            Des talents complémentaires réunis pour transformer chaque idée en
-            une expérience singulière, cohérente et mémorable.
+            Des expertises complémentaires réunies pour concevoir stratégies,
+            produits et systèmes digitaux orientés vers la croissance.
           </p>
         </div>
 

@@ -15,13 +15,12 @@ export function ServicesShowcasePage() {
         >
           <div className="about-container">
             <h2 className="max-w-[980px] font-heading text-4xl font-medium leading-[44px] tracking-[-1px] text-[#1D0D3B] md:text-6xl md:leading-[64px] md:tracking-[-1.5px] lg:text-[80px] lg:leading-[88px] lg:tracking-[-2.5px]">
-              Nos services, pensés
-              <br className="hidden sm:block" />
-              pour votre croissance.
+              Des expertises conçues pour votre croissance.
             </h2>
             <p className="mt-10 max-w-[650px] text-[18px] font-medium leading-[1.45] text-[#1D0D3B]/65 sm:text-[20px] md:mt-12 md:text-[22px]">
-              De la visibilité au produit digital, cinq expertises réunies pour
-              faire avancer votre marque dans une direction claire et durable.
+              De la stratégie au produit digital, cinq expertises réunies pour
+              attirer, convertir et faire grandir durablement votre entreprise
+              à chaque étape.
             </p>
           </div>
         </section>

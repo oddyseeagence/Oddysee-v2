@@ -117,9 +117,9 @@ export function Header({ variant = "default", darkLogo = false }: HeaderProps) {
       <div
         aria-hidden="true"
         className={cn(
-          "pointer-events-none fixed inset-x-0 top-0 h-32 backdrop-blur-xl",
+          "pointer-events-none absolute inset-x-0 -top-4 h-32 backdrop-blur-xl md:-top-6",
           isLight && "bg-white/20",
-          isAbout && "h-24 backdrop-blur-none",
+          isAbout && "-top-3 h-24 backdrop-blur-none md:-top-5",
           "[mask-image:linear-gradient(to_bottom,black_0%,black_55%,transparent_100%)]",
           "[-webkit-mask-image:linear-gradient(to_bottom,black_0%,black_55%,transparent_100%)]"
         )}

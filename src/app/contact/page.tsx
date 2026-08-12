@@ -13,20 +13,20 @@ export const metadata: Metadata = {
 
 const contactRows = [
   {
-    label: "Business",
-    value: "hello@crevixstudio.com",
-    href: "mailto:hello@crevixstudio.com",
-    copyValue: "hello@crevixstudio.com",
+    label: "Contact",
+    value: "contact@oddysee.fr",
+    href: "mailto:contact@oddysee.fr",
+    copyValue: "contact@oddysee.fr",
   },
   {
-    label: "Où",
-    value: "Marrakech, Maroc — disponible à l’international",
+    label: "Localisation",
+    value: "Marrakech, Maroc — ouvert à l’international",
     copyValue: "Marrakech, Maroc",
   },
   {
     label: "Recrutement",
-    value: "Postuler par ici",
-    href: "mailto:hello@crevixstudio.com?subject=Candidature%20Oddysee",
+    value: "Rejoindre notre équipe",
+    href: "mailto:contact@oddysee.fr?subject=Candidature%20Oddysee",
   },
 ];
 
@@ -47,7 +47,7 @@ export default function ContactPage() {
               </h1>
 
               <a
-                href="mailto:hello@crevixstudio.com?subject=Parlons%20de%20votre%20projet"
+                href="mailto:contact@oddysee.fr?subject=Parlons%20de%20votre%20projet"
                 className="group mt-20 flex min-h-[88px] w-full items-center justify-between rounded-[12px] border border-black/80 px-7 py-5 text-[22px] font-medium tracking-[-0.025em] outline-none transition-[background-color,color] duration-300 hover:bg-[#632BC5] hover:text-white focus-visible:ring-2 focus-visible:ring-[#632BC5] focus-visible:ring-offset-4 lg:mt-[225px] lg:min-h-[82px] lg:px-7 lg:py-4 lg:text-[22px]"
               >
                 <span>Vérifiez si on peut travailler avec vous</span>

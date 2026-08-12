@@ -33,11 +33,11 @@ export function FeaturedProjects() {
               id="featured-projects-title"
               className="font-heading text-[44px] leading-[0.98] tracking-[-0.045em] text-foreground sm:text-[56px] md:text-[68px] lg:text-[76px]"
             >
-              Projets en vedette
+              Nos projets phares
             </h2>
             <p className="mt-6 max-w-[720px] text-base leading-7 text-foreground/65 md:text-lg md:leading-8">
-              Des identités et expériences digitales conçues pour donner aux
-              marques une présence claire, cohérente et mémorable.
+              Des projets digitaux conçus pour renforcer la visibilité, la
+              crédibilité et la croissance de nos clients.
             </p>
           </div>
 

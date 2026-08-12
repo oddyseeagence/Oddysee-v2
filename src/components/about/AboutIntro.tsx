@@ -11,33 +11,37 @@ import { Header } from "@/components/Header";
 
 const statistics = [
   {
-    label: "Projets créatifs",
-    detail: "identités, expériences et campagnes imaginées avec exigence.",
+    label: "Projets réalisés",
+    detail: "Stratégies, sites et campagnes conçus pour convertir.",
     icon: PanelsTopLeft,
   },
   {
-    label: "Clients satisfaits",
-    detail: "de collaborations prolongées au-delà du premier projet.",
+    label: "Clients accompagnés",
+    detail: "Des collaborations durables centrées sur des résultats.",
     icon: UsersRound,
   },
   {
     label: "Années d’expérience",
-    detail: "à transformer des idées ambitieuses en marques qui comptent.",
+    detail:
+      "À accompagner des entreprises ambitieuses vers une croissance mesurable.",
     icon: BadgeCheck,
   },
   {
     label: "Identités de marque",
-    detail: "des univers visuels cohérents, distinctifs et conçus pour durer.",
+    detail:
+      "Des univers visuels cohérents pensés pour renforcer votre crédibilité.",
     icon: Palette,
   },
   {
     label: "Expériences digitales",
-    detail: "des interfaces intuitives qui rapprochent les marques de leurs publics.",
+    detail:
+      "Des interfaces digitales conçues pour transformer vos visiteurs en clients.",
     icon: MonitorSmartphone,
   },
   {
     label: "Stratégies de croissance",
-    detail: "des systèmes créatifs pensés pour attirer, convaincre et progresser.",
+    detail:
+      "Des systèmes d’acquisition pensés pour attirer, convertir et évoluer.",
     icon: TrendingUp,
   },
 ];
@@ -62,13 +66,12 @@ export function AboutIntro() {
         <div className="about-container">
           <h1 className="sr-only">À propos d’Oddysee</h1>
           <h2 className="max-w-[980px] font-heading text-4xl font-medium leading-[44px] tracking-[-1px] text-[#1D0D3B] md:text-6xl md:leading-[64px] md:tracking-[-1.5px] lg:text-[80px] lg:leading-[88px] lg:tracking-[-2.5px]">
-            Découvrez l’histoire
-            <br className="hidden sm:block" />
-            derrière Oddysee.
+            Pensée pour la croissance.
           </h2>
           <p className="mt-10 max-w-[650px] text-[18px] font-medium leading-[1.45] text-[#1D0D3B]/65 sm:text-[20px] md:mt-12 md:text-[22px]">
-            Une agence créative née à Marrakech, pensée pour transformer les
-            idées ambitieuses en marques fortes, cohérentes et mémorables.
+            Née à Marrakech, Oddysee accompagne les entreprises dans la
+            création de systèmes digitaux capables d’attirer, convaincre et
+            convertir leurs futurs clients.
           </p>
         </div>
       </section>
@@ -83,9 +86,9 @@ export function AboutIntro() {
 
             <div>
               <h2 className="max-w-[980px] font-heading text-[34px] leading-[1.08] tracking-[-0.035em] text-[#1D0D3B] sm:text-[40px] md:text-[44px] md:leading-[1.1] lg:text-[48px] lg:leading-[52.8px]">
-                Oddysee est née d’une vision&nbsp;: créer un travail moderne,
-                sensible et porteur de sens, qui aide les marques à grandir et
-                à se distinguer.
+                Oddysee est née d’une ambition&nbsp;: construire des écosystèmes
+                digitaux performants, capables d’aider les entreprises à gagner
+                en visibilité, convertir davantage et accélérer leur croissance.
               </h2>
             </div>
           </div>

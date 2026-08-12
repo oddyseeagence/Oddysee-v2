@@ -100,7 +100,7 @@ export default async function ProjectDetailPage({
             <div className="grid gap-10 py-20 md:grid-cols-2 md:py-28 lg:gap-24">
               <div>
                 <h2 className="max-w-[680px] text-[clamp(28px,3.2vw,52px)] font-medium leading-[1.02] tracking-[-0.045em]">
-                  Le challenge
+                  Le challenge :
                 </h2>
               </div>
               <div>
@@ -147,7 +147,7 @@ export default async function ProjectDetailPage({
 
           <section className="mx-auto grid max-w-[1320px] gap-10 px-4 py-24 md:grid-cols-2 md:px-8 md:py-32 lg:px-10 lg:py-40">
             <h2 className="max-w-[720px] text-[clamp(32px,4vw,64px)] font-medium leading-[0.98] tracking-[-0.05em]">
-              L’impact
+              L’impact :
             </h2>
             <div>
               <h3 className="max-w-[720px] text-[clamp(32px,4vw,64px)] font-medium leading-[0.98] tracking-[-0.05em]">

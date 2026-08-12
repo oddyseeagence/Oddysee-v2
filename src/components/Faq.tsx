@@ -9,44 +9,34 @@ interface FaqItem {
 
 const faqItems: FaqItem[] = [
   {
-    question: "Quels services proposez-vous ?",
+    question: "À quoi vous attendre lorsque vous nous choisissez ?",
     answer:
-      "Nous proposons des services de design UI/UX, de création de sites web, d'identité de marque et des solutions digitales complètes pour les entreprises.",
+      "Une approche à la fois méthodique, avec des objectifs clairs et des plans pour les atteindre, et flexible, en adaptant notre stratégie aux changements lorsque cela est nécessaire pour obtenir les meilleurs résultats.",
   },
   {
-    question: "Combien coûtent vos services ?",
+    question: "Est-ce que la publicité suffit pour générer des clients ?",
     answer:
-      "Nos tarifs dépendent de la portée et de la complexité du projet. Nous préparons une proposition claire et adaptée après un premier échange.",
+      "Non, la publicité seule ne suffit pas. Sans un site optimisé, un message clair et un bon parcours utilisateur, les campagnes perdent en efficacité. C’est pourquoi nous travaillons toujours sur l’ensemble de l’écosystème : site, message, publicité et suivi.",
   },
   {
-    question: "Combien de temps dure un projet ?",
+    question: "Pourquoi les optimisations sont-elles continues ?",
     answer:
-      "La plupart des projets prennent entre 5 et 15 jours, selon leur complexité et les besoins définis ensemble.",
+      "Les comportements des utilisateurs, les algorithmes et la concurrence évoluent constamment. L’optimisation continue permet de maintenir de bonnes performances, réduire les coûts d’acquisition et rester compétitif sur votre marché.",
   },
   {
-    question: "Proposez-vous des révisions ?",
+    question: "Est-ce que je peux demander des modifications à tout moment ?",
     answer:
-      "Oui. Chaque projet inclut des cycles de révision afin de garantir que le résultat final corresponde pleinement à vos attentes.",
+      "Oui, dans le cadre défini du projet. Les ajustements font partie du processus, mais ils sont planifiés et priorisés afin de préserver la cohérence, les délais et la performance globale.",
   },
   {
-    question: "Puis-je voir vos réalisations précédentes ?",
+    question: "Combien de temps faut-il pour créer un site web ?",
     answer:
-      "Bien sûr. Consultez notre page Projets pour découvrir une sélection de nos réalisations récentes.",
+      "Selon la complexité du projet, la création d’un site web prend généralement entre deux et dix semaines, de la conception au déploiement.",
   },
   {
-    question: "Travaillez-vous avec des startups ?",
+    question: "Comment gérez-vous la confidentialité et la sécurité des données ?",
     answer:
-      "Oui. Nous accompagnons régulièrement des startups et des marques en croissance, quelle que soit l'étape de leur développement.",
-  },
-  {
-    question: "Quels outils utilisez-vous ?",
-    answer:
-      "Nous concevons principalement avec Figma et développons avec des technologies modernes comme Next.js et Tailwind CSS.",
-  },
-  {
-    question: "Concevez-vous des applications mobiles ?",
-    answer:
-      "Oui. Le design d'applications mobiles fait partie de nos services, au même titre que les sites web et les tableaux de bord.",
+      "Nous accordons une importance majeure à la confidentialité et à la sécurité des informations de nos clients. Toutes les données, stratégies et informations sensibles sont protégées par des mesures de sécurité strictes et traitées dans le respect des bonnes pratiques et des réglementations en vigueur.",
   },
 ];
 

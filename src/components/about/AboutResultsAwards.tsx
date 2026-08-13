@@ -68,7 +68,7 @@ export function AboutResultsAwards() {
         </header>
 
         <div className="mt-14 grid gap-6 md:grid-cols-3 lg:mt-20">
-          <article className="group flex min-h-[460px] flex-col overflow-hidden rounded-[18px] bg-[#faf9ff] text-[#101010] transition duration-300 ease-out hover:-translate-y-[5px] lg:min-h-[520px]">
+          <article className="group flex min-h-[460px] flex-col overflow-hidden rounded-[18px] bg-[#faf9ff] text-[#1D0D3B] transition duration-300 ease-out hover:-translate-y-[5px] lg:min-h-[520px]">
             <div className="relative m-3 aspect-[1.24/1] overflow-hidden rounded-[12px] bg-[#eee9ff]">
               <Image
                 alt="Composition abstraite violette réalisée par Oddysee"
@@ -85,7 +85,7 @@ export function AboutResultsAwards() {
               <h3 className="about-display mt-3 text-[28px] leading-none tracking-[-0.035em] sm:text-[32px]">
                 Créativité en mouvement
               </h3>
-              <p className="mt-4 max-w-sm text-[13px] leading-[1.55] text-black/55">
+              <p className="mt-4 max-w-sm text-[13px] leading-[1.55] text-[#1D0D3B]/55">
                 Une identité singulière pensée pour transformer une idée ambitieuse
                 en expérience visuelle mémorable.
               </p>

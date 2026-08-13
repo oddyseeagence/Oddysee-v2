@@ -221,7 +221,7 @@ export function Header({ variant = "default", darkLogo = false }: HeaderProps) {
           ) : isAbout ? (
             <Link
               href="/contact"
-              className="hidden rounded-full bg-[#a88fff] px-8 py-3.5 text-sm font-semibold text-[#0a0a0a] transition-[background-color,color] duration-200 hover:bg-[#8966ff] hover:text-white lg:block"
+              className="hidden rounded-full bg-[#a88fff] px-8 py-3.5 text-sm font-semibold text-[#1D0D3B] transition-[background-color,color] duration-200 hover:bg-[#8966ff] hover:text-white lg:block"
             >
               Démarrer un projet
             </Link>

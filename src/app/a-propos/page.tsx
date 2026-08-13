@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <div className="about-dark min-h-screen overflow-x-clip selection:bg-[var(--about-accent)] selection:text-[#0a0a0a]">
+    <div className="about-dark min-h-screen overflow-x-clip selection:bg-[var(--about-accent)] selection:text-[#1D0D3B]">
       <AboutIntro />
 
       <main>

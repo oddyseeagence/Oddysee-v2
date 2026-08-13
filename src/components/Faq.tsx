@@ -44,7 +44,7 @@ function FaqAccordionItem({ item }: { item: FaqItem }) {
   return (
     <details name="faq" className="group border-b border-[#1D0D3B]/15">
       <summary className="flex min-h-[88px] w-full cursor-pointer list-none items-center justify-between gap-8 py-7 text-left outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#632BC5] md:min-h-[104px] md:py-8 lg:min-h-[116px] [&::-webkit-details-marker]:hidden">
-        <span className="max-w-[1100px] font-sans text-[19px] font-medium leading-[1.3] tracking-[-0.025em] text-[#111111] md:text-[22px] lg:text-[24px]">
+        <span className="max-w-[1100px] font-sans text-[19px] font-medium leading-[1.3] tracking-[-0.025em] text-[#1D0D3B] md:text-[22px] lg:text-[24px]">
           {item.question}
         </span>
 
@@ -84,7 +84,7 @@ export function Faq({
           data-reveal={isHeaderRevealed ? "visible" : "hidden"}
           className="scroll-reveal lg:sticky lg:top-28 lg:self-start"
         >
-          <h2 className="font-heading text-[clamp(88px,8vw,150px)] font-medium leading-[0.82] tracking-[-0.075em] text-[#090909]">
+          <h2 className="font-heading text-[clamp(88px,8vw,150px)] font-medium leading-[0.82] tracking-[-0.075em] text-[#1D0D3B]">
             FAQ
           </h2>
           <p className="mt-14 max-w-[380px] font-sans text-[19px] leading-[1.35] tracking-[-0.02em] text-[#51485E] md:mt-20 md:text-[22px]">
@@ -93,7 +93,7 @@ export function Faq({
           </p>
           <a
             href="/contact"
-            className="group/link mt-12 inline-flex items-center gap-4 font-sans text-[22px] font-medium tracking-[-0.025em] text-[#111111] outline-none transition-colors hover:text-[#632BC5] focus-visible:ring-2 focus-visible:ring-[#632BC5] md:mt-20 md:text-[26px]"
+            className="group/link mt-12 inline-flex items-center gap-4 font-sans text-[22px] font-medium tracking-[-0.025em] text-[#1D0D3B] outline-none transition-colors hover:text-[#632BC5] focus-visible:ring-2 focus-visible:ring-[#632BC5] md:mt-20 md:text-[26px]"
           >
             <span
               aria-hidden="true"

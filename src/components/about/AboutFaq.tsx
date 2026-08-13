@@ -78,7 +78,7 @@ export function AboutFaq() {
                 const panelId = `about-faq-panel-${index}`;
 
                 return (
-                  <article key={item.question} className="overflow-hidden rounded-[18px] bg-[#faf9ff] text-[#0a0a0a]">
+                  <article key={item.question} className="overflow-hidden rounded-[18px] bg-[#faf9ff] text-[#1D0D3B]">
                     <h3>
                       <button
                         type="button"
@@ -107,7 +107,7 @@ export function AboutFaq() {
                       }`}
                     >
                       <div className="overflow-hidden">
-                        <p className="px-5 pb-6 text-[14px] leading-6 text-black/60 sm:px-6 sm:text-[15px] sm:leading-7">
+                        <p className="px-5 pb-6 text-[14px] leading-6 text-[#1D0D3B]/60 sm:px-6 sm:text-[15px] sm:leading-7">
                           {item.answer}
                         </p>
                       </div>

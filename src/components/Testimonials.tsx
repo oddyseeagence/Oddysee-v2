@@ -73,7 +73,7 @@ function TestimonialCard({
             className="pointer-events-none h-[38px] w-[38px] shrink-0 select-none rounded-full object-cover"
           />
           <div className="min-w-0">
-            <h3 className="truncate text-[12px] font-semibold leading-4 text-[#242122]">
+            <h3 className="truncate text-[12px] font-semibold leading-4 text-[#1D0D3B]">
               {testimonial.name}
             </h3>
             <p className="truncate text-[9px] leading-4 text-[#777274]">
@@ -83,11 +83,11 @@ function TestimonialCard({
         </div>
         <QuoteIcon
           aria-hidden="true"
-          className="h-4 w-5 shrink-0 text-[#242122]"
+          className="h-4 w-5 shrink-0 text-[#1D0D3B]"
         />
       </div>
 
-      <blockquote className="mt-7 max-w-[570px] text-[27px] font-normal leading-[1.12] tracking-[-0.035em] text-[#292526] sm:text-[31px] lg:text-[34px]">
+      <blockquote className="mt-7 max-w-[570px] text-[27px] font-normal leading-[1.12] tracking-[-0.035em] text-[#1D0D3B] sm:text-[31px] lg:text-[34px]">
         {testimonial.quote}
       </blockquote>
     </article>
@@ -224,7 +224,7 @@ export function Testimonials() {
     <section className="overflow-hidden bg-[#F7F3FF] py-20 font-sans sm:py-24 lg:py-28">
       <div className="mx-auto max-w-[1320px] px-4 md:px-8 lg:px-10">
         <header className="max-w-[600px]">
-          <h2 className="font-heading text-4xl leading-tight text-[#262122] md:text-5xl lg:text-[56px]">
+          <h2 className="font-heading text-4xl leading-tight text-[#1D0D3B] md:text-5xl lg:text-[56px]">
             Vrais retours de nos clients
           </h2>
         </header>

@@ -37,12 +37,12 @@ export default function ContactPage() {
 
       <main
         id="hero"
-        className="overflow-hidden bg-white text-[#090909] selection:bg-[#632BC5] selection:text-white"
+        className="overflow-hidden bg-white text-[#1D0D3B] selection:bg-[#632BC5] selection:text-white"
       >
         <div className="mx-auto max-w-[1920px] px-5 pb-20 pt-32 sm:px-8 md:px-10 lg:px-8 lg:pb-[166px] lg:pt-[216px]">
           <div className="grid gap-12 lg:min-h-[556px] lg:grid-cols-[minmax(0,672px)_475px] lg:justify-between lg:gap-16">
             <div className="flex min-w-0 flex-col">
-              <h1 className="font-heading text-[clamp(60px,4.2vw,80px)] font-medium leading-[0.95] tracking-[-0.055em] text-black">
+              <h1 className="font-heading text-[clamp(60px,4.2vw,80px)] font-medium leading-[0.95] tracking-[-0.055em] text-[#1D0D3B]">
                 Prêt à parler ?
               </h1>
 

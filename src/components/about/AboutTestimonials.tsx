@@ -62,7 +62,7 @@ export function AboutTestimonials() {
           {testimonials.map((testimonial, index) => (
             <article
               key={testimonial.name}
-              className="relative flex min-h-[405px] w-[84vw] max-w-[420px] shrink-0 snap-center flex-col overflow-hidden rounded-[18px] bg-[#faf9ff] p-7 text-[#0a0a0a] md:w-auto md:max-w-none lg:p-9"
+              className="relative flex min-h-[405px] w-[84vw] max-w-[420px] shrink-0 snap-center flex-col overflow-hidden rounded-[18px] bg-[#faf9ff] p-7 text-[#1D0D3B] md:w-auto md:max-w-none lg:p-9"
             >
               <span
                 aria-hidden="true"
@@ -77,14 +77,14 @@ export function AboutTestimonials() {
 
               <div className="mt-auto flex items-center gap-3 border-t border-black/10 pt-6">
                 <span
-                  className={`grid size-11 shrink-0 place-items-center rounded-full text-[12px] font-semibold text-[#17111f] ${avatarStyles[index]}`}
+                  className={`grid size-11 shrink-0 place-items-center rounded-full text-[12px] font-semibold text-[#1D0D3B] ${avatarStyles[index]}`}
                   aria-hidden="true"
                 >
                   {testimonial.avatar}
                 </span>
                 <div>
                   <h3 className="text-[14px] font-semibold leading-5">{testimonial.name}</h3>
-                  <p className="text-[12px] leading-5 text-black/55">{testimonial.role}</p>
+                  <p className="text-[12px] leading-5 text-[#1D0D3B]/55">{testimonial.role}</p>
                 </div>
               </div>
             </article>

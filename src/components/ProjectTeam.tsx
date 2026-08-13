@@ -6,17 +6,13 @@ export function ProjectTeam() {
     <section
       id="equipe"
       aria-labelledby="project-team-title"
-      className="overflow-hidden bg-white py-24 [--about-surface:#F7F3FF] md:py-28 lg:py-32"
+      className="overflow-hidden bg-white pb-24 pt-12 [--about-surface:#F7F3FF] md:pb-28 md:pt-14 lg:pb-32 lg:pt-16"
     >
       <div className="about-container">
         <div className="max-w-[760px]">
-          <p className="flex items-center gap-2 text-sm font-medium text-[#1D0D3B]/60">
-            <span className="size-2 rounded-full bg-[#632BC5]" />
-            Notre équipe
-          </p>
           <h2
             id="project-team-title"
-            className="mt-4 font-heading text-4xl leading-[1.02] tracking-[-0.035em] text-[#1D0D3B] sm:text-5xl lg:text-[64px]"
+            className="font-heading text-4xl leading-[1.02] tracking-[-0.035em] text-[#1D0D3B] sm:text-5xl lg:text-[64px]"
           >
             Rencontrez l’équipe derrière Oddysee
           </h2>

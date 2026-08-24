@@ -18,16 +18,21 @@ export function LandingLegal({
   copyright = "© 2026 Oddysee. Tous droits réservés.",
 }: LandingLegalProps) {
   return (
-    <footer className="page-cover px-4 py-6 font-sans text-white md:px-6 md:py-7 lg:px-8">
-      <div className="mx-auto max-w-[1320px] rounded-[24px] border border-white/10 bg-white/[0.04] px-6 py-7 md:px-10 md:py-8">
-        <div className="grid gap-6 md:grid-cols-[220px_minmax(0,1fr)] md:items-start md:gap-10">
+    <footer className="page-cover p-4 font-sans md:p-6 lg:p-8">
+      <div className="footer-panel relative isolate mx-auto max-w-[1320px] border border-[#1D0D3B]/10 bg-[#F7F3FF] px-6 py-7 md:px-10 md:py-8 lg:px-12">
+        <span
+          aria-hidden="true"
+          className="footer-brand-mark pointer-events-none absolute -right-12 -top-16 z-0 hidden h-[280px] w-[280px] select-none lg:block"
+        />
+
+        <div className="relative z-10 grid gap-6 md:grid-cols-[180px_minmax(0,1fr)] md:items-start md:gap-10 lg:pr-44">
           <Link
             href="/"
             aria-label="Retour à l’accueil Oddysee"
-            className="inline-flex w-fit rounded-sm outline-none focus-visible:ring-2 focus-visible:ring-[#A78FFF] focus-visible:ring-offset-4 focus-visible:ring-offset-[#1D0D3B]"
+            className="inline-flex w-fit rounded-sm outline-none focus-visible:ring-2 focus-visible:ring-[#632BC5] focus-visible:ring-offset-4 focus-visible:ring-offset-[#F7F3FF]"
           >
             <Image
-              src="/images/Oddysee_Horizontal_White-1.svg"
+              src="/images/2Oddysee_Horizontal_White.svg"
               alt="Oddysee"
               width={192}
               height={73}
@@ -35,12 +40,12 @@ export function LandingLegal({
             />
           </Link>
 
-          <p className="max-w-[820px] text-sm leading-6 text-white/55">
+          <p className="max-w-[760px] text-sm leading-6 text-[#1D0D3B]/70">
             {disclaimer}
           </p>
         </div>
 
-        <div className="mt-8 flex flex-col gap-5 border-t border-white/10 pt-5 text-xs text-white/45 sm:flex-row sm:items-center sm:justify-between">
+        <div className="relative z-10 mt-8 flex flex-col gap-5 border-t border-[#1D0D3B]/15 pt-5 text-xs font-medium text-[#1D0D3B]/60 sm:flex-row sm:items-center sm:justify-between lg:pr-44">
           <p>{copyright}</p>
           {links.length ? (
             <nav aria-label="Liens légaux">
@@ -49,7 +54,7 @@ export function LandingLegal({
                   <li key={link.label}>
                     <Link
                       href={link.href}
-                      className="transition hover:text-white focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#A78FFF]"
+                      className="transition hover:text-[#1D0D3B] hover:underline focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#632BC5] focus-visible:ring-offset-2 focus-visible:ring-offset-[#F7F3FF]"
                     >
                       {link.label}
                     </Link>

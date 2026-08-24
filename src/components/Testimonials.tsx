@@ -4,14 +4,14 @@ import { useEffect, useRef } from "react";
 import Image from "next/image";
 import { QuoteIcon } from "@/components/icons";
 
-interface Testimonial {
+export interface Testimonial {
   quote: string;
   name: string;
   role: string;
   avatar: string;
 }
 
-const testimonials: Testimonial[] = [
+const DEFAULT_TESTIMONIALS: Testimonial[] = [
   {
     quote:
       "Oddysee a su transformer notre vision en une identité forte, claire et mémorable.",
@@ -94,7 +94,13 @@ function TestimonialCard({
   );
 }
 
-function TestimonialGroup({ duplicate = false }: { duplicate?: boolean }) {
+function TestimonialGroup({
+  testimonials,
+  duplicate = false,
+}: {
+  testimonials: readonly Testimonial[];
+  duplicate?: boolean;
+}) {
   return (
     <div
       aria-hidden={duplicate || undefined}
@@ -111,7 +117,19 @@ function TestimonialGroup({ duplicate = false }: { duplicate?: boolean }) {
   );
 }
 
-export function Testimonials() {
+interface TestimonialsProps {
+  heading?: string;
+  testimonials?: readonly Testimonial[];
+  emptyMessage?: string;
+  density?: "default" | "compact";
+}
+
+export function Testimonials({
+  heading = "Vrais retours de nos clients",
+  testimonials = DEFAULT_TESTIMONIALS,
+  emptyMessage = "Les témoignages approuvés seront ajoutés ici.",
+  density = "default",
+}: TestimonialsProps = {}) {
   const viewportRef = useRef<HTMLDivElement>(null);
   const hoveredRef = useRef(false);
   const draggingRef = useRef(false);
@@ -221,25 +239,47 @@ export function Testimonials() {
   }, []);
 
   return (
-    <section className="overflow-hidden bg-[#F7F3FF] py-20 font-sans sm:py-24 lg:py-28">
+    <section
+      className={`overflow-hidden bg-[#F7F3FF] font-sans ${
+        density === "compact"
+          ? "py-16 sm:py-20 lg:py-24"
+          : "py-20 sm:py-24 lg:py-28"
+      }`}
+    >
       <div className="mx-auto max-w-[1320px] px-4 md:px-8 lg:px-10">
         <header className="max-w-[600px]">
           <h2 className="font-heading text-4xl leading-tight text-[#1D0D3B] md:text-5xl lg:text-[56px]">
-            Vrais retours de nos clients
+            {heading}
           </h2>
         </header>
 
-        <div
-          ref={viewportRef}
-          id="testimonial-carousel"
-          aria-label="Témoignages clients"
-          className="mt-12 min-w-0 cursor-grab touch-pan-y select-none overflow-x-auto overscroll-x-contain pb-2 active:cursor-grabbing sm:mt-14 [scroll-behavior:auto] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
-        >
-          <div className="flex w-max">
-            <TestimonialGroup />
-            <TestimonialGroup duplicate />
+        {testimonials.length ? (
+          <div
+            ref={viewportRef}
+            id="testimonial-carousel"
+            aria-label="Témoignages clients"
+            className={`min-w-0 cursor-grab touch-pan-y select-none overflow-x-auto overscroll-x-contain pb-2 active:cursor-grabbing [scroll-behavior:auto] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden ${
+              density === "compact" ? "mt-10 sm:mt-12" : "mt-12 sm:mt-14"
+            }`}
+          >
+            <div className="flex w-max">
+              <TestimonialGroup testimonials={testimonials} />
+              <TestimonialGroup testimonials={testimonials} duplicate />
+            </div>
           </div>
-        </div>
+        ) : (
+          <div
+            className={`rounded-[22px] border border-dashed border-[#1D0D3B]/20 bg-white px-6 text-center md:px-10 ${
+              density === "compact"
+                ? "mt-9 flex min-h-[210px] items-center justify-center py-10 sm:mt-10"
+                : "mt-12 py-16 sm:mt-14"
+            }`}
+          >
+            <p className="mx-auto max-w-xl text-base leading-7 text-[#1D0D3B]/55">
+              {emptyMessage}
+            </p>
+          </div>
+        )}
       </div>
     </section>
   );

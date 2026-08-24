@@ -3,7 +3,12 @@
 import Image from "next/image";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
-const PARTNERS = [
+export interface PartnerLogo {
+  name: string;
+  src: string;
+}
+
+const PARTNERS: PartnerLogo[] = [
   { name: "Puma", src: "/images/partners/puma.svg" },
   { name: "Adidas", src: "/images/partners/adidas.svg" },
   { name: "Clinique Chifa Tasnime", src: "/images/partners/clinic-chifa.svg" },
@@ -11,10 +16,22 @@ const PARTNERS = [
   { name: "Planète Montessori", src: "/images/partners/pmis.svg" },
 ];
 
-const TRACK = [...PARTNERS, ...PARTNERS];
+interface TrustBannerProps {
+  partners?: readonly PartnerLogo[];
+  headlineLines?: readonly string[] | null;
+  variant?: "default" | "landing";
+}
 
-export function TrustBanner() {
+export function TrustBanner({
+  partners = PARTNERS,
+  headlineLines = [
+    "Helped generating",
+    "+3 900 000 MAD for clients",
+  ],
+  variant = "default",
+}: TrustBannerProps = {}) {
   const { ref, isRevealed } = useScrollReveal<HTMLElement>();
+  const track = [...partners, ...partners];
 
   return (
     <section
@@ -22,13 +39,31 @@ export function TrustBanner() {
       data-reveal={isRevealed ? "visible" : "hidden"}
       className="scroll-reveal relative bg-white"
     >
-      <div className="mx-auto max-w-[1320px] px-4 py-12 md:px-8 md:py-16 lg:px-10">
-        <div className="flex flex-col gap-6 md:flex-row md:items-center md:gap-12">
-          <span className="shrink-0 font-sans text-[19.2px] font-bold leading-snug text-[#1D0D3B]">
-            Helped generating
-            <br />
-            +3 900 000 MAD for clients
-          </span>
+      <div
+        className={`mx-auto max-w-[1320px] px-4 md:px-8 lg:px-10 ${
+          variant === "landing" ? "py-8 md:py-10" : "py-12 md:py-16"
+        }`}
+      >
+        <div
+          className={`flex flex-col md:flex-row md:items-center ${
+            variant === "landing" ? "gap-5 md:gap-10" : "gap-6 md:gap-12"
+          }`}
+        >
+          {headlineLines?.length ? (
+            <span
+              className={`shrink-0 font-sans font-bold leading-snug text-[#1D0D3B] ${
+                variant === "landing"
+                  ? "text-[17px] md:text-[19.2px]"
+                  : "text-[19.2px]"
+              }`}
+            >
+              {headlineLines.map((line) => (
+                <span key={line} className="block">
+                  {line}
+                </span>
+              ))}
+            </span>
+          ) : null}
 
           <div
             className="w-full min-w-0 flex-1 overflow-hidden"
@@ -40,19 +75,25 @@ export function TrustBanner() {
             }}
           >
             <div
-              className="partner-marquee flex w-max animate-[marquee_28s_linear_infinite] items-center gap-16"
+              className={`partner-marquee flex w-max animate-[marquee_28s_linear_infinite] items-center ${
+                variant === "landing" ? "gap-14 md:gap-16" : "gap-16"
+              }`}
               style={{ willChange: "transform" }}
             >
-              {TRACK.map((partner, index) => (
+              {track.map((partner, index) => (
                 <div
                   key={`${partner.name}-${index}`}
-                  className="flex h-11 w-[141px] shrink-0 items-center justify-center opacity-60 grayscale transition hover:opacity-100 hover:grayscale-0"
+                  className={`flex shrink-0 items-center justify-center grayscale transition hover:opacity-100 hover:grayscale-0 ${
+                    variant === "landing"
+                      ? "h-12 w-[156px] opacity-70"
+                      : "h-11 w-[141px] opacity-60"
+                  }`}
                 >
                   <Image
                     src={partner.src}
                     alt={partner.name}
-                    width={141}
-                    height={44}
+                    width={variant === "landing" ? 156 : 141}
+                    height={variant === "landing" ? 48 : 44}
                     className="h-full w-auto object-contain"
                   />
                 </div>

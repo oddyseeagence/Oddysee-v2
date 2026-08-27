@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 
 import { CtaBand } from "@/components/CtaBand";
-import { Testimonials, type Testimonial } from "@/components/Testimonials";
 import {
   TrustBanner,
   type PartnerLogo,
@@ -11,6 +10,7 @@ import { LandingHeader } from "@/components/landing/LandingHeader";
 import { LandingHero } from "@/components/landing/LandingHero";
 import { LandingLegal } from "@/components/landing/LandingLegal";
 import { LandingVideoBlock } from "@/components/landing/LandingVideoBlock";
+import { LandingVideoTestimonials } from "@/components/landing/LandingVideoTestimonials";
 
 // TODO: replace with approved /get-web campaign metadata.
 export const metadata: Metadata = {
@@ -73,9 +73,6 @@ const webPartners: readonly PartnerLogo[] = [
   { name: "Planète Montessori", src: "/images/partners/pmis.svg" },
 ];
 
-// Approved /get-web testimonials have not been supplied.
-const webTestimonials: readonly Testimonial[] = [];
-
 export default function GetWebPage() {
   return (
     <div className="min-h-screen overflow-x-clip bg-white text-[#1D0D3B] selection:bg-[#632BC5] selection:text-white">
@@ -126,12 +123,7 @@ export default function GetWebPage() {
           density="compact"
         />
 
-        <Testimonials
-          heading="Retours clients à intégrer"
-          testimonials={webTestimonials}
-          emptyMessage="TODO : remplacer cet emplacement par les témoignages approuvés pour la campagne /get-web."
-          density="compact"
-        />
+        <LandingVideoTestimonials />
 
         <CtaBand
           heading={campaign.finalCtaHeading}

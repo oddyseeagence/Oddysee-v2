@@ -59,7 +59,7 @@ export function LandingComparison({
                 <h3 className="font-heading text-3xl leading-none tracking-[-0.04em] text-[#1D0D3B] md:text-4xl">
                   {problemsTitle}
                 </h3>
-                <span className="grid size-11 shrink-0 place-items-center rounded-full bg-[#1D0D3B]/8 text-[#1D0D3B]">
+                <span className="grid size-11 shrink-0 place-items-center rounded-full bg-[#FDE8E7] text-[#E5484D]">
                   <X aria-hidden="true" className="size-5" strokeWidth={1.8} />
                 </span>
               </div>
@@ -81,7 +81,7 @@ export function LandingComparison({
                     {problemDescription ? (
                       <details className="group">
                         <summary className="flex cursor-pointer list-none items-start gap-4 rounded-md outline-none transition-colors hover:text-[#1D0D3B] focus-visible:ring-2 focus-visible:ring-[#632BC5] focus-visible:ring-offset-4 [&::-webkit-details-marker]:hidden">
-                          <span className="mt-1 grid size-6 shrink-0 place-items-center rounded-full bg-[#1D0D3B]/8 text-[#1D0D3B]">
+                          <span className="mt-1 grid size-6 shrink-0 place-items-center rounded-full bg-[#FDE8E7] text-[#E5484D]">
                             <X
                               aria-hidden="true"
                               className="size-3.5"
@@ -107,7 +107,7 @@ export function LandingComparison({
                       </details>
                     ) : (
                       <div className="flex items-start gap-4">
-                        <span className="mt-1 grid size-6 shrink-0 place-items-center rounded-full bg-[#1D0D3B]/8 text-[#1D0D3B]">
+                        <span className="mt-1 grid size-6 shrink-0 place-items-center rounded-full bg-[#FDE8E7] text-[#E5484D]">
                           <X
                             aria-hidden="true"
                             className="size-3.5"
@@ -129,7 +129,7 @@ export function LandingComparison({
                 <h3 className="font-heading text-3xl leading-none tracking-[-0.04em] md:text-4xl">
                   {benefitsTitle}
                 </h3>
-                <span className="grid size-11 shrink-0 place-items-center rounded-full bg-[#632BC5] text-white">
+                <span className="grid size-11 shrink-0 place-items-center rounded-full bg-[#22C55E] text-white">
                   <Check aria-hidden="true" className="size-5" strokeWidth={1.8} />
                 </span>
               </div>
@@ -154,7 +154,7 @@ export function LandingComparison({
                     {benefitDescription ? (
                       <details className="group">
                         <summary className="flex cursor-pointer list-none items-start gap-4 rounded-md outline-none transition-colors hover:text-white focus-visible:ring-2 focus-visible:ring-[#632BC5] focus-visible:ring-offset-4 focus-visible:ring-offset-[#1D0D3B] [&::-webkit-details-marker]:hidden">
-                          <span className="mt-1 grid size-6 shrink-0 place-items-center rounded-full bg-[#632BC5] text-white">
+                          <span className="mt-1 grid size-6 shrink-0 place-items-center rounded-full bg-[#22C55E] text-white">
                             <Check
                               aria-hidden="true"
                               className="size-3.5"
@@ -180,7 +180,7 @@ export function LandingComparison({
                       </details>
                     ) : (
                       <div className="flex items-start gap-4">
-                        <span className="mt-1 grid size-6 shrink-0 place-items-center rounded-full bg-[#632BC5] text-white">
+                        <span className="mt-1 grid size-6 shrink-0 place-items-center rounded-full bg-[#22C55E] text-white">
                           <Check
                             aria-hidden="true"
                             className="size-3.5"

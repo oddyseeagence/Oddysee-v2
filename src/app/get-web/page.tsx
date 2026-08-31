@@ -23,16 +23,15 @@ export const metadata: Metadata = {
 // The whiteboard term "W/As Bot" is interpreted here as WhatsApp only as an
 // unapproved, replaceable thematic reference.
 const campaign = {
-  eyebrow: "Contenu Site web / Workflow / WhatsApp à valider",
-  headline: "Titre Site web / Workflow / WhatsApp à valider.",
+  headline: "Vos concurrents sont déjà en ligne. Pas vous.",
   introduction:
-    "Cette introduction temporaire réserve l’espace du message principal sans ajouter de fonctionnalité, de promesse ou de résultat non approuvé.",
+    "Chaque jour sans site web, c'est des clients qui achètent ailleurs. On vous met en ligne en 7 jours — avec un site qui vend, pas juste une vitrine.",
   videoHeading:
-    "La Masterclass Site web / Workflow / WhatsApp sera présentée ici.",
+    "Découvrez comment on transforme votre activité en machine à clients — en moins de 3 minutes.",
   videoDescription:
-    "Le texte final précisera le contenu de la vidéo et guidera vers l’unique objectif de conversion approuvé pour cette campagne.",
+    "Regardez la vidéo avant de cliquer ci-dessous  ",
   // TODO: replace with the approved /get-web CTA label and destination.
-  ctaLabel: "Parler à Oddysee",
+  ctaLabel: "Passer à l'action — Contacter un expert sur WhatsApp",
   ctaHref: "/contact",
   comparisonHeading: "Du besoin digital à une valeur à préciser.",
   comparisonDescription:
@@ -47,16 +46,50 @@ const campaign = {
 
 // TODO: replace with approved /get-web problem statements.
 const problems = [
-  "Premier besoin Site web / Workflow / WhatsApp à documenter avec l’équipe campagne.",
-  "Deuxième point de friction à préciser avant toute publication.",
-  "Troisième difficulté utilisateur ou métier à confirmer.",
+  {
+    title: "Vos clients ne vous trouvent pas.",
+    description:
+      "Ils cherchent votre service sur Google, sur Facebook, sur Instagram. Ils tombent sur vos concurrents. Ils achètent chez eux.\n\nVous, vous restez avec votre bouche-à-oreille — utile, mais imprévisible.",
+  },
+  {
+    title: "Vos concurrents avancent. Vous les regardez.",
+    description:
+      "Chaque semaine, un nouveau concurrent lance son site. Sa boutique en ligne. Sa présence WhatsApp automatisée.\n\nPendant ce temps, votre entreprise reste dépendante des clients de proximité — et de ce qu'ils veulent bien raconter de vous.",
+  },
+  {
+    title: "Un client vous demande votre site. Vous n'en avez pas.",
+    description:
+      "Le message est reçu : « ils ne sont pas encore digitalisés ». La confiance baisse. Le prospect se tourne vers un concurrent mieux présenté.\n\nSans site web professionnel en 2026, vous perdez des ventes avant même de discuter.",
+  },
+  {
+    title: "Dans un an, ce sera plus tard.",
+    description:
+      "Internet se démocratise à grande vitesse en Afrique francophone. Les entreprises qui prennent leur place maintenant domineront leur marché demain.\n\nCelles qui attendent devront rattraper — à un coût beaucoup plus élevé, avec une concurrence beaucoup plus dense.",
+  },
 ] as const;
 
 // TODO: replace with approved /get-web value statements.
 const benefits = [
-  "Premier élément de valeur à formuler et valider.",
-  "Deuxième bénéfice à compléter sans promesse non vérifiée.",
-  "Troisième résultat attendu à confirmer avant publication.",
+  {
+    title: "Un site professionnel dont vous êtes fier.",
+    description:
+      "Quand un client vous demande votre site, vous envoyez le lien avec assurance. Il découvre une entreprise sérieuse, structurée, professionnelle. La conversation commence bien avant votre premier échange.",
+  },
+  {
+    title: "Vos clients vous trouvent — sans effort.",
+    description:
+      "Votre site apparaît sur Google. Votre présence sur les réseaux devient cohérente. Les personnes qui cherchent votre service dans votre ville tombent sur vous — pas sur vos concurrents.",
+  },
+  {
+    title: "Des demandes qui rentrent chaque semaine.",
+    description:
+      "Le formulaire de votre site remonte les demandes directement dans WhatsApp. Vous répondez en un clic. Chaque visiteur intéressé devient un client potentiel — même à 22h ou le dimanche.",
+  },
+  {
+    title: "Vous concentrez votre énergie sur votre métier.",
+    description:
+      "Plus besoin de courir après les clients. Plus besoin d'expliquer votre activité à chaque conversation. Votre site travaille pour vous — pendant que vous faites ce que vous savez faire de mieux.",
+  },
 ] as const;
 
 // TODO: replace with approved /get-web partner proof. This temporary selection
@@ -80,7 +113,6 @@ export default function GetWebPage() {
 
       <main>
         <LandingHero
-          eyebrow={campaign.eyebrow}
           headline={campaign.headline}
           description={campaign.introduction}
         />
@@ -109,9 +141,11 @@ export default function GetWebPage() {
           eyebrow="Problème / valeur"
           heading={campaign.comparisonHeading}
           description={campaign.comparisonDescription}
-          problemsTitle="Points de friction"
+          problemsTitle="Vous vous reconnaissez ?"
+          problemsDescription="Voici ce que vit un entrepreneur qui n'est pas en ligne — ou qui a un site qui ne travaille pas pour lui."
           problems={problems}
-          benefitsTitle="Valeur apportée"
+          benefitsTitle="Voici ce qui change dès que votre site est en ligne."
+          benefitsDescription="Pas une promesse en l'air. Le quotidien de nos clients depuis qu'on a lancé leur site."
           benefits={benefits}
         />
 

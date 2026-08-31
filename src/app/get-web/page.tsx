@@ -11,6 +11,7 @@ import { LandingHero } from "@/components/landing/LandingHero";
 import { LandingLegal } from "@/components/landing/LandingLegal";
 import { LandingVideoBlock } from "@/components/landing/LandingVideoBlock";
 import { LandingVideoTestimonials } from "@/components/landing/LandingVideoTestimonials";
+import { LandingWhatsAppCta } from "@/components/landing/LandingWhatsAppCta";
 
 // TODO: replace with approved /get-web campaign metadata.
 export const metadata: Metadata = {
@@ -39,9 +40,10 @@ const campaign = {
   midCtaHeading: "Ils l'ont fait. Voici leurs résultats.",
   midCtaDescription:
     "Des entrepreneurs qui ont pris leur place en ligne — et qui n'attendent plus le bouche-à-oreille pour vendre.",
-  finalCtaHeading: "Échangeons sur votre projet digital.",
+  finalCtaHeading: "Prêt à mettre votre entreprise en ligne ?",
   finalCtaDescription:
-    "Le texte final et la destination de conversion restent à confirmer.",
+    "Discutez avec un expert Oddysee dès maintenant. On répond en moins d'une heure sur WhatsApp — du lundi au samedi.",
+  finalCtaLabel: "Contacter un expert maintenant",
 } as const;
 
 const clientStats = [
@@ -180,13 +182,11 @@ export default function GetWebPage() {
 
         <LandingVideoTestimonials />
 
-        <CtaBand
+        <LandingWhatsAppCta
           heading={campaign.finalCtaHeading}
           description={campaign.finalCtaDescription}
-          ctaLabel={campaign.ctaLabel}
+          ctaLabel={campaign.finalCtaLabel}
           ctaHref={campaign.ctaHref}
-          background="lavender"
-          density="compact"
         />
       </main>
 

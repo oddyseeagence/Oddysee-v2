@@ -142,6 +142,7 @@ export default function GetWebPage() {
         />
 
         <LandingVideoBlock
+          eyebrow="COMMENT ÇA MARCHE"
           heading={campaign.videoHeading}
           description={campaign.videoDescription}
           video={{
@@ -162,7 +163,7 @@ export default function GetWebPage() {
         />
 
         <LandingComparison
-          eyebrow="Problème / valeur"
+          eyebrow="CE QUI CHANGE"
           heading={campaign.comparisonHeading}
           description={campaign.comparisonDescription}
           problemsTitle="Vous vous reconnaissez ?"

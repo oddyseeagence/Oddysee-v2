@@ -34,7 +34,7 @@ export function LandingComparison({
   benefits,
 }: LandingComparisonProps) {
   return (
-    <section className="bg-[#F7F3FF] py-20 md:py-24 lg:py-28">
+    <section className="bg-[#F7F3FF] pb-20 pt-16 sm:pt-20 md:pb-24 lg:pb-28 lg:pt-24">
       <div className="about-container">
         <div className="grid gap-6 lg:grid-cols-[0.38fr_0.62fr] lg:gap-12">
           <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#632BC5]">

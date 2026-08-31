@@ -36,13 +36,32 @@ const campaign = {
   comparisonHeading: "Du besoin digital à une valeur à préciser.",
   comparisonDescription:
     "Les formulations ci-dessous servent uniquement à préserver la structure du futur message Site web / Workflow / WhatsApp.",
-  midCtaHeading: "Une prochaine étape commune à définir.",
+  midCtaHeading: "Ils l'ont fait. Voici leurs résultats.",
   midCtaDescription:
-    "Le message de conversion intermédiaire sera remplacé après validation de l’offre et du parcours de campagne.",
+    "Des entrepreneurs qui ont pris leur place en ligne — et qui n'attendent plus le bouche-à-oreille pour vendre.",
   finalCtaHeading: "Échangeons sur votre projet digital.",
   finalCtaDescription:
     "Le texte final et la destination de conversion restent à confirmer.",
 } as const;
+
+const clientStats = [
+  {
+    value: "+200",
+    label: "Entreprises accompagnées",
+  },
+  {
+    value: "7 jours",
+    label: "De la commande au site en ligne",
+  },
+  {
+    value: "3 continents · 8 pays",
+    label: "Amérique · Europe · Afrique",
+  },
+  {
+    value: "+2 M",
+    label: "De prospects générés pour nos clients",
+  },
+] as const;
 
 // TODO: replace with approved /get-web problem statements.
 const problems = [
@@ -151,7 +170,9 @@ export default function GetWebPage() {
 
         <CtaBand
           heading={campaign.midCtaHeading}
+          headingSize="display"
           description={campaign.midCtaDescription}
+          stats={clientStats}
           ctaLabel={campaign.ctaLabel}
           ctaHref={campaign.ctaHref}
           density="compact"

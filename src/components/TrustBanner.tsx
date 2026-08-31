@@ -41,7 +41,9 @@ export function TrustBanner({
     >
       <div
         className={`mx-auto max-w-[1320px] px-4 md:px-8 lg:px-10 ${
-          variant === "landing" ? "py-8 md:py-10" : "py-12 md:py-16"
+          variant === "landing"
+            ? "pb-16 sm:pb-20 lg:pb-24"
+            : "py-12 md:py-16"
         }`}
       >
         <div

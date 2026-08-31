@@ -4,12 +4,14 @@ interface LandingHeroProps {
   eyebrow?: string;
   headline: ReactNode;
   description: string;
+  subdescription?: string;
 }
 
 export function LandingHero({
   eyebrow,
   headline,
   description,
+  subdescription,
 }: LandingHeroProps) {
   return (
     <section
@@ -31,6 +33,11 @@ export function LandingHero({
           <p className="hero-reveal max-w-[660px] opacity-0 animate-[fadeUp_0.6s_ease-out_forwards] text-[20px] font-medium leading-[1.35] tracking-[-0.025em] text-[#1D0D3B]/65 [animation-delay:220ms] sm:text-[22px] lg:text-[26px]">
             {description}
           </p>
+          {subdescription ? (
+            <p className="hero-reveal mt-5 max-w-[660px] opacity-0 animate-[fadeUp_0.6s_ease-out_forwards] text-sm leading-6 text-[#1D0D3B]/60 [animation-delay:320ms] sm:text-base sm:leading-7">
+              {subdescription}
+            </p>
+          ) : null}
         </div>
       </div>
     </section>

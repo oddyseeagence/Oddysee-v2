@@ -27,6 +27,8 @@ const campaign = {
   headline: "Vos concurrents sont déjà en ligne. Pas vous.",
   introduction:
     "Chaque jour sans site web, c'est des clients qui achètent ailleurs. On vous met en ligne en 7 jours — avec un site qui vend, pas juste une vitrine.",
+  introductionSubdescription:
+    "🇺🇸 États-Unis · 🇫🇷 France · 🇧🇪 Belgique · 🇲🇦 Maroc · 🇨🇬 Congo · 🇨🇮 Côte d'Ivoire · 🇹🇩 Tchad · 🇹🇬 Togo Déjà +200 entreprises accompagnées",
   videoHeading:
     "Découvrez comment on transforme votre activité en machine à clients — en moins de 3 minutes.",
   videoDescription:
@@ -136,6 +138,7 @@ export default function GetWebPage() {
         <LandingHero
           headline={campaign.headline}
           description={campaign.introduction}
+          subdescription={campaign.introductionSubdescription}
         />
 
         <LandingVideoBlock

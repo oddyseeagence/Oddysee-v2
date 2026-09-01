@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const videoReviews = [
   {
@@ -25,6 +25,9 @@ const videoReviews = [
   },
 ] as const;
 
+const carouselReviews = [...videoReviews, ...videoReviews] as const;
+const AUTO_SCROLL_SPEED = 56;
+
 function PlayIcon() {
   return (
     <svg
@@ -38,8 +41,103 @@ function PlayIcon() {
 }
 
 export function LandingVideoTestimonials() {
+  const carouselRef = useRef<HTMLDivElement>(null);
+  const slideRefs = useRef<Array<HTMLElement | null>>([]);
   const videoRefs = useRef<Array<HTMLVideoElement | null>>([]);
+  const scrollAnimationRef = useRef<number | null>(null);
+  const resumeAutoScrollTimeoutRef = useRef<number | null>(null);
+  const isUserInteractingRef = useRef(false);
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
+
+  useEffect(() => {
+    if (activeIndex !== null) {
+      return;
+    }
+
+    const carousel = carouselRef.current;
+
+    if (!carousel) {
+      return;
+    }
+
+    const mobileQuery = window.matchMedia("(max-width: 639px)");
+    const reducedMotionQuery = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    );
+    let previousTimestamp: number | null = null;
+
+    const animateScroll = (timestamp: number) => {
+      if (
+        !mobileQuery.matches ||
+        reducedMotionQuery.matches ||
+        document.hidden ||
+        isUserInteractingRef.current
+      ) {
+        previousTimestamp = timestamp;
+        scrollAnimationRef.current = window.requestAnimationFrame(animateScroll);
+        return;
+      }
+
+      const firstSlide = slideRefs.current[0];
+      const loopSlide = slideRefs.current[videoReviews.length];
+
+      if (!firstSlide || !loopSlide) {
+        scrollAnimationRef.current = window.requestAnimationFrame(animateScroll);
+        return;
+      }
+
+      if (previousTimestamp !== null) {
+        const elapsed = Math.min(timestamp - previousTimestamp, 50);
+        carousel.scrollLeft += (AUTO_SCROLL_SPEED * elapsed) / 1000;
+      }
+
+      previousTimestamp = timestamp;
+
+      const loopDistance = loopSlide.offsetLeft - firstSlide.offsetLeft;
+
+      if (loopDistance > 0 && carousel.scrollLeft >= loopDistance) {
+        carousel.scrollLeft %= loopDistance;
+      }
+
+      scrollAnimationRef.current = window.requestAnimationFrame(animateScroll);
+    };
+
+    scrollAnimationRef.current = window.requestAnimationFrame(animateScroll);
+
+    return () => {
+      if (scrollAnimationRef.current !== null) {
+        window.cancelAnimationFrame(scrollAnimationRef.current);
+        scrollAnimationRef.current = null;
+      }
+
+      if (resumeAutoScrollTimeoutRef.current !== null) {
+        window.clearTimeout(resumeAutoScrollTimeoutRef.current);
+        resumeAutoScrollTimeoutRef.current = null;
+      }
+
+      isUserInteractingRef.current = false;
+    };
+  }, [activeIndex]);
+
+  const pauseAutoScroll = () => {
+    if (resumeAutoScrollTimeoutRef.current !== null) {
+      window.clearTimeout(resumeAutoScrollTimeoutRef.current);
+      resumeAutoScrollTimeoutRef.current = null;
+    }
+
+    isUserInteractingRef.current = true;
+  };
+
+  const resumeAutoScroll = () => {
+    if (resumeAutoScrollTimeoutRef.current !== null) {
+      window.clearTimeout(resumeAutoScrollTimeoutRef.current);
+    }
+
+    resumeAutoScrollTimeoutRef.current = window.setTimeout(() => {
+      isUserInteractingRef.current = false;
+      resumeAutoScrollTimeoutRef.current = null;
+    }, 1200);
+  };
 
   const playReview = async (index: number) => {
     videoRefs.current.forEach((video, videoIndex) => {
@@ -73,16 +171,33 @@ export function LandingVideoTestimonials() {
           </h2>
         </header>
 
-        <div className="mt-12 grid gap-8 sm:mt-16 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
-          {videoReviews.map((review, index) => {
+        <div
+          ref={carouselRef}
+          aria-label="Témoignages vidéo"
+          onPointerDown={pauseAutoScroll}
+          onPointerUp={resumeAutoScroll}
+          onPointerCancel={resumeAutoScroll}
+          className="scrollbar-hidden mt-12 flex gap-4 overflow-x-auto sm:mt-16 sm:grid sm:grid-cols-2 sm:gap-8 sm:overflow-visible lg:grid-cols-4 lg:gap-6"
+        >
+          {carouselReviews.map((review, index) => {
             const isActive = activeIndex === index;
+            const isLoopClone = index >= videoReviews.length;
 
             return (
               <article
-                key={review.src}
-                className="mx-auto w-full max-w-[315px]"
+                ref={(slide) => {
+                  slideRefs.current[index] = slide;
+                }}
+                key={`${review.src}-${index}`}
+                aria-hidden={isLoopClone || undefined}
+                aria-label={
+                  isLoopClone
+                    ? undefined
+                    : `${index + 1} sur ${videoReviews.length}`
+                }
+                className={`w-full shrink-0 sm:mx-auto sm:max-w-[315px] ${isLoopClone ? "pointer-events-none sm:hidden" : ""}`}
               >
-                <div className="relative aspect-[9/16] overflow-hidden rounded-[12px] bg-[#1D0D3B] shadow-[0_18px_50px_rgba(29,13,59,0.12)]">
+                <div className="relative aspect-[9/16] overflow-hidden rounded-[12px] bg-[#1D0D3B] shadow-none sm:shadow-[0_18px_50px_rgba(29,13,59,0.12)]">
                   <video
                     ref={(video) => {
                       videoRefs.current[index] = video;

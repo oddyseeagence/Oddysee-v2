@@ -93,7 +93,7 @@ export function AboutIntro() {
             </div>
           </div>
 
-          <div className="mt-16 grid grid-cols-[minmax(0,320px)] justify-start gap-5 md:mt-24 md:grid-cols-3 md:gap-6 lg:mt-28 xl:grid-cols-[repeat(3,minmax(0,320px))] xl:justify-center">
+          <div className="mt-16 grid grid-cols-[minmax(0,320px)] justify-center gap-5 md:mt-24 md:grid-cols-3 md:gap-6 lg:mt-28 xl:grid-cols-[repeat(3,minmax(0,320px))]">
             {statistics.map((statistic) => {
               const Icon = statistic.icon;
 

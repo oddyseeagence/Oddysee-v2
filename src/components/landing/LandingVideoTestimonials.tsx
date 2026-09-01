@@ -195,7 +195,7 @@ export function LandingVideoTestimonials() {
                     ? undefined
                     : `${index + 1} sur ${videoReviews.length}`
                 }
-                className={`w-[82%] max-w-[285px] shrink-0 sm:w-[calc(50%_-_1rem)] sm:max-w-none xl:mx-auto xl:max-w-[315px] ${isLoopClone ? "pointer-events-none xl:hidden" : ""}`}
+                className={`w-[82%] max-w-[285px] shrink-0 sm:w-[calc(50%_-_1rem)] sm:max-w-none xl:mx-auto xl:w-full xl:max-w-[315px] ${isLoopClone ? "pointer-events-none xl:hidden" : ""}`}
               >
                 <div className="relative aspect-[9/16] overflow-hidden rounded-[12px] bg-[#1D0D3B] shadow-none xl:shadow-[0_18px_50px_rgba(29,13,59,0.12)]">
                   <video

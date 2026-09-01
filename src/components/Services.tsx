@@ -72,29 +72,31 @@ export function Services() {
   return (
     <section className="bg-[#F7F3FF] py-24">
       <div className="mx-auto max-w-[1320px] px-4 md:px-8 lg:px-10">
-        <div className="mb-16 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-          <div>
-            <h2 className="font-heading text-4xl text-[#1D0D3B] md:text-5xl lg:text-[56px]">
-              Ce qu&apos;on fait
-            </h2>
+        <div className="flex flex-col">
+          <div className="contents md:mb-16 md:flex md:flex-row md:items-end md:justify-between md:gap-6">
+            <div className="order-1 md:order-none">
+              <h2 className="font-heading text-4xl text-[#1D0D3B] md:text-5xl lg:text-[56px]">
+                Ce qu&apos;on fait
+              </h2>
+            </div>
+            <button
+              type="button"
+              className="order-3 mt-8 rounded-full bg-[#632BC5] px-8 py-4 font-bold text-[#FFFFFF] transition hover:brightness-110 md:order-none md:mt-0"
+            >
+              More Services
+            </button>
           </div>
-          <button
-            type="button"
-            className="rounded-full bg-[#632BC5] px-8 py-4 font-bold text-[#FFFFFF] transition hover:brightness-110"
-          >
-            More Services
-          </button>
-        </div>
 
-        <div>
-          {SERVICE_ROWS.map((row, i) => (
-            <ServiceRowItem
-              key={row.title + i}
-              row={row}
-              isLast={i === SERVICE_ROWS.length - 1}
-              delayMs={i * 80}
-            />
-          ))}
+          <div className="order-2 mt-16 md:order-none md:mt-0">
+            {SERVICE_ROWS.map((row, i) => (
+              <ServiceRowItem
+                key={row.title + i}
+                row={row}
+                isLast={i === SERVICE_ROWS.length - 1}
+                delayMs={i * 80}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </section>

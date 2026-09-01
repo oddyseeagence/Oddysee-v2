@@ -158,7 +158,7 @@ export default function GetWebPage() {
 
         <TrustBanner
           partners={webPartners}
-          headlineLines={["Partenaires à confirmer"]}
+          headlineLines={null}
           variant="landing"
         />
 

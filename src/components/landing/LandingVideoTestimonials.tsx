@@ -60,7 +60,7 @@ export function LandingVideoTestimonials() {
       return;
     }
 
-    const mobileQuery = window.matchMedia("(max-width: 639px)");
+    const carouselQuery = window.matchMedia("(max-width: 1279px)");
     const reducedMotionQuery = window.matchMedia(
       "(prefers-reduced-motion: reduce)",
     );
@@ -68,7 +68,7 @@ export function LandingVideoTestimonials() {
 
     const animateScroll = (timestamp: number) => {
       if (
-        !mobileQuery.matches ||
+        !carouselQuery.matches ||
         reducedMotionQuery.matches ||
         document.hidden ||
         isUserInteractingRef.current
@@ -177,7 +177,7 @@ export function LandingVideoTestimonials() {
           onPointerDown={pauseAutoScroll}
           onPointerUp={resumeAutoScroll}
           onPointerCancel={resumeAutoScroll}
-          className="scrollbar-hidden mt-12 flex gap-4 overflow-x-auto sm:mt-16 sm:grid sm:grid-cols-2 sm:gap-8 sm:overflow-visible lg:grid-cols-4 lg:gap-6"
+          className="scrollbar-hidden mt-12 flex gap-4 overflow-x-auto sm:mt-16 sm:gap-8 xl:grid xl:grid-cols-4 xl:gap-6 xl:overflow-visible"
         >
           {carouselReviews.map((review, index) => {
             const isActive = activeIndex === index;
@@ -195,9 +195,9 @@ export function LandingVideoTestimonials() {
                     ? undefined
                     : `${index + 1} sur ${videoReviews.length}`
                 }
-                className={`w-full shrink-0 sm:mx-auto sm:max-w-[315px] ${isLoopClone ? "pointer-events-none sm:hidden" : ""}`}
+                className={`w-full shrink-0 sm:w-[calc(50%_-_1rem)] xl:mx-auto xl:max-w-[315px] ${isLoopClone ? "pointer-events-none xl:hidden" : ""}`}
               >
-                <div className="relative aspect-[9/16] overflow-hidden rounded-[12px] bg-[#1D0D3B] shadow-none sm:shadow-[0_18px_50px_rgba(29,13,59,0.12)]">
+                <div className="relative aspect-[9/16] overflow-hidden rounded-[12px] bg-[#1D0D3B] shadow-none xl:shadow-[0_18px_50px_rgba(29,13,59,0.12)]">
                   <video
                     ref={(video) => {
                       videoRefs.current[index] = video;

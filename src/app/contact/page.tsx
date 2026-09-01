@@ -99,17 +99,17 @@ export default function ContactPage() {
           </div>
 
           <div className="mt-20 border-t border-black/50 pt-7 md:mt-32 lg:mt-[126px] lg:pt-6">
-            <div className="flex justify-end">
-              <div className="flex flex-wrap justify-end gap-4 lg:gap-3">
+            <div className="flex justify-center sm:justify-end">
+              <div className="flex w-full flex-nowrap justify-center gap-3 sm:w-auto sm:justify-end sm:gap-4 lg:gap-3">
                 <a
                   href="#"
-                  className="inline-flex min-h-14 min-w-[166px] items-center justify-center rounded-full bg-[#1D0D3B] px-8 text-[18px] font-semibold text-white transition-colors hover:bg-[#632BC5] lg:min-h-[45px] lg:min-w-[133px] lg:px-6 lg:text-[16px]"
+                  className="inline-flex min-h-12 min-w-0 flex-1 items-center justify-center rounded-full bg-[#1D0D3B] px-4 text-[16px] font-semibold text-white transition-colors hover:bg-[#632BC5] sm:min-h-14 sm:min-w-[166px] sm:flex-none sm:px-8 sm:text-[18px] lg:min-h-[45px] lg:min-w-[133px] lg:px-6 lg:text-[16px]"
                 >
                   Linkedin
                 </a>
                 <a
                   href="#"
-                  className="inline-flex min-h-14 min-w-[184px] items-center justify-center rounded-full bg-[#1D0D3B] px-8 text-[18px] font-semibold text-white transition-colors hover:bg-[#632BC5] lg:min-h-[45px] lg:min-w-[147px] lg:px-6 lg:text-[16px]"
+                  className="inline-flex min-h-12 min-w-0 flex-1 items-center justify-center rounded-full bg-[#1D0D3B] px-4 text-[16px] font-semibold text-white transition-colors hover:bg-[#632BC5] sm:min-h-14 sm:min-w-[184px] sm:flex-none sm:px-8 sm:text-[18px] lg:min-h-[45px] lg:min-w-[147px] lg:px-6 lg:text-[16px]"
                 >
                   Instagram
                 </a>

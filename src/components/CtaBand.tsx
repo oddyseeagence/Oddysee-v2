@@ -77,12 +77,12 @@ export function CtaBand({
             {stats.map((stat) => (
               <div
                 key={stat.value}
-                className="flex min-h-[154px] flex-col justify-between bg-white px-5 py-6 sm:min-h-[170px] sm:px-7 sm:py-8"
+                className="flex min-h-[120px] flex-col bg-white px-5 py-6 sm:min-h-[170px] sm:justify-between sm:px-7 sm:py-8"
               >
                 <dt className="font-heading text-[clamp(34px,3.4vw,52px)] leading-[0.9] tracking-[-0.055em] text-[#1D0D3B]">
                   {stat.value}
                 </dt>
-                <dd className="mt-7 max-w-[240px] text-sm leading-6 text-[#1D0D3B]/65 sm:text-base">
+                <dd className="mt-4 max-w-[240px] text-sm leading-6 text-[#1D0D3B]/65 sm:mt-7 sm:text-base">
                   {stat.label}
                 </dd>
               </div>

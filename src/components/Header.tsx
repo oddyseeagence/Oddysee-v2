@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
-import { ArrowUpRightIcon, XIcon } from "@/components/icons";
+import { ArrowUpRightIcon, CloseIcon } from "@/components/icons";
 
 const navLinks = [
   { label: "À propos", href: "/a-propos" },
@@ -248,7 +248,7 @@ export function Header({ variant = "default", darkLogo = false }: HeaderProps) {
             )}
           >
             {mobileOpen ? (
-              <XIcon className="h-5 w-5 text-[#faf9ff]" />
+              <CloseIcon className="h-5 w-5 text-[#faf9ff]" />
             ) : (
               <span className="flex flex-col items-end gap-1.5">
                 <span className="h-0.5 w-5 rounded-full bg-[#faf9ff]" />

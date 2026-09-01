@@ -74,10 +74,18 @@ export function InstagramIcon(props: SVGProps<SVGSVGElement>) {
   );
 }
 
-export function XIcon(props: SVGProps<SVGSVGElement>) {
+export function CloseIcon(props: SVGProps<SVGSVGElement>) {
   return (
-    <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" {...props}>
-      <path d="M17.53 3H21l-7.5 8.573L22 21h-6.812l-5.334-6.72L4.06 21H1l8.06-9.21L2 3h6.968l4.822 6.148L17.53 3zm-1.194 16.2h1.89L7.77 4.68H5.74L16.336 19.2z" />
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <path d="M6 6l12 12M18 6 6 18" />
     </svg>
   );
 }

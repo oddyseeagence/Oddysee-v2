@@ -134,35 +134,36 @@ export function Blog() {
   return (
     <section className="bg-white py-24">
       <div className="mx-auto max-w-[1320px] px-4 md:px-8 lg:px-10">
-        <div
-          ref={headerRef}
-          data-reveal={isHeaderRevealed ? "visible" : "hidden"}
-          className="scroll-reveal mb-16 flex flex-col gap-6 md:flex-row md:items-end md:justify-between"
-        >
-          <div>
+        <div className="grid grid-cols-1 md:grid-cols-[minmax(0,1fr)_auto] md:items-end md:gap-x-6">
+          <div
+            ref={headerRef}
+            data-reveal={isHeaderRevealed ? "visible" : "hidden"}
+            className="scroll-reveal col-start-1 row-start-1"
+          >
             <h2 className="font-heading text-4xl text-[#1D0D3B] md:text-5xl">
               Explore Latest Thoughts
             </h2>
           </div>
           <Link
             href="/blog"
-            className="w-fit rounded-full bg-[#632BC5] px-8 py-4 font-bold text-[#FFFFFF] transition hover:bg-[#4f20a5] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#632BC5] focus-visible:ring-offset-4"
+            data-reveal={isHeaderRevealed ? "visible" : "hidden"}
+            className="scroll-reveal col-start-1 row-start-3 mt-12 w-fit justify-self-center rounded-full bg-[#632BC5] px-8 py-4 font-bold text-[#FFFFFF] transition hover:bg-[#4f20a5] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#632BC5] focus-visible:ring-offset-4 md:col-start-2 md:row-start-1 md:mt-0 md:justify-self-auto"
           >
             Explore More
           </Link>
-        </div>
 
-        <div className="grid grid-cols-1 gap-12 lg:grid-cols-2">
-          <FeaturedPostCard />
+          <div className="col-start-1 row-start-2 mt-16 grid grid-cols-1 gap-12 md:col-span-2 lg:grid-cols-2">
+            <FeaturedPostCard />
 
-          <div className="flex flex-col gap-10">
-            {SMALL_POSTS.map((post, index) => (
-              <SmallPostCard
-                key={post.title}
-                post={post}
-                index={index}
-              />
-            ))}
+            <div className="flex flex-col gap-10">
+              {SMALL_POSTS.map((post, index) => (
+                <SmallPostCard
+                  key={post.title}
+                  post={post}
+                  index={index}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </div>

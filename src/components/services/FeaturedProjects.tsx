@@ -43,7 +43,7 @@ export function FeaturedProjects() {
 
           <Link
             href="/projets"
-            className="group inline-flex shrink-0 items-center justify-center gap-2 rounded-full bg-primary px-7 py-3.5 text-sm font-semibold text-white shadow-lg shadow-primary/20 transition duration-300 hover:scale-[1.02] hover:brightness-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-4 focus-visible:ring-offset-white lg:mt-2"
+            className="group hidden shrink-0 items-center justify-center gap-2 rounded-full bg-primary px-7 py-3.5 text-sm font-semibold text-white shadow-lg shadow-primary/20 transition duration-300 hover:scale-[1.02] hover:brightness-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-4 focus-visible:ring-offset-white lg:mt-2 lg:inline-flex"
           >
             Voir tous les projets
             <ArrowUpRight className="size-4 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
@@ -93,6 +93,14 @@ export function FeaturedProjects() {
             </Link>
           ))}
         </div>
+
+        <Link
+          href="/projets"
+          className="group mt-12 flex w-full items-center justify-center gap-2 rounded-full bg-primary px-7 py-3.5 text-sm font-semibold text-white shadow-lg shadow-primary/20 transition duration-300 hover:scale-[1.02] hover:brightness-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-4 focus-visible:ring-offset-white lg:hidden"
+        >
+          Voir tous les projets
+          <ArrowUpRight className="size-4 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+        </Link>
       </div>
     </section>
   );

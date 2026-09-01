@@ -34,7 +34,7 @@ const campaign = {
   videoDescription:
     "Regardez la vidéo avant de cliquer ci-dessous  ",
   // TODO: replace with the approved /get-web CTA label and destination.
-  ctaLabel: "Passer à l'action — Contacter un expert sur WhatsApp",
+  ctaLabel: "Contacter un expert sur WhatsApp",
   ctaHref: "/contact",
   comparisonHeading: "Du besoin digital à une valeur à préciser.",
   comparisonDescription:

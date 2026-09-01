@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, type MouseEvent } from "react";
+import { useEffect, useRef, useState, type MouseEvent } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -26,6 +26,8 @@ export function Header({ variant = "default", darkLogo = false }: HeaderProps) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [hideNav, setHideNav] = useState(false);
   const [pastHero, setPastHero] = useState(false);
+  const mobileMenuRef = useRef<HTMLDivElement>(null);
+  const mobileToggleRef = useRef<HTMLButtonElement>(null);
 
   function isActiveLink(href: string) {
     if (href === "/") return pathname === "/";
@@ -104,6 +106,51 @@ export function Header({ variant = "default", darkLogo = false }: HeaderProps) {
       window.removeEventListener("resize", updateHeroHeight);
     };
   }, [isAbout]);
+
+  useEffect(() => {
+    if (!mobileOpen) return;
+
+    const menuOpenedAtScrollY = window.scrollY;
+
+    function closeMenu() {
+      setMobileOpen(false);
+    }
+
+    function closeMenuAfterMeaningfulScroll() {
+      if (Math.abs(window.scrollY - menuOpenedAtScrollY) < 24) return;
+      closeMenu();
+    }
+
+    function closeMenuOnEscape(event: KeyboardEvent) {
+      if (event.key === "Escape") {
+        setMobileOpen(false);
+      }
+    }
+
+    function closeMenuOnOutsidePointer(event: PointerEvent) {
+      const target = event.target;
+      if (!(target instanceof Node)) return;
+      if (mobileMenuRef.current?.contains(target)) return;
+      if (mobileToggleRef.current?.contains(target)) return;
+      closeMenu();
+    }
+
+    window.addEventListener("scroll", closeMenuAfterMeaningfulScroll, {
+      passive: true,
+    });
+    window.addEventListener("popstate", closeMenu);
+    window.addEventListener("hashchange", closeMenu);
+    window.addEventListener("keydown", closeMenuOnEscape);
+    document.addEventListener("pointerdown", closeMenuOnOutsidePointer);
+
+    return () => {
+      window.removeEventListener("scroll", closeMenuAfterMeaningfulScroll);
+      window.removeEventListener("popstate", closeMenu);
+      window.removeEventListener("hashchange", closeMenu);
+      window.removeEventListener("keydown", closeMenuOnEscape);
+      document.removeEventListener("pointerdown", closeMenuOnOutsidePointer);
+    };
+  }, [mobileOpen]);
 
   return (
     <header
@@ -236,40 +283,56 @@ export function Header({ variant = "default", darkLogo = false }: HeaderProps) {
 
           {/* Mobile hamburger */}
           <button
+            ref={mobileToggleRef}
             type="button"
-            aria-label="Basculer le menu"
+            aria-label={mobileOpen ? "Fermer le menu" : "Ouvrir le menu"}
             aria-expanded={mobileOpen}
             onClick={() => setMobileOpen((open) => !open)}
             className={cn(
-              "flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-black/20 backdrop-blur-md",
+              "relative flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-black/20 backdrop-blur-md",
               isAbout ? "lg:hidden" : "md:hidden",
               isAbout && "border border-white/15 bg-black/35",
               isLight && "bg-[#632BC5]"
             )}
           >
-            {mobileOpen ? (
-              <CloseIcon className="h-5 w-5 text-[#faf9ff]" />
-            ) : (
-              <span className="flex flex-col items-end gap-1.5">
+            <CloseIcon
+              className={cn(
+                "absolute inset-0 m-auto h-5 w-5 text-[#faf9ff] transition-all duration-300",
+                mobileOpen
+                  ? "scale-100 opacity-100"
+                  : "scale-75 opacity-0"
+              )}
+            />
+            <span
+              className={cn(
+                "flex flex-col items-end gap-1.5 transition-all duration-300",
+                mobileOpen
+                  ? "scale-75 opacity-0"
+                  : "scale-100 opacity-100"
+              )}
+            >
                 <span className="h-0.5 w-5 rounded-full bg-[#faf9ff]" />
                 <span className="h-0.5 w-3.5 rounded-full bg-[#faf9ff]" />
                 <span className="h-0.5 w-5 rounded-full bg-[#faf9ff]" />
-              </span>
-            )}
+            </span>
           </button>
         </div>
       </div>
 
       {/* Mobile menu */}
-      {mobileOpen && (
-        <div
-          className={cn(
-            "animate-in fade-in slide-in-from-top-2 mx-4 mt-3 rounded-3xl bg-black/40 backdrop-blur-md duration-200",
-            isAbout ? "lg:hidden" : "md:hidden",
-            isAbout && "border border-white/12 bg-[#0a0a0a]/95",
-            isLight && "border border-[#1D0D3B]/10 bg-white/95 shadow-xl"
-          )}
-        >
+      <div
+        ref={mobileMenuRef}
+        aria-hidden={!mobileOpen}
+        className={cn(
+          "mx-4 mt-3 rounded-3xl bg-black/40 backdrop-blur-md transition-[opacity,transform,visibility] duration-300 ease-out",
+          isAbout ? "lg:hidden" : "md:hidden",
+          mobileOpen
+            ? "visible translate-y-0 opacity-100"
+            : "invisible pointer-events-none -translate-y-2 opacity-0",
+          isAbout && "border border-white/12 bg-[#0a0a0a]/95",
+          isLight && "border border-[#1D0D3B]/10 bg-white/95 shadow-xl"
+        )}
+      >
           <div className="flex flex-col gap-6 px-8 py-8">
             <Link
               href="/#hero"
@@ -308,8 +371,7 @@ export function Header({ variant = "default", darkLogo = false }: HeaderProps) {
               Commencer
             </Link>
           </div>
-        </div>
-      )}
+      </div>
     </header>
   );
 }

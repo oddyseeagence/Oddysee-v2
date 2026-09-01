@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 
 const ANIMATE = "hero-reveal opacity-0 animate-[fadeUp_0.6s_ease-out_forwards]";
 
@@ -58,18 +59,18 @@ export function Hero() {
             <div
               className={`order-4 flex flex-col items-start gap-3 sm:flex-row sm:flex-wrap sm:gap-4 lg:mt-8 ${ANIMATE} [animation-delay:360ms]`}
             >
-              <a
-                href="#contact"
+              <Link
+                href="/contact"
                 className="inline-flex w-[190px] items-center justify-center rounded-full bg-[#632BC5] px-10 py-4 font-sans font-bold text-[#faf9ff] transition hover:brightness-110 sm:w-auto"
               >
                 Engagez-nous
-              </a>
-              <a
-                href="#about"
+              </Link>
+              <Link
+                href="/a-propos"
                 className="inline-flex w-[190px] items-center justify-center rounded-full bg-[rgba(250,249,255,0.3)] px-10 py-4 font-sans text-[#faf9ff] transition hover:bg-[rgba(250,249,255,0.4)] sm:w-auto"
               >
                 En savoir plus
-              </a>
+              </Link>
             </div>
           </div>
         </div>

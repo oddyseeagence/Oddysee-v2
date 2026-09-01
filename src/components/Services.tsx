@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 interface ServiceRow {
@@ -79,12 +81,12 @@ export function Services() {
                 Ce qu&apos;on fait
               </h2>
             </div>
-            <button
-              type="button"
+            <Link
+              href="/services"
               className="order-3 mt-8 rounded-full bg-[#632BC5] px-8 py-4 font-bold text-[#FFFFFF] transition hover:brightness-110 md:order-none md:mt-0"
             >
               More Services
-            </button>
+            </Link>
           </div>
 
           <div className="order-2 mt-16 md:order-none md:mt-0">

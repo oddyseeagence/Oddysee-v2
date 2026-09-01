@@ -214,7 +214,7 @@ export function Header({ variant = "default", darkLogo = false }: HeaderProps) {
             "hidden items-center gap-8 justify-self-center rounded-full bg-black/20 px-8 py-4 backdrop-blur-md",
             isAbout &&
               "gap-1 border border-white/10 bg-black/25 px-2 py-2 backdrop-blur-xl lg:flex",
-            !isAbout && "md:flex",
+            !isAbout && "lg:flex",
             isLight && "bg-transparent px-4 py-2 backdrop-blur-none"
           )}
         >
@@ -261,7 +261,7 @@ export function Header({ variant = "default", darkLogo = false }: HeaderProps) {
             <Link
               href="/contact"
               aria-label="Démarrer un projet"
-              className="hidden h-9 w-9 items-center justify-center rounded-full bg-[#632BC5] text-white transition hover:scale-105 hover:bg-[#4f20a5] md:flex"
+              className="hidden h-9 w-9 items-center justify-center rounded-full bg-[#632BC5] text-white transition hover:scale-105 hover:bg-[#4f20a5] lg:flex"
             >
               <ArrowUpRightIcon className="h-4 w-4" />
             </Link>
@@ -275,7 +275,7 @@ export function Header({ variant = "default", darkLogo = false }: HeaderProps) {
           ) : (
             <Link
               href="/contact"
-              className="hidden rounded-full bg-[#632BC5] px-8 py-4 text-sm font-bold text-[#ffffff] backdrop-blur-md transition hover:brightness-110 md:block"
+              className="hidden rounded-full bg-[#632BC5] px-8 py-4 text-sm font-bold text-[#ffffff] backdrop-blur-md transition hover:brightness-110 lg:block"
             >
               Commencer
             </Link>
@@ -290,7 +290,7 @@ export function Header({ variant = "default", darkLogo = false }: HeaderProps) {
             onClick={() => setMobileOpen((open) => !open)}
             className={cn(
               "relative flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-black/20 backdrop-blur-md",
-              isAbout ? "lg:hidden" : "md:hidden",
+              "lg:hidden",
               isAbout && "border border-white/15 bg-black/35",
               isLight && "bg-[#632BC5]"
             )}
@@ -325,7 +325,7 @@ export function Header({ variant = "default", darkLogo = false }: HeaderProps) {
         aria-hidden={!mobileOpen}
         className={cn(
           "mx-4 mt-3 rounded-3xl bg-black/40 backdrop-blur-md transition-[opacity,transform,visibility] duration-300 ease-out",
-          isAbout ? "lg:hidden" : "md:hidden",
+          "lg:hidden",
           mobileOpen
             ? "visible translate-y-0 opacity-100"
             : "invisible pointer-events-none -translate-y-2 opacity-0",

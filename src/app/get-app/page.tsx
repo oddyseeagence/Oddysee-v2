@@ -28,9 +28,9 @@ const campaign = {
   videoHeading: "La Masterclass App / Web / Mobile sera présentée ici.",
   videoDescription:
     "Le texte final précisera le contenu de la vidéo et guidera vers l’unique objectif de conversion approuvé pour cette campagne.",
-  // TODO: replace with the approved /get-app CTA label and destination.
+  // TODO: replace with the approved /get-app CTA label.
   ctaLabel: "Parler à Oddysee",
-  ctaHref: "/contact",
+  ctaHref: "https://www.oddysee.fr/votre-solution",
   comparisonHeading: "Du besoin digital à une solution à préciser.",
   comparisonDescription:
     "Les formulations ci-dessous servent uniquement à préserver la structure du futur message App / Web / Mobile.",
@@ -132,8 +132,6 @@ export default function GetAppPage() {
       </main>
 
       <LandingLegal
-        // TODO: replace with approved /get-app disclaimer and legal destinations.
-        disclaimer="Texte légal temporaire : le disclaimer, les mentions de campagne et les précisions liées à l’offre App / Web / Mobile doivent être fournis avant publication."
         links={[
           { label: "Mentions légales à confirmer", href: "#" },
           { label: "Confidentialité à confirmer", href: "#" },

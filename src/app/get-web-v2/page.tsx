@@ -27,9 +27,9 @@ const campaign = {
     "Chaque jour sans site web, c'est des clients qui achètent ailleurs. On vous met en ligne en 7 jours — avec un site qui vend, pas juste une vitrine.",
   introductionSubdescription:
     "🇺🇸 États-Unis · 🇫🇷 France · 🇧🇪 Belgique · 🇲🇦 Maroc · 🇨🇬 Congo · 🇨🇮 Côte d'Ivoire · 🇹🇩 Tchad · 🇹🇬 Togo Déjà +200 entreprises accompagnées",
-  // TODO: replace with the approved /get-web-v2 CTA label and destination.
+  // TODO: replace with the approved /get-web-v2 CTA label.
   ctaLabel: "Contacter un expert sur WhatsApp",
-  ctaHref: "/contact",
+  ctaHref: "https://www.oddysee.fr/votre-solution",
   comparisonHeading: "Du besoin digital à une valeur à préciser.",
   comparisonDescription:
     "Les formulations ci-dessous servent uniquement à préserver la structure du futur message Site web / Workflow / WhatsApp.",
@@ -175,8 +175,6 @@ export default function GetWebV2Page() {
       </main>
 
       <LandingLegal
-        // TODO: replace with approved /get-web-v2 disclaimer and legal destinations.
-        disclaimer="Texte légal temporaire : le disclaimer, les mentions de campagne et les précisions liées à l’offre Site web / Workflow / WhatsApp doivent être fournis avant publication."
         links={[
           { label: "Mentions légales à confirmer", href: "#" },
           { label: "Confidentialité à confirmer", href: "#" },

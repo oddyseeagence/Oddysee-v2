@@ -1,7 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { InstagramIcon, LinkedInIcon } from "@/components/icons";
+import {
+  FacebookIcon,
+  InstagramIcon,
+  LinkedInIcon,
+} from "@/components/icons";
 
 interface LegalLink {
   label: string;
@@ -9,13 +13,16 @@ interface LegalLink {
 }
 
 interface LandingLegalProps {
-  disclaimer: string;
+  disclaimer?: string;
   links?: readonly LegalLink[];
   copyright?: string;
 }
 
+const defaultDisclaimer =
+  "Ce site ne fait pas partie du site web Facebook ou de Facebook, Inc. ni de Google Inc. En outre, ce site n’est pas endossé par Facebook en aucune façon ni par Google Inc.\nFacebook est une marque déposée de Facebook, Inc. et Google est une marque déposée de Google Inc.";
+
 export function LandingLegal({
-  disclaimer,
+  disclaimer = defaultDisclaimer,
   links = [],
   copyright = "© 2026 Oddysee. Tous droits réservés.",
 }: LandingLegalProps) {
@@ -42,7 +49,7 @@ export function LandingLegal({
             />
           </Link>
 
-          <p className="max-w-[760px] text-sm leading-6 text-[#1D0D3B]/70">
+          <p className="max-w-[760px] whitespace-pre-line text-sm leading-6 text-[#1D0D3B]/70">
             {disclaimer}
           </p>
         </div>
@@ -75,7 +82,7 @@ export function LandingLegal({
                 <a
                   href="#"
                   aria-label="LinkedIn"
-                  className="flex h-4 w-4 transition hover:text-[#632BC5] focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#632BC5]"
+                  className="flex h-4 w-4 items-center justify-center transition hover:text-[#632BC5] focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#632BC5]"
                 >
                   <LinkedInIcon aria-hidden="true" className="h-4 w-4" />
                 </a>
@@ -83,8 +90,17 @@ export function LandingLegal({
               <li className="h-4">
                 <a
                   href="#"
+                  aria-label="Facebook"
+                  className="flex h-4 w-4 items-center justify-center transition hover:text-[#632BC5] focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#632BC5]"
+                >
+                  <FacebookIcon aria-hidden="true" className="h-3.5 w-3.5" />
+                </a>
+              </li>
+              <li className="h-4">
+                <a
+                  href="#"
                   aria-label="Instagram"
-                  className="flex h-4 w-4 transition hover:text-[#632BC5] focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#632BC5]"
+                  className="flex h-4 w-4 items-center justify-center transition hover:text-[#632BC5] focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#632BC5]"
                 >
                   <InstagramIcon aria-hidden="true" className="h-4 w-4" />
                 </a>

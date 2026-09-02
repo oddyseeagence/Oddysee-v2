@@ -33,9 +33,9 @@ const campaign = {
     "Découvrez comment on transforme votre activité en machine à clients — en moins de 3 minutes.",
   videoDescription:
     "Regardez la vidéo avant de cliquer ci-dessous  ",
-  // TODO: replace with the approved /get-web CTA label and destination.
+  // TODO: replace with the approved /get-web CTA label.
   ctaLabel: "Contacter un expert sur WhatsApp",
-  ctaHref: "/contact",
+  ctaHref: "https://www.oddysee.fr/votre-solution",
   comparisonHeading: "Du besoin digital à une valeur à préciser.",
   comparisonDescription:
     "Les formulations ci-dessous servent uniquement à préserver la structure du futur message Site web / Workflow / WhatsApp.",
@@ -195,8 +195,6 @@ export default function GetWebPage() {
       </main>
 
       <LandingLegal
-        // TODO: replace with approved /get-web disclaimer and legal destinations.
-        disclaimer="Texte légal temporaire : le disclaimer, les mentions de campagne et les précisions liées à l’offre Site web / Workflow / WhatsApp doivent être fournis avant publication."
         links={[
           { label: "Mentions légales à confirmer", href: "#" },
           { label: "Confidentialité à confirmer", href: "#" },

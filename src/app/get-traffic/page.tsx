@@ -29,8 +29,7 @@ const campaign = {
   videoDescription:
     "Le texte final expliquera ce que la vidéo apporte et guidera vers l’unique objectif de conversion de la campagne.",
   ctaLabel: "Parler à Oddysee",
-  // TODO: replace with the approved conversion destination.
-  ctaHref: "/contact",
+  ctaHref: "https://www.oddysee.fr/votre-solution",
   comparisonHeading: "Du point de friction à une solution plus claire.",
   comparisonDescription:
     "Les formulations ci-dessous sont des repères de mise en page et ne constituent pas des promesses commerciales approuvées.",
@@ -129,8 +128,6 @@ export default function GetTrafficPage() {
       </main>
 
       <LandingLegal
-        // TODO: replace with approved disclaimer and legal destinations.
-        disclaimer="Texte légal temporaire : le disclaimer, les mentions liées à la campagne et les éventuelles précisions publicitaires doivent être fournis avant publication."
         links={[
           { label: "Mentions légales à confirmer", href: "#" },
           { label: "Confidentialité à confirmer", href: "#" },

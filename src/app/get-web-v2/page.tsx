@@ -143,7 +143,7 @@ export default function GetWebV2Page() {
         />
 
         <LandingComparison
-          eyebrow="CE QUI CHANGE"
+          eyebrow=""
           heading={campaign.comparisonHeading}
           description={campaign.comparisonDescription}
           problemsTitle="Vous vous reconnaissez ?"
@@ -171,6 +171,7 @@ export default function GetWebV2Page() {
           description={campaign.finalCtaDescription}
           ctaLabel={campaign.finalCtaLabel}
           ctaHref={campaign.ctaHref}
+          background="white"
         />
       </main>
 

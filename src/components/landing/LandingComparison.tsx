@@ -36,10 +36,16 @@ export function LandingComparison({
   return (
     <section className="bg-[#F7F3FF] pb-20 pt-16 sm:pt-20 md:pb-24 lg:pb-28 lg:pt-24">
       <div className="about-container">
-        <div className="grid gap-6 lg:grid-cols-[0.38fr_0.62fr] lg:gap-12">
-          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#632BC5]">
-            {eyebrow}
-          </p>
+        <div
+          className={`grid gap-6 ${
+            eyebrow ? "lg:grid-cols-[0.38fr_0.62fr] lg:gap-12" : ""
+          }`}
+        >
+          {eyebrow ? (
+            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#632BC5]">
+              {eyebrow}
+            </p>
+          ) : null}
           <div>
             <h2 className="max-w-[840px] font-heading text-[clamp(42px,6vw,80px)] leading-[0.92] tracking-[-0.055em] text-[#1D0D3B]">
               {heading}

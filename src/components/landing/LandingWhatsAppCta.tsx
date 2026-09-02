@@ -3,6 +3,7 @@ interface LandingWhatsAppCtaProps {
   description: string;
   ctaLabel: string;
   ctaHref: string;
+  background?: "white" | "lavender";
 }
 
 function WhatsAppIcon() {
@@ -18,9 +19,14 @@ export function LandingWhatsAppCta({
   description,
   ctaLabel,
   ctaHref,
+  background = "lavender",
 }: LandingWhatsAppCtaProps) {
   return (
-    <section className="border-b-4 border-[#1D0D3B] bg-[#F7F3FF] px-4 py-16 text-center sm:py-20 md:px-8 lg:px-10 lg:py-24">
+    <section
+      className={`border-b-4 border-[#1D0D3B] px-4 py-16 text-center sm:py-20 md:px-8 lg:px-10 lg:py-24 ${
+        background === "white" ? "bg-white" : "bg-[#F7F3FF]"
+      }`}
+    >
       <div className="mx-auto max-w-[760px]">
         <h2 className="font-heading text-[clamp(42px,5vw,64px)] leading-[0.95] tracking-[-0.055em] text-[#1D0D3B]">
           {heading}

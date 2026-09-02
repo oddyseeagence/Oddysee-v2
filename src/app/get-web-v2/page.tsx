@@ -139,6 +139,7 @@ export default function GetWebV2Page() {
           partners={webPartners}
           headlineLines={null}
           variant="landing"
+          background="transparent"
         />
 
         <LandingComparison

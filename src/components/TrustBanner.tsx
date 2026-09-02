@@ -20,6 +20,7 @@ interface TrustBannerProps {
   partners?: readonly PartnerLogo[];
   headlineLines?: readonly string[] | null;
   variant?: "default" | "landing";
+  background?: "white" | "transparent";
 }
 
 export function TrustBanner({
@@ -29,6 +30,7 @@ export function TrustBanner({
     "+3 900 000 MAD for clients",
   ],
   variant = "default",
+  background = "white",
 }: TrustBannerProps = {}) {
   const { ref, isRevealed } = useScrollReveal<HTMLElement>();
   const track = [...partners, ...partners];
@@ -37,7 +39,9 @@ export function TrustBanner({
     <section
       ref={ref}
       data-reveal={isRevealed ? "visible" : "hidden"}
-      className="scroll-reveal relative bg-white"
+      className={`scroll-reveal relative ${
+        background === "transparent" ? "bg-transparent" : "bg-white"
+      }`}
     >
       <div
         className={`mx-auto max-w-[1320px] px-4 md:px-8 lg:px-10 ${

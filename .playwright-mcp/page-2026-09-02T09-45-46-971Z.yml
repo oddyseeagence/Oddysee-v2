@@ -1,0 +1,146 @@
+- generic [ref=f3e2]:
+  - main [ref=f3e3]:
+    - generic [ref=f3e6]:
+      - generic [ref=f3e7]:
+        - link "Retour à l’accueil Oddysee" [ref=f3e8] [cursor=pointer]:
+          - /url: /
+        - heading "Vos concurrents sont déjà en ligne. Pas vous." [level=1] [ref=f3e9]
+        - generic [ref=f3e10]:
+          - paragraph [ref=f3e11]: Chaque jour sans site web, c'est des clients qui achètent ailleurs. On vous met en ligne en 7 jours — avec un site qui vend, pas juste une vitrine.
+          - paragraph [ref=f3e12]: 🇺🇸 États-Unis · 🇫🇷 France · 🇧🇪 Belgique · 🇲🇦 Maroc · 🇨🇬 Congo · 🇨🇮 Côte d'Ivoire · 🇹🇩 Tchad · 🇹🇬 Togo Déjà +200 entreprises accompagnées
+          - link "Contacter un expert sur WhatsApp" [ref=f3e13] [cursor=pointer]:
+            - /url: https://www.oddysee.fr/votre-solution
+      - img "Entrepreneur porté par une flèche de croissance" [ref=f3e26]
+    - generic [ref=f3e32]:
+      - img "Puma" [ref=f3e34]
+      - img "Adidas" [ref=f3e36]
+      - img "Clinique Chifa Tasnime" [ref=f3e38]
+      - img "Menara Mall" [ref=f3e40]
+      - img "Planète Montessori" [ref=f3e42]
+      - img "Puma" [ref=f3e44]
+      - img "Adidas" [ref=f3e46]
+      - img "Clinique Chifa Tasnime" [ref=f3e48]
+      - img "Menara Mall" [ref=f3e50]
+      - img "Planète Montessori" [ref=f3e52]
+    - generic [ref=f3e54]:
+      - generic [ref=f3e56]:
+        - heading "Du besoin digital à une valeur à préciser." [level=2] [ref=f3e57]
+        - paragraph [ref=f3e58]: Les formulations ci-dessous servent uniquement à préserver la structure du futur message Site web / Workflow / WhatsApp.
+      - generic [ref=f3e59]:
+        - article [ref=f3e60]:
+          - generic [ref=f3e61]:
+            - heading "Vous vous reconnaissez ?" [level=3] [ref=f3e63]
+            - paragraph [ref=f3e68]: Voici ce que vit un entrepreneur qui n'est pas en ligne — ou qui a un site qui ne travaille pas pour lui.
+          - list [ref=f3e69]:
+            - listitem [ref=f3e70]:
+              - group [ref=f3e71]:
+                - generic "Vos clients ne vous trouvent pas." [ref=f3e72] [cursor=pointer]
+            - listitem [ref=f3e81]:
+              - group [ref=f3e82]:
+                - generic "Vos concurrents avancent. Vous les regardez." [ref=f3e83] [cursor=pointer]
+            - listitem [ref=f3e92]:
+              - group [ref=f3e93]:
+                - generic "Un client vous demande votre site. Vous n'en avez pas." [ref=f3e94] [cursor=pointer]
+            - listitem [ref=f3e103]:
+              - group [ref=f3e104]:
+                - generic "Dans un an, ce sera plus tard." [ref=f3e105] [cursor=pointer]
+        - article [ref=f3e114]:
+          - generic [ref=f3e115]:
+            - heading "Voici ce qui change dès que votre site est en ligne." [level=3] [ref=f3e117]
+            - paragraph [ref=f3e121]: Pas une promesse en l'air. Le quotidien de nos clients depuis qu'on a lancé leur site.
+          - list [ref=f3e122]:
+            - listitem [ref=f3e123]:
+              - group [ref=f3e124]:
+                - generic "Un site professionnel dont vous êtes fier." [ref=f3e125] [cursor=pointer]
+            - listitem [ref=f3e133]:
+              - group [ref=f3e134]:
+                - generic "Vos clients vous trouvent — sans effort." [ref=f3e135] [cursor=pointer]
+            - listitem [ref=f3e143]:
+              - group [ref=f3e144]:
+                - generic "Des demandes qui rentrent chaque semaine." [ref=f3e145] [cursor=pointer]
+            - listitem [ref=f3e153]:
+              - group [ref=f3e154]:
+                - generic "Vous concentrez votre énergie sur votre métier." [ref=f3e155] [cursor=pointer]
+    - generic [ref=f3e164]:
+      - heading "Ils l'ont fait. Voici leurs résultats." [level=2] [ref=f3e165]
+      - paragraph [ref=f3e166]: Des entrepreneurs qui ont pris leur place en ligne — et qui n'attendent plus le bouche-à-oreille pour vendre.
+      - generic [ref=f3e167]:
+        - generic [ref=f3e168]:
+          - term [ref=f3e169]: "+200"
+          - definition [ref=f3e170]: Entreprises accompagnées
+        - generic [ref=f3e171]:
+          - term [ref=f3e172]: 7 jours
+          - definition [ref=f3e173]: De la commande au site en ligne
+        - generic [ref=f3e174]:
+          - term [ref=f3e175]: 3 continents · 8 pays
+          - definition [ref=f3e176]: Amérique · Europe · Afrique
+        - generic [ref=f3e177]:
+          - term [ref=f3e178]: +2 M
+          - definition [ref=f3e179]: De prospects générés pour nos clients
+      - link "Contacter un expert sur WhatsApp" [ref=f3e180] [cursor=pointer]:
+        - /url: https://www.oddysee.fr/votre-solution
+    - generic [ref=f3e182]:
+      - heading "Écoutez ceux qui l'ont vécu." [level=2] [ref=f3e184]
+      - generic "Témoignages vidéo" [ref=f3e185]:
+        - article "1 sur 4" [ref=f3e186]:
+          - generic [ref=f3e187]:
+            - generic "Témoignage vidéo de Safir Mebani" [ref=f3e188]: Votre navigateur ne prend pas en charge la lecture vidéo.
+            - button "Lire le témoignage de Safir Mebani" [ref=f3e189]
+            - generic:
+              - heading "Safir Mebani" [level=3]
+              - paragraph: « En 3 semaines, j'ai eu plus de demandes qu'en 6 mois avant. »
+        - article "2 sur 4" [ref=f3e192]:
+          - generic [ref=f3e193]:
+            - generic "Témoignage vidéo de Guylaine Conquet" [ref=f3e194]: Votre navigateur ne prend pas en charge la lecture vidéo.
+            - button "Lire le témoignage de Guylaine Conquet" [ref=f3e195]
+            - generic:
+              - heading "Guylaine Conquet" [level=3]
+              - paragraph: « Aujourd'hui, mes clients me disent que mon site donne confiance. »
+        - article "3 sur 4" [ref=f3e198]:
+          - generic [ref=f3e199]:
+            - generic "Témoignage vidéo de Céline Goutil" [ref=f3e200]: Votre navigateur ne prend pas en charge la lecture vidéo.
+            - button "Lire le témoignage de Céline Goutil" [ref=f3e201]
+            - generic:
+              - heading "Céline Goutil" [level=3]
+              - paragraph: « J'ai récupéré mon investissement dès le premier mois. »
+        - article "4 sur 4" [ref=f3e204]:
+          - generic [ref=f3e205]:
+            - generic "Témoignage vidéo de Gisele Balet" [ref=f3e206]: Votre navigateur ne prend pas en charge la lecture vidéo.
+            - button "Lire le témoignage de Gisele Balet" [ref=f3e207]
+            - generic:
+              - heading "Gisele Balet" [level=3]
+              - paragraph: « Elle dépasse enfin ses peurs. »
+    - generic [ref=f3e211]:
+      - heading "Prêt à mettre votre entreprise en ligne ?" [level=2] [ref=f3e212]
+      - paragraph [ref=f3e213]: Discutez avec un expert Oddysee dès maintenant. On répond en moins d'une heure sur WhatsApp — du lundi au samedi.
+      - link [ref=f3e214] [cursor=pointer]:
+        - /url: https://www.oddysee.fr/votre-solution
+      - paragraph [ref=f3e218]: Nous répondons en moins d'une heure, du lundi au samedi.
+  - contentinfo [ref=f3e219]:
+    - generic [ref=f3e220]:
+      - generic [ref=f3e221]:
+        - link "Retour à l’accueil Oddysee" [ref=f3e222] [cursor=pointer]:
+          - /url: /
+          - img "Oddysee" [ref=f3e223]
+        - paragraph [ref=f3e224]: Ce site ne fait pas partie du site web Facebook ou de Facebook, Inc. ni de Google Inc. En outre, ce site n’est pas endossé par Facebook en aucune façon ni par Google Inc. Facebook est une marque déposée de Facebook, Inc. et Google est une marque déposée de Google Inc.
+      - generic [ref=f3e225]:
+        - paragraph [ref=f3e226]: © 2026 Oddysee. Tous droits réservés.
+        - generic [ref=f3e227]:
+          - navigation "Liens légaux" [ref=f3e228]:
+            - list [ref=f3e229]:
+              - listitem [ref=f3e230]:
+                - link "Mentions légales à confirmer" [ref=f3e231] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=f3e232]:
+                - link "Confidentialité à confirmer" [ref=f3e233] [cursor=pointer]:
+                  - /url: "#"
+          - list "Réseaux sociaux" [ref=f3e234]:
+            - listitem [ref=f3e235]:
+              - link "LinkedIn" [ref=f3e236] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=f3e239]:
+              - link "Facebook" [ref=f3e240] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=f3e243]:
+              - link "Instagram" [ref=f3e244] [cursor=pointer]:
+                - /url: "#"

@@ -86,7 +86,7 @@ export function GetWebV2Hero({
           </div>
 
           <div
-            className={`${styles.scene} relative z-10 mx-auto min-h-[430px] w-full min-w-0 max-w-[520px] sm:min-h-[540px] sm:max-w-[620px] lg:-ml-8 lg:mt-16 lg:min-h-[620px] lg:max-w-none`}
+            className={`${styles.scene} relative z-10 mx-auto min-h-[430px] w-full min-w-0 max-w-[520px] sm:min-h-[540px] sm:max-w-[620px] lg:-ml-8 lg:mt-8 lg:min-h-[620px] lg:max-w-none`}
           >
             <div
               aria-hidden="true"

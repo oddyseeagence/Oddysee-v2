@@ -1,0 +1,516 @@
+.section {
+  position: relative;
+  isolation: isolate;
+}
+
+.section::before {
+  position: absolute;
+  top: 38%;
+  left: 50%;
+  z-index: -1;
+  width: min(900px, 84vw);
+  height: 520px;
+  border-radius: 50%;
+  background: radial-gradient(
+    ellipse,
+    rgb(137 102 255 / 12%) 0%,
+    rgb(99 43 197 / 5%) 42%,
+    transparent 72%
+  );
+  content: "";
+  filter: blur(18px);
+  transform: translateX(-50%);
+}
+
+.stage {
+  position: relative;
+  width: 100%;
+  max-width: 1180px;
+  margin: 38px auto 0;
+  padding-top: clamp(280px, 80vw, 370px);
+}
+
+.glow {
+  position: absolute;
+  top: 8%;
+  left: 50%;
+  width: min(590px, 92vw);
+  height: min(360px, 62vw);
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 50% 45%, rgb(137 102 255 / 28%), transparent 58%),
+    radial-gradient(circle at 64% 62%, rgb(99 43 197 / 15%), transparent 70%);
+  filter: blur(12px);
+  transform: translateX(-50%);
+  animation: results-glow 7.5s ease-in-out infinite;
+}
+
+.phoneAnchor {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 2;
+  display: flex;
+  height: clamp(300px, 78vw, 390px);
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  perspective: 1100px;
+}
+
+.phoneFloat {
+  width: min(112%, 590px);
+  transform-origin: 50% 56%;
+  transform-style: preserve-3d;
+  will-change: transform;
+  animation: results-phone-float 9s cubic-bezier(0.45, 0, 0.2, 1) infinite;
+}
+
+.phoneImage {
+  display: block;
+  width: 100%;
+  height: auto;
+  user-select: none;
+  filter: drop-shadow(0 32px 34px rgb(29 13 59 / 22%));
+}
+
+.stats {
+  position: relative;
+  z-index: 4;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin: 0;
+}
+
+.statCard {
+  --x-a: -5px;
+  --x-b: 7px;
+  --y-a: 3px;
+  --y-b: -5px;
+  --rotation-a: -0.4deg;
+  --rotation-b: 0.5deg;
+
+  position: relative;
+  display: grid;
+  min-width: 0;
+  min-height: 132px;
+  align-content: center;
+  gap: 8px;
+  overflow: hidden;
+  padding: 18px;
+  border: 1px solid rgb(99 43 197 / 14%);
+  border-radius: 24px;
+  background: rgb(255 255 255 / 90%);
+  box-shadow:
+    0 22px 55px rgb(29 13 59 / 11%),
+    inset 0 1px 0 rgb(255 255 255 / 78%);
+  text-align: left;
+  transform-style: preserve-3d;
+  backdrop-filter: blur(15px);
+  will-change: transform;
+  animation: results-stat-drift 10.5s cubic-bezier(0.45, 0, 0.2, 1) infinite;
+}
+
+.statCard::after {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  background: #8966ff;
+  content: "";
+  opacity: 0.72;
+  transform: rotate(45deg);
+}
+
+.statValue {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  font-family: var(--font-heading), sans-serif;
+  font-size: clamp(28px, 8vw, 42px);
+  font-weight: 500;
+  line-height: 0.92;
+  letter-spacing: -0.055em;
+  color: #1d0d3b;
+}
+
+.statLabel {
+  position: relative;
+  z-index: 1;
+  max-width: 190px;
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.4;
+  color: rgb(29 13 59 / 64%);
+}
+
+.statOne,
+.statFour {
+  border-color: transparent;
+  background: linear-gradient(135deg, #632bc5, #7d48de);
+  box-shadow:
+    0 24px 58px rgb(99 43 197 / 23%),
+    inset 0 1px 0 rgb(255 255 255 / 24%);
+}
+
+.statOne .statValue,
+.statFour .statValue {
+  color: white;
+}
+
+.statOne .statLabel,
+.statFour .statLabel {
+  color: rgb(255 255 255 / 78%);
+}
+
+.statOne::after,
+.statFour::after {
+  background: white;
+  opacity: 0.55;
+}
+
+.statTwo {
+  --x-a: 5px;
+  --x-b: -8px;
+  --y-a: -3px;
+  --y-b: 6px;
+  --rotation-a: 0.45deg;
+  --rotation-b: -0.55deg;
+
+  animation-duration: 12s;
+  animation-delay: -3.1s;
+}
+
+.statThree {
+  --x-a: -7px;
+  --x-b: 6px;
+  --y-a: -4px;
+  --y-b: 5px;
+  --rotation-a: -0.55deg;
+  --rotation-b: 0.4deg;
+
+  background: rgb(247 243 255 / 92%);
+  animation-duration: 11.25s;
+  animation-delay: -6.4s;
+}
+
+.statThree .statValue {
+  font-size: clamp(24px, 6.8vw, 36px);
+}
+
+.statFour {
+  --x-a: 7px;
+  --x-b: -6px;
+  --y-a: 4px;
+  --y-b: -6px;
+  --rotation-a: 0.55deg;
+  --rotation-b: -0.4deg;
+
+  background: linear-gradient(135deg, #1d0d3b, #32135f);
+  animation-duration: 12.75s;
+  animation-delay: -8.2s;
+}
+
+.orbit {
+  position: absolute;
+  top: 22%;
+  left: 50%;
+  z-index: 1;
+  width: min(700px, 106vw);
+  height: min(330px, 52vw);
+  border: 1px solid rgb(99 43 197 / 19%);
+  border-radius: 50%;
+  pointer-events: none;
+  transform-origin: center;
+  will-change: transform;
+}
+
+.orbitOne {
+  transform: translateX(-50%) rotate(-8deg);
+  animation: results-orbit-one 16s ease-in-out infinite alternate;
+}
+
+.orbitTwo {
+  width: min(560px, 91vw);
+  height: min(390px, 66vw);
+  border-style: dashed;
+  border-color: rgb(137 102 255 / 16%);
+  transform: translateX(-50%) rotate(28deg);
+  animation: results-orbit-two 19s linear infinite;
+}
+
+.spark {
+  position: absolute;
+  z-index: 3;
+  width: 8px;
+  height: 8px;
+  border: 2px solid white;
+  border-radius: 999px;
+  background: #632bc5;
+  box-shadow: 0 0 0 7px rgb(99 43 197 / 9%);
+  pointer-events: none;
+  animation: results-spark 3.6s ease-in-out infinite;
+}
+
+.sparkOne {
+  top: 12%;
+  left: 13%;
+}
+
+.sparkTwo {
+  top: 34%;
+  right: 11%;
+  animation-delay: -1.2s;
+}
+
+.sparkThree {
+  top: 49%;
+  left: 7%;
+  width: 7px;
+  height: 7px;
+  background: #8966ff;
+  animation-delay: -2.4s;
+}
+
+.stage:hover .phoneFloat,
+.stage:hover .statCard {
+  animation-play-state: paused;
+}
+
+@media (min-width: 40rem) {
+  .stage {
+    margin-top: 48px;
+    padding-top: 390px;
+  }
+
+  .phoneAnchor {
+    height: 420px;
+  }
+
+  .statCard {
+    min-height: 142px;
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: center;
+    align-content: initial;
+    column-gap: 16px;
+    padding: 22px;
+  }
+
+  .statValue {
+    font-size: clamp(34px, 5vw, 44px);
+  }
+
+  .statThree .statValue {
+    max-width: 150px;
+    font-size: clamp(28px, 4vw, 36px);
+  }
+
+  .statLabel {
+    font-size: 13px;
+  }
+}
+
+@media (min-width: 64rem) {
+  .stage {
+    height: 600px;
+    margin-top: 48px;
+    padding-top: 0;
+  }
+
+  .phoneAnchor {
+    inset: 0;
+    height: auto;
+  }
+
+  .phoneFloat {
+    width: min(58%, 650px);
+  }
+
+  .stats {
+    position: absolute;
+    inset: 0;
+    display: block;
+  }
+
+  .statCard {
+    position: absolute;
+    min-height: 112px;
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: center;
+    gap: 18px;
+    padding: 20px 24px;
+    border-radius: 28px;
+  }
+
+  .statValue {
+    font-size: clamp(36px, 3.2vw, 48px);
+  }
+
+  .statLabel {
+    font-size: 13px;
+    line-height: 1.35;
+  }
+
+  .statOne {
+    --x-a: -18px;
+    --x-b: 20px;
+    --y-a: 7px;
+    --y-b: -10px;
+
+    top: 72px;
+    left: 1.5%;
+    width: 300px;
+  }
+
+  .statTwo {
+    --x-a: 18px;
+    --x-b: -17px;
+    --y-a: -8px;
+    --y-b: 10px;
+
+    top: 102px;
+    right: 1.5%;
+    width: 292px;
+  }
+
+  .statThree {
+    --x-a: -20px;
+    --x-b: 16px;
+    --y-a: -6px;
+    --y-b: 9px;
+
+    bottom: 92px;
+    left: 2.5%;
+    width: 350px;
+  }
+
+  .statThree .statValue {
+    max-width: 150px;
+    font-size: 34px;
+  }
+
+  .statFour {
+    --x-a: 17px;
+    --x-b: -18px;
+    --y-a: 8px;
+    --y-b: -9px;
+
+    right: 3.5%;
+    bottom: 72px;
+    width: 300px;
+  }
+
+  .orbit {
+    top: 23%;
+  }
+
+  .sparkOne {
+    top: 17%;
+    left: 21%;
+  }
+
+  .sparkTwo {
+    top: 33%;
+    right: 19%;
+  }
+
+  .sparkThree {
+    top: 66%;
+    left: 18%;
+  }
+}
+
+@keyframes results-phone-float {
+  0%,
+  100% {
+    transform: translate3d(-4px, 8px, 0) rotateX(0.6deg) rotateY(-0.8deg)
+      rotateZ(-0.5deg) scale(0.992);
+  }
+
+  42% {
+    transform: translate3d(5px, -10px, 18px) rotateX(-0.7deg) rotateY(0.9deg)
+      rotateZ(0.45deg) scale(1.008);
+  }
+
+  72% {
+    transform: translate3d(2px, -3px, 9px) rotateX(0.45deg) rotateY(0.35deg)
+      rotateZ(0.15deg) scale(1.002);
+  }
+}
+
+@keyframes results-stat-drift {
+  0%,
+  100% {
+    transform: translate3d(var(--x-a), var(--y-a), 0) rotate(var(--rotation-a));
+  }
+
+  50% {
+    transform: translate3d(var(--x-b), var(--y-b), 24px) rotate(var(--rotation-b));
+  }
+}
+
+@keyframes results-glow {
+  0%,
+  100% {
+    opacity: 0.72;
+    transform: translateX(-50%) scale(0.96);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateX(-50%) scale(1.06);
+  }
+}
+
+@keyframes results-orbit-one {
+  from {
+    transform: translateX(-50%) rotate(-11deg) scale(0.98);
+  }
+
+  to {
+    transform: translateX(-50%) rotate(-4deg) scale(1.03);
+  }
+}
+
+@keyframes results-orbit-two {
+  from {
+    transform: translateX(-50%) rotate(28deg);
+  }
+
+  to {
+    transform: translateX(-50%) rotate(388deg);
+  }
+}
+
+@keyframes results-spark {
+  0%,
+  100% {
+    opacity: 0.45;
+    transform: scale(0.82);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.14);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .phoneFloat,
+  .statCard,
+  .glow,
+  .orbitOne,
+  .orbitTwo,
+  .spark {
+    animation: none !important;
+  }
+
+  .phoneFloat,
+  .statCard {
+    transform: none;
+  }
+}

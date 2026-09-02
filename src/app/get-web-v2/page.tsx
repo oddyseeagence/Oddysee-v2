@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 
-import { CtaBand } from "@/components/CtaBand";
 import {
   TrustBanner,
   type PartnerLogo,
 } from "@/components/TrustBanner";
 import { LandingComparison } from "@/components/landing/LandingComparison";
 import { GetWebV2Hero } from "@/components/landing/GetWebV2Hero";
+import { GetWebV2Results } from "@/components/landing/GetWebV2Results";
 import { LandingLegal } from "@/components/landing/LandingLegal";
 import { LandingVideoTestimonials } from "@/components/landing/LandingVideoTestimonials";
 import { LandingWhatsAppCta } from "@/components/landing/LandingWhatsAppCta";
@@ -154,14 +154,12 @@ export default function GetWebV2Page() {
           benefits={benefits}
         />
 
-        <CtaBand
+        <GetWebV2Results
           heading={campaign.midCtaHeading}
-          headingSize="display"
           description={campaign.midCtaDescription}
           stats={clientStats}
           ctaLabel={campaign.ctaLabel}
           ctaHref={campaign.ctaHref}
-          density="compact"
         />
 
         <LandingVideoTestimonials />

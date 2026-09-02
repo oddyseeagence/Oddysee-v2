@@ -64,7 +64,7 @@ export function GetWebV2Hero({
               </p>
             ) : null}
 
-            <h1 className="hero-reveal mt-4 max-w-[800px] opacity-0 animate-[fadeUp_0.6s_ease-out_forwards] font-heading text-[52px] font-medium leading-[0.88] tracking-[-0.065em] [animation-delay:100ms] sm:text-[68px] md:text-[88px] lg:text-[clamp(78px,7vw,108px)]">
+            <h1 className={`${styles.headline} hero-reveal mt-4 max-w-[800px] opacity-0 animate-[fadeUp_0.6s_ease-out_forwards] font-heading text-[52px] font-medium leading-[0.88] tracking-[-0.065em] [animation-delay:100ms] sm:text-[68px] md:text-[88px] lg:text-[clamp(78px,7vw,108px)]`}>
               {headline}
             </h1>
 

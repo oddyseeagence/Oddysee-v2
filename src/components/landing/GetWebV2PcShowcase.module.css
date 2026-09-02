@@ -1,0 +1,291 @@
+.section {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      ellipse 72% 62% at 50% 32%,
+      #ffffff 0%,
+      rgb(255 255 255 / 82%) 48%,
+      transparent 100%
+    ),
+    linear-gradient(
+      180deg,
+      #ffffff 0%,
+      #ffffff 26%,
+      #fbf9ff 64%,
+      #f7f3ff 100%
+    );
+}
+
+.stage {
+  position: relative;
+  height: clamp(360px, 96vw, 440px);
+  perspective: 1400px;
+}
+
+.glow {
+  position: absolute;
+  bottom: 2%;
+  left: 50%;
+  z-index: 0;
+  width: min(880px, 94vw);
+  height: 58%;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 50% 56%, rgb(137 102 255 / 22%), transparent 52%),
+    radial-gradient(circle at 62% 48%, rgb(99 43 197 / 11%), transparent 68%);
+  filter: blur(18px);
+  transform: translateX(-50%);
+  will-change: opacity, transform;
+  animation: pc-showcase-glow 8.5s ease-in-out infinite;
+}
+
+.marquee {
+  position: absolute;
+  right: 0;
+  left: 0;
+  z-index: 1;
+  overflow: hidden;
+  font-family: var(--font-heading), sans-serif;
+  font-size: clamp(62px, 19vw, 86px);
+  font-weight: 500;
+  line-height: 0.84;
+  letter-spacing: -0.065em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  pointer-events: none;
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    black 8%,
+    black 92%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    black 8%,
+    black 92%,
+    transparent 100%
+  );
+  transition: opacity 700ms ease;
+}
+
+.marqueePrimary {
+  top: 8%;
+  color: rgb(99 43 197 / 16%);
+}
+
+.marqueeSecondary {
+  top: 61%;
+  color: transparent;
+  opacity: 0.34;
+  -webkit-text-stroke: 1px rgb(29 13 59 / 45%);
+}
+
+.track {
+  display: flex;
+  width: max-content;
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+.track span {
+  flex: none;
+  padding-right: 0.22em;
+}
+
+.trackPrimary {
+  animation: pc-showcase-marquee-left 42s linear infinite;
+}
+
+.trackSecondary {
+  animation: pc-showcase-marquee-right 48s linear infinite;
+  animation-delay: -15s;
+}
+
+.pcAnchor {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 36px;
+  pointer-events: none;
+  transform-origin: center bottom;
+  transition:
+    opacity 800ms ease,
+    transform 900ms cubic-bezier(0.2, 0.75, 0.2, 1);
+}
+
+.pcFloat {
+  width: min(94vw, 560px);
+}
+
+.pcImage {
+  display: block;
+  width: 100%;
+  height: auto;
+  user-select: none;
+}
+
+.groundShadow {
+  position: absolute;
+  bottom: 8%;
+  left: 50%;
+  z-index: 2;
+  width: min(720px, 76vw);
+  height: 9%;
+  border-radius: 50%;
+  background: radial-gradient(ellipse, rgb(29 13 59 / 22%), transparent 68%);
+  filter: blur(11px);
+  opacity: 0.38;
+  transform: translateX(-50%);
+  will-change: opacity, transform;
+  animation: pc-showcase-shadow 10s cubic-bezier(0.45, 0, 0.2, 1) infinite;
+}
+
+.section[data-reveal="hidden"] .marquee,
+.section[data-reveal="hidden"] .pcAnchor {
+  opacity: 0;
+}
+
+.section[data-reveal="hidden"] .glow,
+.section[data-reveal="hidden"] .groundShadow {
+  visibility: hidden;
+}
+
+.section[data-reveal="hidden"] .pcAnchor {
+  transform: translateY(24px) scale(0.97);
+}
+
+.section[data-reveal="hidden"] .track,
+.section[data-reveal="hidden"] .glow,
+.section[data-reveal="hidden"] .groundShadow {
+  animation-play-state: paused;
+}
+
+@media (min-width: 40rem) {
+  .stage {
+    height: clamp(500px, 70vw, 620px);
+  }
+
+  .marquee {
+    font-size: clamp(88px, 15vw, 136px);
+  }
+
+  .marqueePrimary {
+    top: 12%;
+  }
+
+  .marqueeSecondary {
+    top: 59%;
+  }
+
+  .pcAnchor {
+    padding-bottom: 40px;
+  }
+
+  .pcFloat {
+    width: min(90vw, 840px);
+  }
+}
+
+@media (min-width: 64rem) {
+  .stage {
+    height: clamp(620px, 58vw, 780px);
+  }
+
+  .marquee {
+    font-size: clamp(112px, 11vw, 178px);
+  }
+
+  .marqueePrimary {
+    top: 16%;
+  }
+
+  .marqueeSecondary {
+    top: 58%;
+  }
+
+  .pcAnchor {
+    padding-bottom: 44px;
+  }
+
+  .pcFloat {
+    width: min(82vw, 1100px);
+  }
+}
+
+@keyframes pc-showcase-marquee-left {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@keyframes pc-showcase-marquee-right {
+  from {
+    transform: translate3d(-50%, 0, 0);
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes pc-showcase-glow {
+  0%,
+  100% {
+    opacity: 0.7;
+    transform: translateX(-50%) scale(0.96);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateX(-50%) scale(1.06);
+  }
+}
+
+@keyframes pc-showcase-shadow {
+  0%,
+  100% {
+    opacity: 0.38;
+    transform: translateX(-50%) scaleX(0.92);
+  }
+
+  46% {
+    opacity: 0.26;
+    transform: translateX(-50%) scaleX(0.82);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .track,
+  .glow,
+  .groundShadow {
+    animation: none !important;
+  }
+
+  .trackPrimary {
+    transform: translate3d(-14%, 0, 0);
+  }
+
+  .trackSecondary {
+    transform: translate3d(-32%, 0, 0);
+  }
+
+  .section[data-reveal="hidden"] .marquee,
+  .section[data-reveal="hidden"] .pcAnchor {
+    opacity: 1;
+  }
+
+  .section[data-reveal="hidden"] .pcAnchor {
+    transform: none;
+  }
+}

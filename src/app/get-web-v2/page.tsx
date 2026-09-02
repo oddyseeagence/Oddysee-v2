@@ -6,6 +6,7 @@ import {
 } from "@/components/TrustBanner";
 import { LandingComparison } from "@/components/landing/LandingComparison";
 import { GetWebV2Hero } from "@/components/landing/GetWebV2Hero";
+import { GetWebV2PcShowcase } from "@/components/landing/GetWebV2PcShowcase";
 import { GetWebV2Results } from "@/components/landing/GetWebV2Results";
 import { LandingLegal } from "@/components/landing/LandingLegal";
 import { LandingVideoTestimonials } from "@/components/landing/LandingVideoTestimonials";
@@ -49,15 +50,15 @@ const clientStats = [
   },
   {
     value: "7 jours",
-    label: "De la commande au site en ligne",
+    label: "De la commande au\nsite en ligne",
   },
   {
-    value: "3 continents · 8 pays",
-    label: "Amérique · Europe · Afrique",
+    value: "3 continents\n8 pays",
+    label: "Amérique · Europe ·\nAfrique",
   },
   {
     value: "+2 M",
-    label: "De prospects générés pour nos clients",
+    label: "De prospects générés\npour nos clients",
   },
 ] as const;
 
@@ -141,6 +142,8 @@ export default function GetWebV2Page() {
           variant="landing"
           background="transparent"
         />
+
+        <GetWebV2PcShowcase />
 
         <LandingComparison
           eyebrow=""

@@ -1,0 +1,192 @@
+- generic [ref=e2]:
+  - main [ref=e3]:
+    - generic [ref=e6]:
+      - generic [ref=e7]:
+        - link "Retour à l’accueil Oddysee" [ref=e8] [cursor=pointer]:
+          - /url: /
+        - heading "Vos concurrents sont déjà en ligne. Pas vous." [level=1] [ref=e9]
+        - generic [ref=e10]:
+          - paragraph [ref=e11]: Chaque jour sans site web, c'est des clients qui achètent ailleurs. On vous met en ligne en 7 jours — avec un site qui vend, pas juste une vitrine.
+          - paragraph [ref=e12]: 🇺🇸 États-Unis · 🇫🇷 France · 🇧🇪 Belgique · 🇲🇦 Maroc · 🇨🇬 Congo · 🇨🇮 Côte d'Ivoire · 🇹🇩 Tchad · 🇹🇬 Togo Déjà +200 entreprises accompagnées
+          - link "Contacter un expert sur WhatsApp" [ref=e13] [cursor=pointer]:
+            - /url: https://www.oddysee.fr/votre-solution
+      - img "Entrepreneur porté par une flèche de croissance" [ref=e26]
+    - region [ref=e28]:
+      - heading "Votre présence digitale, prête à convertir" [level=2] [ref=e29]
+      - generic [ref=e30]:
+        - generic [aria-hidden]:
+          - generic:
+            - generic: VOTRE SITE · EN LIGNE · EN 7 JOURS ·
+            - generic: VOTRE SITE · EN LIGNE · EN 7 JOURS ·
+        - generic [aria-hidden]:
+          - generic:
+            - generic: PLUS DE CLIENTS · PLUS DE VENTES ·
+            - generic: PLUS DE CLIENTS · PLUS DE VENTES ·
+        - generic:
+          - generic:
+            - img "Solution digitale Oddysee présentée sur un ordinateur portable"
+    - generic [ref=e37]:
+      - img "Puma" [ref=e39]
+      - img "Adidas" [ref=e41]
+      - img "Clinique Chifa Tasnime" [ref=e43]
+      - img "Menara Mall" [ref=e45]
+      - img "Planète Montessori" [ref=e47]
+      - img "Puma" [ref=e49]
+      - img "Adidas" [ref=e51]
+      - img "Clinique Chifa Tasnime" [ref=e53]
+      - img "Menara Mall" [ref=e55]
+      - img "Planète Montessori" [ref=e57]
+    - generic [ref=e59]:
+      - generic [ref=e61]:
+        - heading "Du besoin digital à une valeur à préciser." [level=2] [ref=e62]
+        - paragraph [ref=e63]: Les formulations ci-dessous servent uniquement à préserver la structure du futur message Site web / Workflow / WhatsApp.
+      - generic [ref=e64]:
+        - article [ref=e65]:
+          - generic [ref=e66]:
+            - heading "Vous vous reconnaissez ?" [level=3] [ref=e68]
+            - paragraph [ref=e73]: Voici ce que vit un entrepreneur qui n'est pas en ligne — ou qui a un site qui ne travaille pas pour lui.
+          - list [ref=e74]:
+            - listitem [ref=e75]:
+              - group [ref=e76]:
+                - generic "Vos clients ne vous trouvent pas." [ref=e77] [cursor=pointer]
+            - listitem [ref=e86]:
+              - group [ref=e87]:
+                - generic "Vos concurrents avancent. Vous les regardez." [ref=e88] [cursor=pointer]
+            - listitem [ref=e97]:
+              - group [ref=e98]:
+                - generic "Un client vous demande votre site. Vous n'en avez pas." [ref=e99] [cursor=pointer]
+            - listitem [ref=e108]:
+              - group [ref=e109]:
+                - generic "Dans un an, ce sera plus tard." [ref=e110] [cursor=pointer]
+        - article [ref=e119]:
+          - generic [ref=e120]:
+            - heading "Voici ce qui change dès que votre site est en ligne." [level=3] [ref=e122]
+            - paragraph [ref=e126]: Pas une promesse en l'air. Le quotidien de nos clients depuis qu'on a lancé leur site.
+          - list [ref=e127]:
+            - listitem [ref=e128]:
+              - group [ref=e129]:
+                - generic "Un site professionnel dont vous êtes fier." [ref=e130] [cursor=pointer]
+            - listitem [ref=e138]:
+              - group [ref=e139]:
+                - generic "Vos clients vous trouvent — sans effort." [ref=e140] [cursor=pointer]
+            - listitem [ref=e148]:
+              - group [ref=e149]:
+                - generic "Des demandes qui rentrent chaque semaine." [ref=e150] [cursor=pointer]
+            - listitem [ref=e158]:
+              - group [ref=e159]:
+                - generic "Vous concentrez votre énergie sur votre métier." [ref=e160] [cursor=pointer]
+    - generic [ref=e169]:
+      - heading "Ils l'ont fait. Voici leurs résultats." [level=2] [ref=e170]
+      - paragraph [ref=e171]: Des entrepreneurs qui ont pris leur place en ligne — et qui n'attendent plus le bouche-à-oreille pour vendre.
+      - generic [ref=e172]:
+        - generic:
+          - generic:
+            - img "Profil Oddysee présenté sur un smartphone"
+        - generic [ref=e174]:
+          - generic [ref=e175]:
+            - term [ref=e176]: "+200"
+            - definition [ref=e177]: Entreprises accompagnées
+          - generic [ref=e178]:
+            - term [ref=e179]: 7 jours
+            - definition [ref=e180]: De la commande au site en ligne
+          - generic [ref=e181]:
+            - term [ref=e182]: 3 continents · 8 pays
+            - definition [ref=e183]: Amérique · Europe · Afrique
+          - generic [ref=e184]:
+            - term [ref=e185]: +2 M
+            - definition [ref=e186]: De prospects générés pour nos clients
+      - link "Contacter un expert sur WhatsApp" [ref=e187] [cursor=pointer]:
+        - /url: https://www.oddysee.fr/votre-solution
+    - generic [ref=e191]:
+      - heading "Écoutez ceux qui l'ont vécu." [level=2] [ref=e193]
+      - generic "Témoignages vidéo" [ref=e194]:
+        - article "1 sur 4" [ref=e195]:
+          - generic [ref=e196]:
+            - generic "Témoignage vidéo de Safir Mebani" [ref=e197]: Votre navigateur ne prend pas en charge la lecture vidéo.
+            - button "Lire le témoignage de Safir Mebani" [ref=e198]
+            - generic:
+              - heading "Safir Mebani" [level=3]
+              - paragraph: « En 3 semaines, j'ai eu plus de demandes qu'en 6 mois avant. »
+        - article "2 sur 4" [ref=e201]:
+          - generic [ref=e202]:
+            - generic "Témoignage vidéo de Guylaine Conquet" [ref=e203]: Votre navigateur ne prend pas en charge la lecture vidéo.
+            - button "Lire le témoignage de Guylaine Conquet" [ref=e204]
+            - generic:
+              - heading "Guylaine Conquet" [level=3]
+              - paragraph: « Aujourd'hui, mes clients me disent que mon site donne confiance. »
+        - article "3 sur 4" [ref=e207]:
+          - generic [ref=e208]:
+            - generic "Témoignage vidéo de Céline Goutil" [ref=e209]: Votre navigateur ne prend pas en charge la lecture vidéo.
+            - button "Lire le témoignage de Céline Goutil" [ref=e210]
+            - generic:
+              - heading "Céline Goutil" [level=3]
+              - paragraph: « J'ai récupéré mon investissement dès le premier mois. »
+        - article "4 sur 4" [ref=e213]:
+          - generic [ref=e214]:
+            - generic "Témoignage vidéo de Gisele Balet" [ref=e215]: Votre navigateur ne prend pas en charge la lecture vidéo.
+            - button "Lire le témoignage de Gisele Balet" [ref=e216]
+            - generic:
+              - heading "Gisele Balet" [level=3]
+              - paragraph: « Elle dépasse enfin ses peurs. »
+        - article [aria-hidden]:
+          - generic:
+            - generic: Votre navigateur ne prend pas en charge la lecture vidéo.
+            - button
+            - generic:
+              - heading [level=3]: Safir Mebani
+              - paragraph: « En 3 semaines, j'ai eu plus de demandes qu'en 6 mois avant. »
+        - article [aria-hidden]:
+          - generic:
+            - generic: Votre navigateur ne prend pas en charge la lecture vidéo.
+            - button
+            - generic:
+              - heading [level=3]: Guylaine Conquet
+              - paragraph: « Aujourd'hui, mes clients me disent que mon site donne confiance. »
+        - article [aria-hidden]:
+          - generic:
+            - generic: Votre navigateur ne prend pas en charge la lecture vidéo.
+            - button
+            - generic:
+              - heading [level=3]: Céline Goutil
+              - paragraph: « J'ai récupéré mon investissement dès le premier mois. »
+        - article [aria-hidden]:
+          - generic:
+            - generic: Votre navigateur ne prend pas en charge la lecture vidéo.
+            - button
+            - generic:
+              - heading [level=3]: Gisele Balet
+              - paragraph: « Elle dépasse enfin ses peurs. »
+    - generic [ref=e220]:
+      - heading "Prêt à mettre votre entreprise en ligne ?" [level=2] [ref=e221]
+      - paragraph [ref=e222]: Discutez avec un expert Oddysee dès maintenant. On répond en moins d'une heure sur WhatsApp — du lundi au samedi.
+      - link [ref=e223] [cursor=pointer]:
+        - /url: https://www.oddysee.fr/votre-solution
+      - paragraph [ref=e227]: Nous répondons en moins d'une heure, du lundi au samedi.
+  - contentinfo [ref=e228]:
+    - generic [ref=e229]:
+      - generic [ref=e230]:
+        - link "Retour à l’accueil Oddysee" [ref=e231] [cursor=pointer]:
+          - /url: /
+          - img "Oddysee" [ref=e232]
+        - paragraph [ref=e233]: Ce site ne fait pas partie du site web Facebook ou de Facebook, Inc. ni de Google Inc. En outre, ce site n’est pas endossé par Facebook en aucune façon ni par Google Inc. Facebook est une marque déposée de Facebook, Inc. et Google est une marque déposée de Google Inc.
+      - generic [ref=e234]:
+        - paragraph [ref=e235]: © 2026 Oddysee. Tous droits réservés.
+        - generic [ref=e236]:
+          - navigation "Liens légaux" [ref=e237]:
+            - list [ref=e238]:
+              - listitem [ref=e239]:
+                - link "Mentions légales à confirmer" [ref=e240] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e241]:
+                - link "Confidentialité à confirmer" [ref=e242] [cursor=pointer]:
+                  - /url: "#"
+          - list "Réseaux sociaux" [ref=e243]:
+            - listitem [ref=e244]:
+              - link "LinkedIn" [ref=e245] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e248]:
+              - link "Facebook" [ref=e249] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e252]:
+              - link "Instagram" [ref=e253] [cursor=pointer]:
+                - /url: "#"

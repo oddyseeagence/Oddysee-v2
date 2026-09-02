@@ -3,6 +3,12 @@
   transform-style: preserve-3d;
 }
 
+@media (max-width: 39.9375rem) {
+  .headline {
+    font-size: clamp(56px, 15vw, 64px);
+  }
+}
+
 .float {
   transform-origin: 52% 54%;
   transform-style: preserve-3d;

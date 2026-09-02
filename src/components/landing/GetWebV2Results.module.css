@@ -185,6 +185,10 @@
   animation-delay: -3.1s;
 }
 
+.statTwo .statLabel {
+  white-space: pre-line;
+}
+
 .statThree {
   --x-a: -7px;
   --x-b: 6px;
@@ -194,12 +198,18 @@
   --rotation-b: 0.4deg;
 
   background: rgb(247 243 255 / 92%);
+  grid-column: 1 / -1;
   animation-duration: 11.25s;
   animation-delay: -6.4s;
 }
 
 .statThree .statValue {
   font-size: clamp(24px, 6.8vw, 36px);
+  white-space: pre;
+}
+
+.statThree .statLabel {
+  white-space: pre-line;
 }
 
 .statFour {
@@ -213,6 +223,38 @@
   background: linear-gradient(135deg, #1d0d3b, #32135f);
   animation-duration: 12.75s;
   animation-delay: -8.2s;
+}
+
+.statFour .statLabel {
+  white-space: pre-line;
+}
+
+@media (max-width: 39.9375rem) {
+  .stats {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+  }
+
+  .statCard,
+  .statThree,
+  .statFour {
+    display: grid;
+    grid-column: auto;
+    grid-template-columns: minmax(142px, 0.95fr) minmax(0, 1fr);
+    align-items: center;
+    align-content: initial;
+    column-gap: 18px;
+    min-height: 116px;
+    padding: 18px 20px;
+    animation: none;
+    transform: none;
+  }
+
+  .statLabel,
+  .statThree .statLabel,
+  .statFour .statLabel {
+    max-width: none;
+  }
 }
 
 .orbit {
@@ -305,8 +347,13 @@
   }
 
   .statThree .statValue {
-    max-width: 150px;
+    max-width: none;
     font-size: clamp(28px, 4vw, 36px);
+  }
+
+  .statThree,
+  .statFour {
+    grid-column: auto;
   }
 
   .statLabel {
@@ -374,7 +421,7 @@
 
     top: 102px;
     right: 1.5%;
-    width: 292px;
+    width: 360px;
   }
 
   .statThree {
@@ -385,11 +432,12 @@
 
     bottom: 92px;
     left: 2.5%;
-    width: 350px;
+    width: 380px;
+    grid-column: auto;
   }
 
   .statThree .statValue {
-    max-width: 150px;
+    max-width: none;
     font-size: 34px;
   }
 
@@ -401,7 +449,7 @@
 
     right: 3.5%;
     bottom: 72px;
-    width: 300px;
+    width: 360px;
   }
 
   .orbit {

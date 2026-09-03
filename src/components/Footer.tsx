@@ -2,6 +2,7 @@ import type { ComponentType, SVGProps } from "react";
 
 import {
   ChevronDownIcon,
+  FacebookIcon,
   InstagramIcon,
   LinkedInIcon,
 } from "@/components/icons";
@@ -80,8 +81,14 @@ const footerColumns: FooterColumn[] = [
       {
         heading: "Suivez-nous",
         links: [
-          { label: "LinkedIn", href: "#" },
-          { label: "Instagram", href: "#" },
+          {
+            label: "LinkedIn",
+            href: "https://www.linkedin.com/company/oddyseefr/posts/?feedView=all",
+          },
+          {
+            label: "Instagram",
+            href: "https://www.instagram.com/oddysee.agence/",
+          },
         ],
       },
     ],
@@ -99,8 +106,21 @@ const socialLinks: {
   href: string;
   Icon: ComponentType<SVGProps<SVGSVGElement>>;
 }[] = [
-  { label: "LinkedIn", href: "#", Icon: LinkedInIcon },
-  { label: "Instagram", href: "#", Icon: InstagramIcon },
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/company/oddyseefr/posts/?feedView=all",
+    Icon: LinkedInIcon,
+  },
+  {
+    label: "Instagram",
+    href: "https://www.instagram.com/oddysee.agence/",
+    Icon: InstagramIcon,
+  },
+  {
+    label: "Facebook",
+    href: "https://www.facebook.com/oddysee.fr",
+    Icon: FacebookIcon,
+  },
 ];
 
 const linkClassName =

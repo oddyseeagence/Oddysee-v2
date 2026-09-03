@@ -80,7 +80,7 @@ export function LandingLegal({
             >
               <li className="h-4">
                 <a
-                  href="#"
+                  href="https://www.linkedin.com/company/oddyseefr/posts/?feedView=all"
                   aria-label="LinkedIn"
                   className="flex h-4 w-4 items-center justify-center transition hover:text-[#632BC5] focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#632BC5]"
                 >
@@ -89,7 +89,7 @@ export function LandingLegal({
               </li>
               <li className="h-4">
                 <a
-                  href="#"
+                  href="https://www.facebook.com/oddysee.fr"
                   aria-label="Facebook"
                   className="flex h-4 w-4 items-center justify-center transition hover:text-[#632BC5] focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#632BC5]"
                 >
@@ -98,7 +98,7 @@ export function LandingLegal({
               </li>
               <li className="h-4">
                 <a
-                  href="#"
+                  href="https://www.instagram.com/oddysee.agence/"
                   aria-label="Instagram"
                   className="flex h-4 w-4 items-center justify-center transition hover:text-[#632BC5] focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#632BC5]"
                 >

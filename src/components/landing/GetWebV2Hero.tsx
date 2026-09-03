@@ -64,12 +64,12 @@ export function GetWebV2Hero({
               </p>
             ) : null}
 
-            <h1 className={`${styles.headline} hero-reveal mt-4 max-w-[800px] opacity-0 animate-[fadeUp_0.6s_ease-out_forwards] font-heading text-[52px] font-medium leading-[0.88] tracking-[-0.065em] [animation-delay:100ms] sm:text-[68px] md:text-[88px] lg:text-[clamp(78px,7vw,108px)]`}>
+            <h1 className={`${styles.headline} hero-reveal mt-4 max-w-[800px] opacity-0 animate-[fadeUp_0.6s_ease-out_forwards] font-heading text-[52px] font-medium leading-[0.88] tracking-[-0.065em] [animation-delay:100ms] sm:text-[68px] md:text-[88px] lg:text-[clamp(82px,5vw,96px)]`}>
               {headline}
             </h1>
 
-            <div className="mt-8 max-w-[650px] sm:mt-10">
-              <p className="hero-reveal max-w-[620px] opacity-0 animate-[fadeUp_0.6s_ease-out_forwards] text-[19px] font-medium leading-[1.4] tracking-[-0.025em] text-[#1D0D3B]/65 [animation-delay:220ms] sm:text-[21px] lg:text-[23px]">
+            <div className="mt-8 max-w-[650px] sm:mt-10 lg:mt-8">
+              <p className="hero-reveal max-w-[620px] opacity-0 animate-[fadeUp_0.6s_ease-out_forwards] text-[19px] font-medium leading-[1.4] tracking-[-0.025em] text-[#1D0D3B]/65 [animation-delay:220ms] sm:text-[21px]">
                 {description}
               </p>
               <div className="hidden lg:block">
@@ -81,7 +81,7 @@ export function GetWebV2Hero({
                 <LandingCta
                   label={ctaLabel}
                   href={ctaHref}
-                  className="hero-reveal mt-7 opacity-0 animate-[fadeUp_0.6s_ease-out_forwards] [animation-delay:400ms] sm:mt-8"
+                  className="hero-reveal mt-7 opacity-0 animate-[fadeUp_0.6s_ease-out_forwards] [animation-delay:400ms] sm:mt-8 lg:mt-7"
                 />
               </div>
             </div>

@@ -1,39 +1,34 @@
 import type { Metadata } from "next";
 
-import { CtaBand } from "@/components/CtaBand";
 import {
   TrustBanner,
   type PartnerLogo,
 } from "@/components/TrustBanner";
 import { LandingComparison } from "@/components/landing/LandingComparison";
-import { LandingHeader } from "@/components/landing/LandingHeader";
-import { LandingHero } from "@/components/landing/LandingHero";
+import { GetWebV2Hero } from "@/components/landing/GetWebV2Hero";
+import { GetWebV2PcShowcase } from "@/components/landing/GetWebV2PcShowcase";
+import { GetWebV2Results } from "@/components/landing/GetWebV2Results";
 import { LandingLegal } from "@/components/landing/LandingLegal";
-import { LandingVideoBlock } from "@/components/landing/LandingVideoBlock";
 import { LandingVideoTestimonials } from "@/components/landing/LandingVideoTestimonials";
 import { LandingWhatsAppCta } from "@/components/landing/LandingWhatsAppCta";
 
-// TODO: replace with approved /get-web campaign metadata.
+// TODO: replace with approved /get-web-v2 campaign metadata.
 export const metadata: Metadata = {
   title: "Oddysee/Web",
   description:
     "Présentation temporaire de la future campagne Site web / Workflow / WhatsApp Oddysee.",
 };
 
-// TODO: replace every placeholder below with approved /get-web campaign content.
+// TODO: replace every placeholder below with approved /get-web-v2 campaign content.
 // The whiteboard term "W/As Bot" is interpreted here as WhatsApp only as an
 // unapproved, replaceable thematic reference.
 const campaign = {
   headline: "Vos concurrents sont déjà en ligne. Pas vous.",
   introduction:
-    "Chaque jour sans site web, c'est des clients qui achètent ailleurs. On vous met en ligne en 7 jours — avec un site qui vend, pas juste une vitrine.",
+    "Chaque jour sans site web, c'est des clients qui achètent ailleurs. On vous met en ligne en 7 jours avec un site qui vend, pas juste une vitrine.",
   introductionSubdescription:
     "🇺🇸 États-Unis · 🇫🇷 France · 🇧🇪 Belgique · 🇲🇦 Maroc · 🇨🇬 Congo · 🇨🇮 Côte d'Ivoire · 🇹🇩 Tchad · 🇹🇬 Togo Déjà +200 entreprises accompagnées",
-  videoHeading:
-    "Découvrez comment on transforme votre activité en machine à clients — en moins de 3 minutes.",
-  videoDescription:
-    "Regardez la vidéo avant de cliquer ci-dessous  ",
-  // TODO: replace with the approved /get-web CTA label.
+  // TODO: replace with the approved /get-web-v2 CTA label.
   ctaLabel: "Contacter un expert sur WhatsApp",
   ctaHref: "https://www.oddysee.fr/votre-solution",
   comparisonHeading: "Du besoin digital à une valeur à préciser.",
@@ -41,10 +36,10 @@ const campaign = {
     "Les formulations ci-dessous servent uniquement à préserver la structure du futur message Site web / Workflow / WhatsApp.",
   midCtaHeading: "Ils l'ont fait. Voici leurs résultats.",
   midCtaDescription:
-    "Des entrepreneurs qui ont pris leur place en ligne — et qui n'attendent plus le bouche-à-oreille pour vendre.",
+    "Des entrepreneurs qui ont pris leur place en ligne et qui n'attendent plus le bouche-à-oreille pour vendre.",
   finalCtaHeading: "Prêt à mettre votre entreprise en ligne ?",
   finalCtaDescription:
-    "Discutez avec un expert Oddysee dès maintenant. On répond en moins d'une heure sur WhatsApp — du lundi au samedi.",
+    "Discutez avec un expert Oddysee dès maintenant. On répond en moins d'une heure sur WhatsApp du lundi au samedi.",
   finalCtaLabel: "Contacter un expert maintenant",
 } as const;
 
@@ -55,29 +50,29 @@ const clientStats = [
   },
   {
     value: "7 jours",
-    label: "De la commande au site en ligne",
+    label: "De la commande au\nsite en ligne",
   },
   {
-    value: "3 continents · 8 pays",
-    label: "Amérique · Europe · Afrique",
+    value: "3 continents\n8 pays",
+    label: "Amérique · Europe ·\nAfrique",
   },
   {
     value: "+2 M",
-    label: "De prospects générés pour nos clients",
+    label: "De prospects générés\npour nos clients",
   },
 ] as const;
 
-// TODO: replace with approved /get-web problem statements.
+// TODO: replace with approved /get-web-v2 problem statements.
 const problems = [
   {
     title: "Vos clients ne vous trouvent pas.",
     description:
-      "Ils cherchent votre service sur Google, sur Facebook, sur Instagram. Ils tombent sur vos concurrents. Ils achètent chez eux.\n\nVous, vous restez avec votre bouche-à-oreille — utile, mais imprévisible.",
+      "Ils cherchent votre service sur Google, sur Facebook, sur Instagram. Ils tombent sur vos concurrents. Ils achètent chez eux.\n\nVous, vous restez avec votre bouche-à-oreille utile, mais imprévisible.",
   },
   {
     title: "Vos concurrents avancent. Vous les regardez.",
     description:
-      "Chaque semaine, un nouveau concurrent lance son site. Sa boutique en ligne. Sa présence WhatsApp automatisée.\n\nPendant ce temps, votre entreprise reste dépendante des clients de proximité — et de ce qu'ils veulent bien raconter de vous.",
+      "Chaque semaine, un nouveau concurrent lance son site. Sa boutique en ligne. Sa présence WhatsApp automatisée.\n\nPendant ce temps, votre entreprise reste dépendante des clients de proximité et de ce qu'ils veulent bien raconter de vous.",
   },
   {
     title: "Un client vous demande votre site. Vous n'en avez pas.",
@@ -87,11 +82,11 @@ const problems = [
   {
     title: "Dans un an, ce sera plus tard.",
     description:
-      "Internet se démocratise à grande vitesse en Afrique francophone. Les entreprises qui prennent leur place maintenant domineront leur marché demain.\n\nCelles qui attendent devront rattraper — à un coût beaucoup plus élevé, avec une concurrence beaucoup plus dense.",
+      "Internet se démocratise à grande vitesse en Afrique francophone. Les entreprises qui prennent leur place maintenant domineront leur marché demain.\n\nCelles qui attendent devront rattraper à un coût beaucoup plus élevé, avec une concurrence beaucoup plus dense.",
   },
 ] as const;
 
-// TODO: replace with approved /get-web value statements.
+// TODO: replace with approved /get-web-v2 value statements.
 const benefits = [
   {
     title: "Un site professionnel dont vous êtes fier.",
@@ -99,23 +94,23 @@ const benefits = [
       "Quand un client vous demande votre site, vous envoyez le lien avec assurance. Il découvre une entreprise sérieuse, structurée, professionnelle. La conversation commence bien avant votre premier échange.",
   },
   {
-    title: "Vos clients vous trouvent — sans effort.",
+    title: "Vos clients vous trouvent sans effort.",
     description:
-      "Votre site apparaît sur Google. Votre présence sur les réseaux devient cohérente. Les personnes qui cherchent votre service dans votre ville tombent sur vous — pas sur vos concurrents.",
+      "Votre site apparaît sur Google. Votre présence sur les réseaux devient cohérente. Les personnes qui cherchent votre service dans votre ville tombent sur vous pas sur vos concurrents.",
   },
   {
     title: "Des demandes qui rentrent chaque semaine.",
     description:
-      "Le formulaire de votre site remonte les demandes directement dans WhatsApp. Vous répondez en un clic. Chaque visiteur intéressé devient un client potentiel — même à 22h ou le dimanche.",
+      "Le formulaire de votre site remonte les demandes directement dans WhatsApp. Vous répondez en un clic. Chaque visiteur intéressé devient un client potentiel même à 22h ou le dimanche.",
   },
   {
     title: "Vous concentrez votre énergie sur votre métier.",
     description:
-      "Plus besoin de courir après les clients. Plus besoin d'expliquer votre activité à chaque conversation. Votre site travaille pour vous — pendant que vous faites ce que vous savez faire de mieux.",
+      "Plus besoin de courir après les clients. Plus besoin d'expliquer votre activité à chaque conversation. Votre site travaille pour vous pendant que vous faites ce que vous savez faire de mieux.",
   },
 ] as const;
 
-// TODO: replace with approved /get-web partner proof. This temporary selection
+// TODO: replace with approved /get-web-v2 partner proof. This temporary selection
 // preserves the shared layout and does not attribute Website, Workflow, WhatsApp,
 // bot, or automation services to these partners.
 const webPartners: readonly PartnerLogo[] = [
@@ -129,29 +124,14 @@ const webPartners: readonly PartnerLogo[] = [
   { name: "Planète Montessori", src: "/images/partners/pmis.svg" },
 ];
 
-export default function GetWebPage() {
+export default function GetWebV2Page() {
   return (
     <div className="min-h-screen overflow-x-clip bg-white text-[#1D0D3B] selection:bg-[#632BC5] selection:text-white">
-      <LandingHeader />
-
       <main>
-        <LandingHero
+        <GetWebV2Hero
           headline={campaign.headline}
           description={campaign.introduction}
           subdescription={campaign.introductionSubdescription}
-        />
-
-        <LandingVideoBlock
-          eyebrow="COMMENT ÇA MARCHE"
-          heading={campaign.videoHeading}
-          description={campaign.videoDescription}
-          video={{
-            // TODO: replace with the approved /get-web Masterclass video and poster.
-            src: "/videos/WKG3JrKuuXHmdKCS9p58DUa42A4.mp4",
-            poster: "/images/ZLfjupIzIYXJw7hzRvT4aWylANA.png",
-            title:
-              "Aperçu temporaire de la future Masterclass Site web / Workflow / WhatsApp",
-          }}
           ctaLabel={campaign.ctaLabel}
           ctaHref={campaign.ctaHref}
         />
@@ -160,28 +140,29 @@ export default function GetWebPage() {
           partners={webPartners}
           headlineLines={null}
           variant="landing"
+          background="transparent"
         />
 
+        <GetWebV2PcShowcase />
+
         <LandingComparison
-          eyebrow="CE QUI CHANGE"
+          eyebrow=""
           heading={campaign.comparisonHeading}
           description={campaign.comparisonDescription}
           problemsTitle="Vous vous reconnaissez ?"
-          problemsDescription="Voici ce que vit un entrepreneur qui n'est pas en ligne — ou qui a un site qui ne travaille pas pour lui."
+          problemsDescription="Voici ce que vit un entrepreneur qui n'est pas en ligne ou qui a un site qui ne travaille pas pour lui."
           problems={problems}
           benefitsTitle="Voici ce qui change dès que votre site est en ligne."
           benefitsDescription="Pas une promesse en l'air. Le quotidien de nos clients depuis qu'on a lancé leur site."
           benefits={benefits}
         />
 
-        <CtaBand
+        <GetWebV2Results
           heading={campaign.midCtaHeading}
-          headingSize="display"
           description={campaign.midCtaDescription}
           stats={clientStats}
           ctaLabel={campaign.ctaLabel}
           ctaHref={campaign.ctaHref}
-          density="compact"
         />
 
         <LandingVideoTestimonials />
@@ -191,6 +172,7 @@ export default function GetWebPage() {
           description={campaign.finalCtaDescription}
           ctaLabel={campaign.finalCtaLabel}
           ctaHref={campaign.ctaHref}
+          background="white"
         />
       </main>
 

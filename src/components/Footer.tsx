@@ -107,14 +107,14 @@ const socialLinks: {
   Icon: ComponentType<SVGProps<SVGSVGElement>>;
 }[] = [
   {
-    label: "LinkedIn",
-    href: "https://www.linkedin.com/company/oddyseefr/posts/?feedView=all",
-    Icon: LinkedInIcon,
-  },
-  {
     label: "Instagram",
     href: "https://www.instagram.com/oddysee.agence/",
     Icon: InstagramIcon,
+  },
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/company/oddyseefr/posts/?feedView=all",
+    Icon: LinkedInIcon,
   },
   {
     label: "Facebook",

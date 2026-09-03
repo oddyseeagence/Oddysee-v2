@@ -80,6 +80,15 @@ export function LandingLegal({
             >
               <li className="h-4">
                 <a
+                  href="https://www.instagram.com/oddysee.agence/"
+                  aria-label="Instagram"
+                  className="flex h-4 w-4 items-center justify-center transition hover:text-[#632BC5] focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#632BC5]"
+                >
+                  <InstagramIcon aria-hidden="true" className="h-4 w-4" />
+                </a>
+              </li>
+              <li className="h-4">
+                <a
                   href="https://www.linkedin.com/company/oddyseefr/posts/?feedView=all"
                   aria-label="LinkedIn"
                   className="flex h-4 w-4 items-center justify-center transition hover:text-[#632BC5] focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#632BC5]"
@@ -94,15 +103,6 @@ export function LandingLegal({
                   className="flex h-4 w-4 items-center justify-center transition hover:text-[#632BC5] focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#632BC5]"
                 >
                   <FacebookIcon aria-hidden="true" className="h-3.5 w-3.5" />
-                </a>
-              </li>
-              <li className="h-4">
-                <a
-                  href="https://www.instagram.com/oddysee.agence/"
-                  aria-label="Instagram"
-                  className="flex h-4 w-4 items-center justify-center transition hover:text-[#632BC5] focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#632BC5]"
-                >
-                  <InstagramIcon aria-hidden="true" className="h-4 w-4" />
                 </a>
               </li>
             </ul>

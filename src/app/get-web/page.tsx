@@ -15,7 +15,7 @@ import { LandingWhatsAppCta } from "@/components/landing/LandingWhatsAppCta";
 
 // TODO: replace with approved /get-web campaign metadata.
 export const metadata: Metadata = {
-  title: "Site web, workflow & WhatsApp | Oddysee",
+  title: "Oddysee/Web",
   description:
     "Présentation temporaire de la future campagne Site web / Workflow / WhatsApp Oddysee.",
 };

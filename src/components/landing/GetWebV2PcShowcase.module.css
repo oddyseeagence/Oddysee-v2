@@ -167,6 +167,40 @@
   animation-play-state: paused;
 }
 
+@media (max-width: 39.999rem) {
+  .stage {
+    height: clamp(320px, 92vw, 380px);
+  }
+
+  .marquee {
+    font-size: clamp(38px, 10vw, 56px);
+    line-height: 0.92;
+    letter-spacing: -0.045em;
+  }
+
+  .marqueePrimary {
+    top: 8%;
+  }
+
+  .marqueeSecondary {
+    top: auto;
+    bottom: 8%;
+  }
+
+  .pcAnchor {
+    padding-bottom: 52px;
+  }
+
+  .pcFloat {
+    width: min(86vw, 390px);
+  }
+
+  .groundShadow {
+    bottom: 13%;
+    width: min(72vw, 340px);
+  }
+}
+
 @media (min-width: 40rem) {
   .stage {
     height: clamp(500px, 70vw, 620px);

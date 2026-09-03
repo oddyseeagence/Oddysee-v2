@@ -14,7 +14,7 @@ import { LandingVideoTestimonials } from "@/components/landing/LandingVideoTesti
 
 // TODO: replace with approved /get-app campaign metadata.
 export const metadata: Metadata = {
-  title: "App, web & mobile | Oddysee",
+  title: "Oddysee/App",
   description:
     "Présentation temporaire de la future campagne App / Web / Mobile Oddysee.",
 };

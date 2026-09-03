@@ -20,12 +20,9 @@ const hostGrotesk = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Crevix — Modern Creative Agency & Digital Studio",
+  title: "Oddysee",
   description:
-    "We create strategic design and development solutions that elevate brands and drive scalable digital growth effectively.",
-  icons: {
-    icon: "/seo/favicon.svg",
-  },
+    "Oddysee crée des écosystèmes digitaux performants pour aider les entreprises à attirer, convertir et accélérer leur croissance.",
 };
 
 export default function RootLayout({

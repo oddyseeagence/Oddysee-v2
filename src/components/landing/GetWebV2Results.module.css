@@ -361,6 +361,47 @@
   }
 }
 
+@media (min-width: 40rem) and (max-width: 63.999rem) {
+  .stage {
+    margin-top: 36px;
+    padding-top: clamp(350px, 52vw, 400px);
+  }
+
+  .phoneAnchor {
+    height: clamp(340px, 48vw, 380px);
+  }
+
+  .phoneFloat {
+    width: min(74vw, 500px);
+  }
+
+  .glow {
+    top: 4%;
+    width: min(500px, 72vw);
+    height: min(300px, 44vw);
+  }
+
+  .stats {
+    max-width: 760px;
+    margin-inline: auto;
+    gap: 16px;
+  }
+
+  .statCard {
+    min-height: 124px;
+    padding: 18px 20px;
+    border-radius: 22px;
+  }
+
+  .statValue {
+    font-size: clamp(30px, 4.5vw, 38px);
+  }
+
+  .statThree .statValue {
+    font-size: clamp(26px, 3.8vw, 32px);
+  }
+}
+
 @media (min-width: 64rem) {
   .stage {
     height: 600px;

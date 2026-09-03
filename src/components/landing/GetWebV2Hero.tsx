@@ -72,7 +72,7 @@ export function GetWebV2Hero({
               <p className="hero-reveal max-w-[620px] opacity-0 animate-[fadeUp_0.6s_ease-out_forwards] text-[19px] font-medium leading-[1.4] tracking-[-0.025em] text-[#1D0D3B]/65 [animation-delay:220ms] sm:text-[21px] lg:text-[23px]">
                 {description}
               </p>
-              <div className="hidden sm:block">
+              <div className="hidden lg:block">
                 {subdescription ? (
                   <p className="hero-reveal mt-5 max-w-[620px] opacity-0 animate-[fadeUp_0.6s_ease-out_forwards] text-sm leading-6 text-[#1D0D3B]/60 [animation-delay:320ms] sm:text-base sm:leading-7">
                     {subdescription}
@@ -133,7 +133,7 @@ export function GetWebV2Hero({
             />
           </div>
 
-          <div className="relative z-20 min-w-0 sm:hidden">
+          <div className="relative z-20 min-w-0 lg:hidden">
             {subdescription ? (
               <p className="hero-reveal max-w-[620px] opacity-0 animate-[fadeUp_0.6s_ease-out_forwards] text-sm leading-6 text-[#1D0D3B]/60 [animation-delay:320ms]">
                 {subdescription}
